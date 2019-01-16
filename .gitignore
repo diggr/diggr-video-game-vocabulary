@@ -1,0 +1,6 @@
+# Eclipse project files
+*.settings
+*.project
+
+catalog-v001.xml
+example.ttl

@@ -1,0 +1,336 @@
+@prefix : <http://vocab.ub.uni-leipzig.de/diggr/> .
+@prefix diggr: <http://vocab.ub.uni-leipzig.de/diggr/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix VideoGameOntology: <http://purl.org/net/VideoGameOntology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix gndo: <http://d-nb.info/standards/elementset/gnd#> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+@prefix frbroo: <http://iflastandards.info/ns/fr/frbr/frbroo/> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@base <http://vocab.ub.uni-leipzig.de/diggr/> .
+
+<http://vocab.ub.uni-leipzig.de/diggr/> a owl:Ontology ;
+    rdfs:label "Vocabulary for diggr (data-based infrastructure for global game culture research)"@en ,
+     "Vokabular diggr (data-based infrastructure for global game culture research)"@de ;
+     vann:preferredNamespacePrefix "diggr" ;
+     vann:preferredNamespaceUri "http://vocab.ub.uni-leipzig.de/diggr/" ;
+     owl:versionInfo "1.0" ;
+     terms:modified "2018-10-30"^^xsd:date ;
+     terms:created "2017-04-04"^^xsd:date ;
+     doap:homepage <http://diggr.link> .
+
+######################## Classes #####################################
+
+diggr:DiggrEntity rdf:type owl:Class ;
+	rdfs:subClassOf owl:Thing , crm:E1_CRM_Entity ;
+	rdfs:comment "Comprises all things"@en ;                    
+    rdfs:label "Diggr entity"@en .
+
+## Main Game Classes
+
+diggr:Game a owl:Class;
+	rdfs:subClassOf diggr:DiggrEntity , frbroo:F1_Work, crm:E28_Conceptual_Object ;
+	owl:equivalentClass VideoGameOntology:Game ;
+	rdfs:comment "The Game entity type is an abstract entity that describes features that are shared among different platform editions of a game.
+		The characteristics that are typically recognized by users when they say “we played the same game” even if they played it on different platforms (e.g. PlayStations 3 and Xbox 360).
+		Features attributed to the Game entity type also support distinguishing between games by genre, mood, theme, setting, plot, etc."@en ;
+	rdfs:label "Videospiel"@de , "Video Game"@en .
+
+diggr:Platform_Edition a owl:Class;
+	rdfs:subClassOf diggr:Game;
+	rdfs:comment "The Platform entity type denotes a particular instantiation of a video game. It differs in the development for a particular hardware platform (e.g. PlayStation 3 or Xbox 360).
+		The Platform bundles together such features as special additional hardware or system requirements.
+		A Platform entity differs to others on the basis of a certain platform and thus by major differences in the program code. 
+		A port creates a new platform entity."@en ; 
+	rdfs:label "Plattform Edition"@de , "Platform Edition"@en . 
+
+diggr:Edition a owl:Class;
+	rdfs:subClassOf diggr:Platform_Edition ;
+	rdfs:comment "The Edition entity type denotes a particular instantiation of a video game platform version. An edition may be a particular release of a game that is in some way different than another release of the same game on the same platform. 
+		This may be because it has fully integrated content that was previously available only as separate expansion material or additional content/features not available in the regular release of the game. This can also be done in physical form e.g. with merchandise "@en ;
+	rdfs:label "Ausgabe"@de , "Edition"@en . 
+
+diggr:LocalRelease a owl:Class;
+	rdfs:subClassOf diggr:Edition ;
+	rdfs:comment "A local release of an edition"@en ;
+	rdfs:label "Lokale Veröffentlichung"@de , "Local Release"@en . 
+
+## Additional Classes
+
+diggr:Platform a owl:Class;
+	rdfs:subClassOf diggr:DiggrEntity ;
+	rdfs:comment "Hardware platform"@en ; 
+	rdfs:label "Plattform"@de , "Platform"@en .  
+
+diggr:ProductionEvent a owl:Class;
+	rdfs:subClassOf diggr:DiggrEntity, crm:E5_Event ;
+	rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom diggr:RoleRelation ;
+                owl:onProperty diggr:hasContributor
+              ] ;
+	rdfs:comment "The act of creating a video game"@en ;   
+	rdfs:label "Produktionsevent"@de , "Production event"@en .
+
+diggr:Role a owl:Class;
+	rdfs:subClassOf diggr:DiggrEntity;
+	rdfs:comment "A Role within a game production process, e.g. writers, developers, actors,..."@en ;
+	rdfs:label "Rolle"@de , "Role"@en . 
+
+diggr:Company a owl:Class ;
+	rdfs:subClassOf diggr:DiggrEntity , crm:E39_Actor, foaf:Agent ;
+    owl:equivalentClass foaf:Organization ;
+    rdfs:comment "A (video game) Company."@en ;
+	rdfs:label "Firma"@de , "Company"@en . 
+
+## Helper Classes
+
+diggr:RoleRelation a owl:Class ;
+    rdfs:comment "An role relation connects persons and roles."@en ;
+	rdfs:label "Rolenrelation"@de , "Role relation"@en ;
+    rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom diggr:Role ;
+                owl:onProperty diggr:roleValue
+              ] ;
+    rdfs:subClassOf
+              [ a       owl:Restriction ;
+                owl:allValuesFrom crm:E39_Actor ;
+                owl:onProperty diggr:roleActor
+              ] .
+
+gndo:PlaceOrGeographicName a owl:Class .
+
+######################## Properties #####################################
+
+diggr:hasContributor a owl:ObjectProperty ;
+   rdfs:domain diggr:ProductionEvent ;
+   rdfs:range diggr:RoleRelation ;
+   rdfs:comment "A game production event has one or more contributors, e.g. writers, developers, actors,..."@en ;
+   rdfs:label "has contributor"@en .
+
+diggr:roleActor a owl:ObjectProperty ;
+   rdfs:domain diggr:RoleRelation ;
+   rdfs:range crm:E39_Actor ;
+   rdfs:comment "An actor has one or more roles within a game production process, e.g. writers, developers, actors,..."@en ;
+   rdfs:label "role actor"@en .
+
+diggr:roleValue a owl:ObjectProperty ;
+   rdfs:domain diggr:RoleRelation ;
+   rdfs:range diggr:Role ;
+   rdfs:comment "A game production role, e.g. writers, developers, actors,..."@en ;
+   rdfs:label "role value"@en .
+
+diggr:createdBy a owl:ObjectProperty ;
+	rdfs:subPropertyOf crm:P94i_was_created_by ;
+	rdfs:domain diggr:Game ;
+	rdfs:range diggr:ProductionEvent ;
+	rdfs:comment "A game is created by a production event."@en ;
+	rdfs:label "is created by"@en .
+
+diggr:isDeveloperOf a owl:ObjectProperty ;
+	rdfs:domain diggr:Company ;
+	rdfs:range diggr:Edition ;
+	owl:inverseOf diggr:developedBy ;
+	rdfs:comment "A company entity is a developer of a specific edition."@en ;
+	rdfs:label "is developer of"@en .
+
+diggr:isPublisherOf a owl:ObjectProperty ;
+	rdfs:domain diggr:Company ;
+	rdfs:range diggr:LocalRelease ;
+	owl:inverseOf diggr:publishedBy ;
+	rdfs:comment "A company entity is a publisher of a specific local release."@en ;
+	rdfs:label "is publisher of"@en .
+
+diggr:developedBy a owl:ObjectProperty ;
+	rdfs:domain diggr:Edition, diggr:Game ;
+	rdfs:range diggr:Company ;
+	owl:inverseOf diggr:isDeveloperOf ;
+	rdfs:comment "An edition or game entity is developed by a company entity."@en ;
+	rdfs:label "developed by"@en .
+
+diggr:publishedBy a owl:ObjectProperty ;
+	rdfs:domain diggr:LocalRelease, diggr:Game ;
+	rdfs:range diggr:Company ;
+	owl:inverseOf diggr:isPublisherOf ;
+	rdfs:comment "A company entity is a publisher of a specific local release or game."@en ;
+	rdfs:label "published by"@en .
+
+diggr:isRelatedTo a owl:ObjectProperty ;
+	rdfs:domain diggr:DiggrEntity ;
+	rdfs:comment "An entity can be related to another entity."@en ;
+	rdfs:label "is related to"@en .
+
+diggr:belongsTo a owl:ObjectProperty ;
+	rdfs:domain diggr:DiggrEntity ;
+	rdfs:comment "An entity can belongs to another entity."@en ;
+	rdfs:label "belongs to"@en .
+
+diggr:isInvolvedIn a owl:ObjectProperty ;
+	rdfs:domain crm:E39_Actor, diggr:Company ;
+	rdfs:range diggr:ProductionEvent ;
+	rdfs:comment "Persons or companies are involved in production events of games."@en ;
+	rdfs:label "is involved in"@en .
+
+diggr:isPortOf a owl:ObjectProperty ;
+	rdfs:domain diggr:Edition ;
+	rdfs:range diggr:Edition ;
+	rdfs:comment "An edition of a game can be a port of a game."@en ;
+	rdfs:label "is port of"@en .
+
+diggr:isReleaseOf a owl:ObjectProperty ;
+	rdfs:domain diggr:LocalRelease ;
+	rdfs:range diggr:Edition ;
+	owl:inverseOf diggr:hasRelease ;
+	rdfs:comment "A local release is a specific release of an edition."@en ;
+	rdfs:label "is release of"@en .
+
+diggr:hasRelease a owl:ObjectProperty ;
+	rdfs:domain diggr:Edition ;
+	rdfs:range diggr:LocalRelease ;
+	owl:inverseOf diggr:isReleaseOf ;
+	rdfs:comment "A local release is a specific release of an edition."@en ;
+	rdfs:label "has release"@en .
+
+diggr:isEditionOf a owl:ObjectProperty ;
+	rdfs:domain diggr:Edition ;
+	rdfs:range diggr:Platform_Edition ;
+	owl:inverseOf diggr:hasEdition ;
+	rdfs:comment "..."@en ;
+	rdfs:label "is edition of"@en .
+
+diggr:hasEdition a owl:ObjectProperty ;
+	rdfs:domain diggr:Platform_Edition ;
+	rdfs:range diggr:Edition ;
+	owl:inverseOf diggr:isEditionOf ;
+	rdfs:comment "..."@en ;
+	rdfs:label "has edition"@en .
+
+diggr:isPlatformEditionOf a owl:ObjectProperty ;
+	rdfs:domain diggr:Platform_Edition ;
+	rdfs:range diggr:Game ;
+	owl:inverseOf diggr:hasPlatformEdition ;
+	rdfs:comment "..."@en ;
+	rdfs:label "is version of"@en .
+
+diggr:hasPlatformEdition a owl:ObjectProperty ;
+	rdfs:domain diggr:Game ;
+	rdfs:range diggr:Platform_Edition ;
+	owl:inverseOf diggr:isPlatformEditionOf ;
+	rdfs:comment "..."@en ;
+	rdfs:label "has version"@en .
+
+diggr:releaseCountry a owl:ObjectProperty ;
+	rdfs:domain diggr:LocalRelease ;
+	rdfs:range gndo:PlaceOrGeographicName ;
+	rdfs:comment "The release country of a local release"@en ;
+	rdfs:label "release country"@en .
+
+diggr:platform a owl:ObjectProperty ;
+	rdfs:domain diggr:ProductionEvent, diggr:Platform_Edition ;
+	rdfs:range diggr:Platform ;
+	rdfs:comment "Connection to a specific platform"@en ;
+	rdfs:label "on/for platform"@en .
+
+## Company Properties
+
+gndo:placeOfBusiness a owl:ObjectProperty ;
+    rdfs:domain diggr:Company ;
+    rdfs:range gndo:PlaceOrGeographicName ;
+    rdfs:comment "The place where the headquarter of a company is located." ;
+    rdfs:label "place of business" .
+
+diggr:placeOfBusinessCity a owl:ObjectProperty ;
+    rdfs:domain diggr:Company ;
+    rdfs:range gndo:PlaceOrGeographicName ;
+    rdfs:comment "The place where the headquarter of a company is located." ;
+    rdfs:label "place of business (city)" .
+
+diggr:placeOfBusinessCountry a owl:ObjectProperty ;
+    rdfs:domain diggr:Company ;
+    rdfs:range gndo:PlaceOrGeographicName ;
+    rdfs:comment "The place where the headquarter of a company is located." ;
+    rdfs:label "place of business (country)" .
+
+gndo:dateOfEstablishment a owl:ObjectProperty ;
+    rdfs:domain diggr:Company ;
+    rdfs:comment "The date of establishment of a company." ;
+    rdfs:label "date of establishment" .
+
+gndo:dateOfTermination a owl:ObjectProperty ;
+    rdfs:domain diggr:Company ;
+    rdfs:comment "The date of termination of a company." ;
+    rdfs:label "date of termination" .
+
+gndo:precedingCompany a owl:ObjectProperty ;
+    rdfs:domain diggr:Company ;
+    rdfs:range diggr:Company ;
+    rdfs:comment "The preceding company of a company." ;
+    rdfs:label "preceding company" .
+
+gndo:succeedingCompany a owl:ObjectProperty ;
+    rdfs:domain diggr:Company ;
+    rdfs:range diggr:Company ;
+    rdfs:comment "The succeeding company of a company." ;
+    rdfs:label "succeeding company" .
+
+gndo:temporaryNameOfCompany a owl:ObjectProperty ;
+    rdfs:domain diggr:Company ;
+    rdfs:range diggr:Company ;
+    rdfs:comment "The temporary name entity of a company." ;
+    rdfs:label "temporary name of company" .
+
+######################## Datatype Properties #####################################
+
+wdt:P625 a owl:DatatypeProperty ;
+	rdfs:domain gndo:PlaceOrGeographicName ;
+	rdfs:comment "The coordiantes of a place where the headquarter of a company is located." ;
+    rdfs:label "coordinates" .
+
+diggr:hasNote a owl:DatatypeProperty ;
+	rdfs:label "has note"@en ;
+    rdfs:domain diggr:DiggrEntity .
+
+diggr:date a owl:DatatypeProperty ;
+	rdfs:label "date"@en ;
+	rdfs:domain diggr:DiggrEntity .
+
+diggr:dateFrom a owl:DatatypeProperty ;
+	rdfs:label "date from"@en ;
+	rdfs:domain gndo:PlaceOrGeographicName .
+
+diggr:dateUntil a owl:DatatypeProperty ;
+	rdfs:label "date until"@en ;
+	rdfs:domain gndo:PlaceOrGeographicName .
+
+diggr:releaseDate a owl:DatatypeProperty ;
+	rdfs:label "release date"@en ;
+	rdfs:comment "A release date of a local release"@en ;
+	rdfs:domain diggr:LocalRelease, diggr:Edition, diggr:Game, diggr:Platform_Edition .
+
+diggr:releaseTitle a owl:DatatypeProperty ;
+	rdfs:label "release title"@en ;
+	rdfs:comment "A release title"@en ;
+	rdfs:domain diggr:LocalRelease .
+
+diggr:variantTitle a owl:DatatypeProperty ;
+	rdfs:domain diggr:DiggrEntity ;
+	rdfs:comment "A variant title of something"@en ;
+	rdfs:label "variant title"@en .
+
+diggr:title a owl:DatatypeProperty ;
+	rdfs:domain diggr:DiggrEntity ;
+	rdfs:comment "A title of something"@en ;
+	rdfs:label "title"@en .
+
+# genre as a datatype property - maybe later a class with properties: preferredLabel, alternativeLabel,...
+diggr:gameGenre a owl:DatatypeProperty ;
+	rdfs:label "game genre"@en ;
+	rdfs:comment "The genre of a game"@en ;
+	rdfs:domain diggr:Game .
