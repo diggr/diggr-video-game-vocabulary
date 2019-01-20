@@ -1,0 +1,186 @@
+@prefix : <http://kirby.diggr.link/dataset/mobygames/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix diggr: <http://vocab.ub.uni-leipzig.de/diggr/> .
+@prefix mobygames: <http://kirby.diggr.link/dataset/mobygames/> .
+@base <http://kirby.diggr.link/dataset/mobygames/> .
+
+<http://kirby.diggr.link/dataset/mobygames/> rdf:type owl:Ontology ;
+                                              rdfs:label "Vocabulary for Mobygames"@en ;
+                                              vann:preferredNamespacePrefix "mobygames" ;
+                                              vann:preferredNamespaceUri "http://kirby.diggr.link/dataset/mobygames/" ;
+                                              owl:versionInfo "1.0" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://kirby.diggr.link/dataset/mobygames/alternate_titles
+mobygames:alternate_titles rdf:type owl:ObjectProperty .
+
+
+###  http://kirby.diggr.link/dataset/mobygames/attributes
+mobygames:attributes rdf:type owl:ObjectProperty .
+
+
+###  http://kirby.diggr.link/dataset/mobygames/companies
+mobygames:companies rdf:type owl:ObjectProperty ;
+                    rdfs:domain mobygames:Releases .
+
+
+###  http://kirby.diggr.link/dataset/mobygames/credits
+mobygames:credits rdf:type owl:ObjectProperty .
+
+
+###  http://kirby.diggr.link/dataset/mobygames/genres
+mobygames:genres rdf:type owl:ObjectProperty .
+
+
+###  http://kirby.diggr.link/dataset/mobygames/platforms
+mobygames:platforms rdf:type owl:ObjectProperty .
+
+
+###  http://kirby.diggr.link/dataset/mobygames/releases
+mobygames:releases rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://kirby.diggr.link/dataset/mobygames/company_id
+mobygames:company_id rdf:type owl:DatatypeProperty .
+
+
+###  http://kirby.diggr.link/dataset/mobygames/company_name
+mobygames:company_name rdf:type owl:DatatypeProperty .
+
+
+###  http://kirby.diggr.link/dataset/mobygames/countries
+mobygames:countries rdf:type owl:DatatypeProperty .
+
+
+###  http://kirby.diggr.link/dataset/mobygames/description
+mobygames:description rdf:type owl:DatatypeProperty ;
+                      rdfs:domain mobygames:Alternate_Titles ,
+                                  mobygames:Releases .
+
+
+###  http://kirby.diggr.link/dataset/mobygames/developer_id
+mobygames:developer_id rdf:type owl:DatatypeProperty .
+
+
+###  http://kirby.diggr.link/dataset/mobygames/first_release_date
+mobygames:first_release_date rdf:type owl:DatatypeProperty .
+
+
+###  http://kirby.diggr.link/dataset/mobygames/game_id
+mobygames:game_id rdf:type owl:DatatypeProperty ;
+                  rdfs:domain mobygames:Game ,
+                              mobygames:Platforms .
+
+
+###  http://kirby.diggr.link/dataset/mobygames/name
+mobygames:name rdf:type owl:DatatypeProperty ;
+               rdfs:domain mobygames:Credits .
+
+
+###  http://kirby.diggr.link/dataset/mobygames/platform_id
+mobygames:platform_id rdf:type owl:DatatypeProperty ;
+                      rdfs:domain mobygames:Platforms .
+
+
+###  http://kirby.diggr.link/dataset/mobygames/platform_name
+mobygames:platform_name rdf:type owl:DatatypeProperty ;
+                        rdfs:domain mobygames:Platforms .
+
+
+###  http://kirby.diggr.link/dataset/mobygames/release_date
+mobygames:release_date rdf:type owl:DatatypeProperty .
+
+
+###  http://kirby.diggr.link/dataset/mobygames/role
+mobygames:role rdf:type owl:DatatypeProperty ;
+               rdfs:domain mobygames:Companies ,
+                           mobygames:Credits .
+
+
+###  http://kirby.diggr.link/dataset/mobygames/title
+mobygames:title rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf diggr:title ;
+                rdfs:domain mobygames:Alternate_Titles ,
+                            mobygames:Game .
+
+
+###  http://vocab.ub.uni-leipzig.de/diggr/title
+diggr:title rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://kirby.diggr.link/dataset/mobygames/Alternate_Titles
+mobygames:Alternate_Titles rdf:type owl:Class .
+
+
+###  http://kirby.diggr.link/dataset/mobygames/Asins
+mobygames:Asins rdf:type owl:Class .
+
+
+###  http://kirby.diggr.link/dataset/mobygames/Attributes
+mobygames:Attributes rdf:type owl:Class .
+
+
+###  http://kirby.diggr.link/dataset/mobygames/Companies
+mobygames:Companies rdf:type owl:Class ;
+                    rdfs:subClassOf diggr:Company .
+
+
+###  http://kirby.diggr.link/dataset/mobygames/Credits
+mobygames:Credits rdf:type owl:Class .
+
+
+###  http://kirby.diggr.link/dataset/mobygames/Game
+mobygames:Game rdf:type owl:Class ;
+               rdfs:subClassOf diggr:Edition ;
+               rdfs:label "Mobygames Entity" .
+
+
+###  http://kirby.diggr.link/dataset/mobygames/Game_Groups
+mobygames:Game_Groups rdf:type owl:Class .
+
+
+###  http://kirby.diggr.link/dataset/mobygames/Genres
+mobygames:Genres rdf:type owl:Class .
+
+
+###  http://kirby.diggr.link/dataset/mobygames/Identifiers
+mobygames:Identifiers rdf:type owl:Class .
+
+
+###  http://kirby.diggr.link/dataset/mobygames/Platforms
+mobygames:Platforms rdf:type owl:Class .
+
+
+###  http://kirby.diggr.link/dataset/mobygames/Product_Codes
+mobygames:Product_Codes rdf:type owl:Class .
+
+
+###  http://kirby.diggr.link/dataset/mobygames/Releases
+mobygames:Releases rdf:type owl:Class .
+
+
+###  http://vocab.ub.uni-leipzig.de/diggr/Company
+diggr:Company rdf:type owl:Class .
+
+
+###  http://vocab.ub.uni-leipzig.de/diggr/Edition
+diggr:Edition rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

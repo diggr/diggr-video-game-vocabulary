@@ -1,0 +1,72 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix properties: <http://kirby.diggr.link/property/> .
+@prefix core: <http://kirby.diggr.link/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+
+<http://kirby.diggr.link/> a owl:Ontology ;
+    rdfs:label "Vocabulary for diggr linking task and support of reference video game dataset"@en ;
+     vann:preferredNamespacePrefix "core" ;
+     vann:preferredNamespaceUri "http://kirby.diggr.link/" ;
+     owl:versionInfo "1.0" ;
+     terms:modified "2018-10-30"^^xsd:date ;
+     terms:created "2018-10-30"^^xsd:date .
+
+######################## Classes #####################################
+
+core:Cluster a owl:Class ;
+	rdfs:comment "A cluster sums up one or more matches."@en ;
+	rdfs:label "Cluster"@en . 
+
+core:Match a owl:Class ;
+	rdfs:comment "A match contains two match candidates."@en ;
+	rdfs:label "Match"@en . 
+
+core:Dataset a owl:Class ;
+	rdfs:comment "A data source e.g. mobygames, media art db, gamefaqs, ..."@en ; 
+    rdfs:label "Dataset"@en . 
+
+core:Dataset_Row a owl:Class ;
+	rdfs:comment "One record of a data source e.g. mobygames edition, media art local release, ..."@en ;
+    rdfs:label "Dataset Row"@en . 
+
+######################## Object Properties ###########################
+
+properties:p_belongs_to_cluster a owl:ObjectProperty ;
+	rdfs:label "belongs_to_cluster"@en ; 
+    rdfs:domain core:Match ;
+    rdfs:range core:Cluster .
+
+properties:p_belongs_to_match a owl:ObjectProperty ; 
+    rdfs:label "belongs_to_match"@en ; 
+    rdfs:domain core:Dataset_Row ;
+    rdfs:range core:Match . 
+
+properties:p_contains_match a owl:ObjectProperty ;
+	rdfs:label "contains_match"@en ; 
+    rdfs:domain core:Cluster ;
+    rdfs:range core:Match . 
+
+properties:p_matched a owl:ObjectProperty ; 
+    rdfs:label "matched"@en ; 
+    rdfs:domain core:Match ;
+    rdfs:range core:Dataset_Row . 
+
+properties:p_contains a owl:ObjectProperty ; 
+    rdfs:label "contains"@en ; 
+    rdfs:domain core:Dataset ;
+    rdfs:range core:Dataset_Row . 
+
+properties:p_is_part_of a owl:ObjectProperty ; 
+    rdfs:label "is_part_of"@en ; 
+    rdfs:domain core:Dataset_Row ;
+    rdfs:range core:Dataset . 
+
+######################## Datatype Properties #########################
+
+properties:has_match_value a owl:DatatypeProperty ; 
+    rdfs:label "has_match_value"@en ; 
+    rdfs:domain core:Match ;
+    rdfs:range xsd:double . 
