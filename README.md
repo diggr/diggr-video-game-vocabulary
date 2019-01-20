@@ -13,8 +13,6 @@ At this state the vocabulary focus on:
 * Video game metadata at a broad level
 * Video game companies with their roles in the production process
 
-Related Work:
-
 Future Work:
 
 * Add more relationships between games
