@@ -37,23 +37,23 @@ diggr:DiggrEntity rdf:type owl:Class ;
 diggr:Game a owl:Class;
 	rdfs:subClassOf diggr:DiggrEntity , frbroo:F1_Work, crm:E28_Conceptual_Object ;
 	owl:equivalentClass VideoGameOntology:Game ;
-	rdfs:comment "The Game entity type is an abstract entity that describes features that are shared among different platform editions of a game.
+	rdfs:comment """The Game entity type is an abstract entity that describes features that are shared among different platform editions of a game.
 		The characteristics that are typically recognized by users when they say “we played the same game” even if they played it on different platforms (e.g. PlayStations 3 and Xbox 360).
-		Features attributed to the Game entity type also support distinguishing between games by genre, mood, theme, setting, plot, etc."@en ;
+		Features attributed to the Game entity type also support distinguishing between games by genre, mood, theme, setting, plot, etc."""@en ;
 	rdfs:label "Videospiel"@de , "Video Game"@en .
 
 diggr:Platform_Edition a owl:Class;
 	rdfs:subClassOf diggr:Game;
-	rdfs:comment "The Platform entity type denotes a particular instantiation of a video game. It differs in the development for a particular hardware platform (e.g. PlayStation 3 or Xbox 360).
+	rdfs:comment """The Platform entity type denotes a particular instantiation of a video game. It differs in the development for a particular hardware platform (e.g. PlayStation 3 or Xbox 360).
 		The Platform bundles together such features as special additional hardware or system requirements.
 		A Platform entity differs to others on the basis of a certain platform and thus by major differences in the program code. 
-		A port creates a new platform entity."@en ; 
+		A port creates a new platform entity."""@en ; 
 	rdfs:label "Plattform Edition"@de , "Platform Edition"@en . 
 
 diggr:Edition a owl:Class;
 	rdfs:subClassOf diggr:Platform_Edition ;
-	rdfs:comment "The Edition entity type denotes a particular instantiation of a video game platform version. An edition may be a particular release of a game that is in some way different than another release of the same game on the same platform. 
-		This may be because it has fully integrated content that was previously available only as separate expansion material or additional content/features not available in the regular release of the game. This can also be done in physical form e.g. with merchandise "@en ;
+	rdfs:comment """The Edition entity type denotes a particular instantiation of a video game platform version. An edition may be a particular release of a game that is in some way different than another release of the same game on the same platform. 
+		This may be because it has fully integrated content that was previously available only as separate expansion material or additional content/features not available in the regular release of the game. This can also be done in physical form e.g. with merchandise"""@en ;
 	rdfs:label "Ausgabe"@de , "Edition"@en . 
 
 diggr:LocalRelease a owl:Class;
@@ -70,11 +70,11 @@ diggr:Platform a owl:Class;
 
 diggr:ProductionEvent a owl:Class;
 	rdfs:subClassOf diggr:DiggrEntity, crm:E5_Event ;
-	rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom diggr:RoleRelation ;
-                owl:onProperty diggr:hasContributor
-              ] ;
+#	rdfs:subClassOf
+#              [ a       owl:Restriction ;
+#                owl:allValuesFrom diggr:RoleRelation ;
+#                owl:onProperty diggr:hasContributor
+#              ] ;
 	rdfs:comment "The act of creating a video game"@en ;   
 	rdfs:label "Produktionsevent"@de , "Production event"@en .
 
@@ -93,17 +93,17 @@ diggr:Company a owl:Class ;
 
 diggr:RoleRelation a owl:Class ;
     rdfs:comment "An role relation connects persons and roles."@en ;
-	rdfs:label "Rolenrelation"@de , "Role relation"@en ;
-    rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom diggr:Role ;
-                owl:onProperty diggr:roleValue
-              ] ;
-    rdfs:subClassOf
-              [ a       owl:Restriction ;
-                owl:allValuesFrom crm:E39_Actor ;
-                owl:onProperty diggr:roleActor
-              ] .
+	rdfs:label "Rolenrelation"@de , "Role relation"@en .
+#    rdfs:subClassOf
+#              [ a       owl:Restriction ;
+#                owl:allValuesFrom diggr:Role ;
+#                owl:onProperty diggr:roleValue
+#              ] ;
+#    rdfs:subClassOf
+#              [ a       owl:Restriction ;
+#                owl:allValuesFrom crm:E39_Actor ;
+#                owl:onProperty diggr:roleActor
+#              ] .
 
 gndo:PlaceOrGeographicName a owl:Class .
 

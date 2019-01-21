@@ -1,0 +1,16 @@
+title: diggr Video Game Vocabulary
+baseurl: "/diggr/" # the subpath of your site, e.g. /blog
+url: "http://vocab.ub.uni-leipzig.de" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Build settings
+markdown: kramdown
+theme: jekyll-theme-jod
+
+exclude: ["docs", "Gemfile", "Gemfile.lock", "README.md", "diggr.ttl"]
+
+jekyll_rdf:
+    path: "diggr.ttl"
+    include_blank: false
+    restriction: "SELECT ?resourceUri WHERE { ?resourceUri ?p ?o . FILTER regex(str(?resourceUri), \"http://vocab.ub.uni-leipzig.de/diggr/\") }"
+    class_template_mappings:
+      "http://www.w3.org/2002/07/owl#Ontology": "ontology"
