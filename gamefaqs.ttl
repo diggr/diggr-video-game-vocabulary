@@ -10,7 +10,7 @@
 @base <http://kirby.diggr.link/dataset/gamefaqs/> .
 
 <http://kirby.diggr.link/dataset/gamefaqs/> rdf:type owl:Ontology ;
-                                             rdfs:label "Vocabulary for Media Art DB"@en ;
+                                             rdfs:label "Vocabulary for GameFAQs"@en ;
                                              owl:versionInfo "1.0" ;
                                              vann:preferredNamespaceUri "http://kirby.diggr.link/dataset/gamefaqs/" ;
                                              vann:preferredNamespacePrefix "gamefaqs" .
