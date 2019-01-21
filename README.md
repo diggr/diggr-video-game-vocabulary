@@ -1,4 +1,5 @@
 # diggr Video Game Vocabulary
+|GitHub license|
 
 Vocabulary for video games build in project diggr (Databased Infrastructure for Global Games Culture Research - https://diggr.link).
 
