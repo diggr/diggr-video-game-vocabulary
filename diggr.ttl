@@ -59,7 +59,8 @@ diggr:Edition a owl:Class;
 
 diggr:LocalRelease a owl:Class;
 	rdfs:subClassOf diggr:Edition ;
-	rdfs:comment "A local release of an edition"@en ;
+	rdfs:comment """Each edition of a video game is made available and accessible in a particular region and in a particular language as a local release.
+		Local releases can differ in language, graphics localization, customization options for difficulty levels and characters."""@en ;
 	rdfs:label "Lokale Veröffentlichung"@de , "Local Release"@en . 
 
 ## Additional Classes
@@ -182,7 +183,7 @@ diggr:isInvolvedIn a owl:ObjectProperty ;
 diggr:isPortOf a owl:ObjectProperty ;
 	rdfs:domain diggr:Edition ;
 	rdfs:range diggr:Edition ;
-	rdfs:comment "An edition of a game can be a port of a game."@en ;
+	rdfs:comment "An edition of a game can be a port of a game from another hardware platform."@en ;
 	rdfs:label "is port of"@en .
 
 diggr:isReleaseOf a owl:ObjectProperty ;
@@ -196,7 +197,7 @@ diggr:hasRelease a owl:ObjectProperty ;
 	rdfs:domain diggr:Edition ;
 	rdfs:range diggr:LocalRelease ;
 	owl:inverseOf diggr:isReleaseOf ;
-	rdfs:comment "A local release is a specific release of an edition."@en ;
+	rdfs:comment "An edition has a specific local release."@en ;
 	rdfs:label "has release"@en .
 
 diggr:isEditionOf a owl:ObjectProperty ;
