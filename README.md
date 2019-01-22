@@ -25,4 +25,5 @@ This vocabulary is licensed under the CC0 1.0 Universal - see the [LICENSE.md](L
 ## Acknowledgments
 
 Some definitions were adapted from:
-Jacob Jett, & Simone Sacchi, Jin Ha Lee, Rachel Ivy Clarke. (2014). A Conceptual Model for Video Games and Interactive Media. In T. Bouwmans, F. Porikli, B. Höferlin, & A. Vacavant (Eds.), Background Modeling and Foreground Detection for Video Surveillance. Chapman and Hall/CRC. https://doi.org/10.1201/b17223-2
+
+Jett, J., Sacchi, S., Lee, J. H., & Clarke, R. I. (2016). A conceptual model for video games and interactive media. Journal of the Association for Information Science and Technology, 67, 505–517. https://doi.org/10.1002/asi.23409
