@@ -10,7 +10,6 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix gndo: <http://d-nb.info/standards/elementset/gnd#> .
-@prefix wdt: <http://www.wikidata.org/prop/direct/> .
 @prefix frbroo: <http://iflastandards.info/ns/fr/frbr/frbroo/> .
 @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
 @base <http://vocab.ub.uni-leipzig.de/diggr/> .
@@ -106,8 +105,6 @@ diggr:RoleRelation a owl:Class ;
 #                owl:allValuesFrom crm:E39_Actor ;
 #                owl:onProperty diggr:roleActor
 #              ] .
-
-gndo:PlaceOrGeographicName a owl:Class .
 
 ######################## Properties #####################################
 
@@ -242,12 +239,6 @@ diggr:platform a owl:ObjectProperty ;
 
 ## Company Properties
 
-gndo:placeOfBusiness a owl:ObjectProperty ;
-    rdfs:domain diggr:Company ;
-    rdfs:range gndo:PlaceOrGeographicName ;
-    rdfs:comment "The place where the headquarter of a company is located." ;
-    rdfs:label "place of business" .
-
 diggr:placeOfBusinessCity a owl:ObjectProperty ;
     rdfs:domain diggr:Company ;
     rdfs:range gndo:PlaceOrGeographicName ;
@@ -260,40 +251,7 @@ diggr:placeOfBusinessCountry a owl:ObjectProperty ;
     rdfs:comment "The place where the headquarter of a company is located." ;
     rdfs:label "place of business (country)" .
 
-gndo:dateOfEstablishment a owl:ObjectProperty ;
-    rdfs:domain diggr:Company ;
-    rdfs:comment "The date of establishment of a company." ;
-    rdfs:label "date of establishment" .
-
-gndo:dateOfTermination a owl:ObjectProperty ;
-    rdfs:domain diggr:Company ;
-    rdfs:comment "The date of termination of a company." ;
-    rdfs:label "date of termination" .
-
-gndo:precedingCompany a owl:ObjectProperty ;
-    rdfs:domain diggr:Company ;
-    rdfs:range diggr:Company ;
-    rdfs:comment "The preceding company of a company." ;
-    rdfs:label "preceding company" .
-
-gndo:succeedingCompany a owl:ObjectProperty ;
-    rdfs:domain diggr:Company ;
-    rdfs:range diggr:Company ;
-    rdfs:comment "The succeeding company of a company." ;
-    rdfs:label "succeeding company" .
-
-gndo:temporaryNameOfCompany a owl:ObjectProperty ;
-    rdfs:domain diggr:Company ;
-    rdfs:range diggr:Company ;
-    rdfs:comment "The temporary name entity of a company." ;
-    rdfs:label "temporary name of company" .
-
 ######################## Datatype Properties #####################################
-
-wdt:P625 a owl:DatatypeProperty ;
-	rdfs:domain gndo:PlaceOrGeographicName ;
-	rdfs:comment "The coordiantes of a place where the headquarter of a company is located." ;
-    rdfs:label "coordinates" .
 
 diggr:hasNote a owl:DatatypeProperty ;
 	rdfs:label "has note"@en ;
