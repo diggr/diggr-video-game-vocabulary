@@ -12,11 +12,12 @@
 @prefix gndo: <http://d-nb.info/standards/elementset/gnd#> .
 @prefix frbroo: <http://iflastandards.info/ns/fr/frbr/frbroo/> .
 @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
 @base <http://vocab.ub.uni-leipzig.de/diggr/> .
 
 <http://vocab.ub.uni-leipzig.de/diggr/> a owl:Ontology ;
-    rdfs:label "Vocabulary for diggr (data-based infrastructure for global game culture research)"@en ,
-     "Vokabular diggr (data-based infrastructure for global game culture research)"@de ;
+    rdfs:label "diggr Video Game Vocabulary"@en ;
+     dbo:subtitle "A Vocabulary for Interlinking Video Game Databases"@en ;
      vann:preferredNamespacePrefix "diggr" ;
      vann:preferredNamespaceUri "http://vocab.ub.uni-leipzig.de/diggr/" ;
      owl:versionInfo "1.0" ;
