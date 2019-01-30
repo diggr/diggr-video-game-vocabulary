@@ -162,6 +162,8 @@ diggr:publishedBy a owl:ObjectProperty ;
 	rdfs:comment "A company entity is a publisher of a specific local release or game."@en ;
 	rdfs:label "published by"@en .
 
+# distributedBy?
+
 diggr:isRelatedTo a owl:ObjectProperty ;
 	rdfs:domain diggr:DiggrEntity ;
 	rdfs:comment "An entity can be related to another entity."@en ;
