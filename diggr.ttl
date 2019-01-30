@@ -129,9 +129,9 @@ diggr:roleValue a owl:ObjectProperty ;
 
 diggr:createdBy a owl:ObjectProperty ;
 	rdfs:subPropertyOf crm:P94i_was_created_by ;
-	rdfs:domain diggr:Game ;
+	rdfs:domain diggr:Platform_Edition ;
 	rdfs:range diggr:ProductionEvent ;
-	rdfs:comment "A game is created by a production event."@en ;
+	rdfs:comment "A Platform Edition is created by a production event."@en ;
 	rdfs:label "is created by"@en .
 
 diggr:isDeveloperOf a owl:ObjectProperty ;
@@ -163,16 +163,6 @@ diggr:publishedBy a owl:ObjectProperty ;
 	rdfs:label "published by"@en .
 
 # distributedBy?
-
-diggr:isRelatedTo a owl:ObjectProperty ;
-	rdfs:domain diggr:DiggrEntity ;
-	rdfs:comment "An entity can be related to another entity."@en ;
-	rdfs:label "is related to"@en .
-
-diggr:belongsTo a owl:ObjectProperty ;
-	rdfs:domain diggr:DiggrEntity ;
-	rdfs:comment "An entity can belongs to another entity."@en ;
-	rdfs:label "belongs to"@en .
 
 diggr:isInvolvedIn a owl:ObjectProperty ;
 	rdfs:domain crm:E39_Actor, diggr:Company ;
