@@ -152,8 +152,14 @@ diggr:developedBy a owl:ObjectProperty ;
 	rdfs:domain diggr:Edition, diggr:Game ;
 	rdfs:range diggr:Company ;
 	owl:inverseOf diggr:isDeveloperOf ;
-	rdfs:comment "An edition or game entity is developed by a company entity."@en ;
+	rdfs:comment "A platform edition or game entity is developed by a company entity."@en ;
 	rdfs:label "developed by"@en .
+
+diggr:portedBy a owl:ObjectProperty ;
+	rdfs:domain diggr:Edition ;
+	rdfs:range diggr:Company ;
+	rdfs:comment "A platform edition or game entity is ported by a company entity."@en ;
+	rdfs:label "ported by"@en .
 
 diggr:publishedBy a owl:ObjectProperty ;
 	rdfs:domain diggr:LocalRelease, diggr:Game ;
@@ -171,9 +177,9 @@ diggr:isInvolvedIn a owl:ObjectProperty ;
 	rdfs:label "is involved in"@en .
 
 diggr:isPortOf a owl:ObjectProperty ;
-	rdfs:domain diggr:Edition ;
-	rdfs:range diggr:Edition ;
-	rdfs:comment "An edition of a game can be a port of a game from another hardware platform."@en ;
+	rdfs:domain diggr:Platform_Edition ;
+	rdfs:range diggr:Platform_Edition ;
+	rdfs:comment "A Platform Edition of a game can be a port of a game from another hardware platform."@en ;
 	rdfs:label "is port of"@en .
 
 diggr:isReleaseOf a owl:ObjectProperty ;
