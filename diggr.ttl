@@ -130,7 +130,7 @@ diggr:roleValue a owl:ObjectProperty ;
 
 diggr:worksFor a owl:ObjectProperty ;
    rdfs:domain diggr:RoleRelation ;
-   rdfs:range diggr:Company ;
+   rdfs:range crm:E39_Actor ;
    rdfs:comment "The relation between a specific role, actor and a corporation at the point in time of the production process."@en ;
    rdfs:label "works for/cooperate with"@en .
 
@@ -142,7 +142,7 @@ diggr:createdBy a owl:ObjectProperty ;
 
 diggr:isDeveloperOf a owl:ObjectProperty ;
 	rdfs:domain diggr:Company ;
-	rdfs:range diggr:Edition ;
+	rdfs:range diggr:Platform_Edition ;
 	owl:inverseOf diggr:developedBy ;
 	rdfs:comment "A company entity is a developer of a specific edition."@en ;
 	rdfs:label "is developer of"@en .
@@ -155,14 +155,14 @@ diggr:isPublisherOf a owl:ObjectProperty ;
 	rdfs:label "is publisher of"@en .
 
 diggr:developedBy a owl:ObjectProperty ;
-	rdfs:domain diggr:Edition, diggr:Game ;
+	rdfs:domain diggr:Platform_Edition, diggr:Game ;
 	rdfs:range diggr:Company ;
 	owl:inverseOf diggr:isDeveloperOf ;
 	rdfs:comment "A platform edition or game entity is developed by a company entity. (role shortcut)"@en ;
 	rdfs:label "developed by"@en .
 
 diggr:portedBy a owl:ObjectProperty ;
-	rdfs:domain diggr:Edition ;
+	rdfs:domain diggr:Platform_Edition ;
 	rdfs:range diggr:Company ;
 	rdfs:comment "A platform edition or game entity is ported by a company entity. (role shortcut)"@en ;
 	rdfs:label "ported by"@en .
@@ -177,7 +177,7 @@ diggr:publishedBy a owl:ObjectProperty ;
 # distributedBy?
 
 diggr:isInvolvedIn a owl:ObjectProperty ;
-	rdfs:domain crm:E39_Actor, diggr:Company ;
+	rdfs:domain crm:E39_Actor ;
 	rdfs:range diggr:ProductionEvent ;
 	rdfs:comment "Persons or companies are involved in the production event of a video game."@en ;
 	rdfs:label "is involved in"@en .
@@ -204,13 +204,13 @@ diggr:hasRelease a owl:ObjectProperty ;
 
 diggr:isEditionOf a owl:ObjectProperty ;
 	rdfs:domain diggr:Edition ;
-	rdfs:range diggr:Platform_Edition ;
+	rdfs:range diggr:Platform_Edition, diggr:Game ;
 	owl:inverseOf diggr:hasEdition ;
 	rdfs:comment "..."@en ;
 	rdfs:label "is edition of"@en .
 
 diggr:hasEdition a owl:ObjectProperty ;
-	rdfs:domain diggr:Platform_Edition ;
+	rdfs:domain diggr:Platform_Edition, diggr:Game ;
 	rdfs:range diggr:Edition ;
 	owl:inverseOf diggr:isEditionOf ;
 	rdfs:comment "..."@en ;
@@ -218,13 +218,13 @@ diggr:hasEdition a owl:ObjectProperty ;
 
 diggr:isPlatformEditionOf a owl:ObjectProperty ;
 	rdfs:domain diggr:Platform_Edition ;
-	rdfs:range diggr:Game ;
+	rdfs:range diggr:Game, diggr:Edition ;
 	owl:inverseOf diggr:hasPlatformEdition ;
 	rdfs:comment "..."@en ;
 	rdfs:label "is platform edition of"@en .
 
 diggr:hasPlatformEdition a owl:ObjectProperty ;
-	rdfs:domain diggr:Game ;
+	rdfs:domain diggr:Game, diggr:Edition ;
 	rdfs:range diggr:Platform_Edition ;
 	owl:inverseOf diggr:isPlatformEditionOf ;
 	rdfs:comment "..."@en ;
