@@ -20,7 +20,7 @@
      vann:preferredNamespacePrefix "diggr" ;
      vann:preferredNamespaceUri "http://vocab.ub.uni-leipzig.de/diggr/" ;
      owl:versionInfo "1.0" ;
-     terms:modified "2019-01-20"^^xsd:date ;
+     terms:modified "2019-02-12"^^xsd:date ;
      terms:created "2017-04-04"^^xsd:date ;
      terms:license "CC0 1.0 Universal";
      doap:homepage <http://diggr.link> .
