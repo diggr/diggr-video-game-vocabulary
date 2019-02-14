@@ -191,6 +191,11 @@ diggr:isPortOf a owl:ObjectProperty ;
 	rdfs:comment "A Platform Edition of a game can be a port of a game from another hardware platform."@en ;
 	rdfs:label "is port of"@en .
 
+diggr:hasSpecialEdition a owl:ObjectProperty ;
+	rdfs:domain diggr:Generic_Edition ;
+	rdfs:comment "Another edition of a game can be in some way different from a generic edition of a game, e.g. Gold Edition, Day One Edition, etc."@en ;
+	rdfs:label "is special edition of"@en .
+
 diggr:isReleaseOf a owl:ObjectProperty ;
 	rdfs:domain diggr:LocalRelease ;
 	owl:inverseOf diggr:hasRelease ;
