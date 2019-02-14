@@ -3,7 +3,6 @@
 @prefix diggr: <http://vocab.ub.uni-leipzig.de/diggr/> .
 @prefix mediaartdb: <http://kirby.diggr.link/dataset/mediaartdb/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
-@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
 
 <http://kirby.diggr.link/dataset/mediaartdb/> a owl:Ontology ;
     rdfs:label "Vocabulary for Media Art DB"@en ;
@@ -44,7 +43,9 @@ mediaartdb:Rating a owl:DatatypeProperty .
 mediaartdb:Recommended_environment a owl:DatatypeProperty .
 mediaartdb:Releasedate_day a owl:DatatypeProperty .
 mediaartdb:Releasedate_month a owl:DatatypeProperty .
-mediaartdb:Releasedate_year a owl:DatatypeProperty .
+mediaartdb:Releasedate_year a owl:DatatypeProperty ;
+	rdfs:subPropertyOf diggr:releaseDate .
+
 mediaartdb:Required_environment a owl:DatatypeProperty .
 mediaartdb:Source_1 a owl:DatatypeProperty .
 mediaartdb:Source_URL_1 a owl:DatatypeProperty .
