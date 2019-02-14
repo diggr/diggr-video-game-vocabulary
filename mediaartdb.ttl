@@ -13,7 +13,8 @@
 #### Media Art DB Classes ####
 
 mediaartdb:Item a owl:Class ;
-	rdfs:subClassOf diggr:LocalRelease .
+	rdfs:subClassOf diggr:LocalRelease ;
+	rdfs:label "Media Art DB game entity" .
 
 #### Mobygames Datatype Properties ####
 

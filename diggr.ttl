@@ -57,7 +57,7 @@ diggr:Generic_Edition a owl:Class;
 		An edition may be a particular release of a game that is in some way different than another release of the same game on the same platform.
 		This may be because it has fully integrated content that was previously available only as separate expansion material or additional content/features not available in the regular release of the game. 
 		This can also be done in physical form e.g. with merchandise."""@en ;
-	rdfs:label "Ausgabe"@de , "Edition"@en . 
+	rdfs:label "Ausgabe (generisch)"@de , "Edition (generic)"@en . 
 
 diggr:LocalRelease a owl:Class;
 	rdfs:subClassOf diggr:DiggrEntity, frbroo:F3_Manifestation_Product_Type ;
@@ -69,7 +69,7 @@ diggr:LocalRelease a owl:Class;
 
 diggr:Platform a owl:Class;
 	rdfs:subClassOf diggr:DiggrEntity ;
-	rdfs:comment "Hardware platform for which a Video Game is developed or released e.g. PlayStation 2 or XBox One."@en ; 
+	rdfs:comment "Hardware or Software platform for which a Video Game is developed or released e.g. PlayStation 2 or XBox One."@en ; 
 	rdfs:label "Plattform"@de , "Platform"@en .  
 
 diggr:ProductionEvent a owl:Class;
@@ -193,7 +193,6 @@ diggr:isPortOf a owl:ObjectProperty ;
 
 diggr:isReleaseOf a owl:ObjectProperty ;
 	rdfs:domain diggr:LocalRelease ;
-	rdfs:range diggr:Generic_Edition, diggr:Platform_Edition ;
 	owl:inverseOf diggr:hasRelease ;
 	rdfs:comment "A local release is a specific release of an edition."@en ;
 	rdfs:label "is release of"@en .
@@ -207,7 +206,6 @@ diggr:hasRelease a owl:ObjectProperty ;
 
 diggr:isEditionOf a owl:ObjectProperty ;
 	rdfs:domain diggr:Generic_Edition ;
-	rdfs:range diggr:Platform_Edition, diggr:Game ;
 	owl:inverseOf diggr:hasEdition ;
 	rdfs:comment "..."@en ;
 	rdfs:label "is edition of"@en .
@@ -221,7 +219,6 @@ diggr:hasEdition a owl:ObjectProperty ;
 
 diggr:isPlatformEditionOf a owl:ObjectProperty ;
 	rdfs:domain diggr:Platform_Edition ;
-	rdfs:range diggr:Game, diggr:Generic_Edition ;
 	owl:inverseOf diggr:hasPlatformEdition ;
 	rdfs:comment "..."@en ;
 	rdfs:label "is platform edition of"@en .
@@ -249,7 +246,6 @@ diggr:platform a owl:ObjectProperty ;
 
 diggr:placeOfBusiness a owl:ObjectProperty ;
     rdfs:domain diggr:Company ;
-    rdfs:range gndo:PlaceOrGeographicName, diggr:LocationStatement ;
     rdfs:comment "The place where the headquarter of a company is located." ;
     rdfs:label "place of business"@en .
 
@@ -261,24 +257,19 @@ diggr:hasNote a owl:DatatypeProperty ;
     rdfs:domain diggr:DiggrEntity .
 
 # todo: replace this with upper vocabulary term
-diggr:date a owl:DatatypeProperty ;
-	rdfs:label "date"@en ;
-	rdfs:domain diggr:DiggrEntity .
-
-# todo: replace this with upper vocabulary term
 diggr:dateFrom a owl:DatatypeProperty ;
 	rdfs:label "date from"@en ;
-	rdfs:domain gndo:PlaceOrGeographicName .
+	rdfs:domain diggr:LocationStatement .
 
 # todo: replace this with upper vocabulary term
 diggr:dateUntil a owl:DatatypeProperty ;
 	rdfs:label "date until"@en ;
-	rdfs:domain gndo:PlaceOrGeographicName .
+	rdfs:domain diggr:LocationStatement .
 
 diggr:releaseDate a owl:DatatypeProperty ;
 	rdfs:label "release date"@en ;
 	rdfs:comment "The release date of a game entity."@en ;
-	rdfs:domain diggr:LocalRelease, diggr:Generic_Edition, diggr:Game, diggr:Platform_Edition .
+	rdfs:domain diggr:DiggrEntity .
 
 diggr:variantTitle a owl:DatatypeProperty ;
 	rdfs:label "variant title"@en ;
