@@ -1,10 +1,8 @@
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix gndo: <http://d-nb.info/standards/elementset/gnd#> .
-@prefix wdt: <http://www.wikidata.org/prop/direct/> .
 @prefix diggr: <http://vocab.ub.uni-leipzig.de/diggr/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix crm:<http://erlangen-crm.org/current/> .
+@prefix crm:<http://www.cidoc-crm.org/cidoc-crm/> .
 
 ## Shapes for diggr Games
 
@@ -25,6 +23,12 @@ diggr:Shape_Game a sh:Shape ;
 		sh:path diggr:hasPlatformEdition ;
 		sh:class diggr:Platform_Edition ;
 		sh:nodeKind sh:IRI 
+	] ;
+		sh:property [
+		sh:minCount 1 ;
+		sh:path diggr:hasEdition ;
+		sh:class diggr:Generic_Edition ;
+		sh:nodeKind sh:IRI 
 	] .
 
 diggr:Shape_Platform_Edition a sh:Shape ;
@@ -38,8 +42,8 @@ diggr:Shape_Platform_Edition a sh:Shape ;
 	] ;
 		sh:property [
 		sh:minCount 1 ;
-		sh:path diggr:hasEdition ;
-		sh:class diggr:Edition ;
+		sh:path diggr:isPlatformEditionOf ;
+		sh:class diggr:Generic_Edition ;
 		sh:nodeKind sh:IRI 
 	] ;
 		sh:property [
@@ -65,6 +69,10 @@ diggr:Shape_Platform_Edition a sh:Shape ;
 		sh:nodeKind sh:IRI 
 	] ;
 		sh:property [
+		sh:path diggr:releaseDate ;
+		sh:datatype xsd:date 
+	] ;
+		sh:property [
 		sh:path diggr:createdBy ;
 		sh:class diggr:ProductionEvent ;
 		sh:nodeKind sh:IRI 
@@ -82,6 +90,16 @@ diggr:Shape_Edition a sh:Shape ;
 		sh:property [
 		sh:path diggr:publishedBy ;
 		sh:class diggr:Company ;
+		sh:nodeKind sh:IRI 
+	] ;
+		sh:property [
+		sh:path diggr:releaseDate ;
+		sh:datatype xsd:date 
+	] ;
+		sh:property [
+		sh:minCount 1 ;
+		sh:path diggr:hasPlatformEdition ;
+		sh:class diggr:Platform_Edition ;
 		sh:nodeKind sh:IRI 
 	] ;
 		sh:property [
@@ -109,6 +127,20 @@ diggr:Shape_Local_Release a sh:Shape ;
 		sh:class gndo:PlaceOrGeographicName
 	] .
 
+diggr:Shape_Platform a sh:Shape ;
+	sh:targetClass diggr:Platform_Edition ;
+	sh:property [
+		sh:minCount 1 ;
+		sh:path diggr:title 
+	] ;
+		sh:property [
+		sh:path diggr:variantTitle 
+	] ;
+		sh:property [
+		sh:path diggr:releaseDate ;
+		sh:datatype xsd:date 
+	] .
+
 ## Shape for diggr Roles
 
 diggr:Shape_Roles a sh:Shape ;
@@ -121,30 +153,26 @@ diggr:Shape_Roles a sh:Shape ;
 		sh:property [
 		sh:minCount 1 ;
 		sh:path diggr:roleActor ;
-		sh:class crm:E39_Actor , diggr:Company
+		sh:class crm:E39_Actor
 	] ;
 		sh:property [
-		sh:path diggr:releaseDate ;
-		sh:datatype xsd:date 
-	] ;
-		sh:property [
-		sh:path diggr:releaseCountry ;
-		sh:class gndo:PlaceOrGeographicName
+		sh:path diggr:worksFor ;
+		sh:class crm:E39_Actor
 	] .
-
+	
 
 ## Shapes for diggr Companies
 
 diggr:Shape_Company a sh:Shape ;
 	sh:targetClass diggr:Company ;
 	sh:property [
-		sh:minCount 1 ;
-		sh:path gndo:placeOfBusiness ; 
-		# todo: Location Statement
+		sh:path gndo:placeOfBusiness ;
+		sh:class diggr:LocationStatement
 	] ;
 	sh:property [
-		sh:path gndo:temporaryNameOfTheCorporateBody
-		# todo: Appellation Statement
+		sh:minCount 1 ;
+		sh:path crm:P131_is_identified_by ;
+		sh:class crm:E82_Actor_Appellation 
 	] ;
 	sh:property [
 		sh:minCount 1 ;
@@ -165,18 +193,27 @@ diggr:Shape_Company a sh:Shape ;
 	] ;
 	sh:property [
 		sh:path diggr:isDeveloperOf ;
-		sh:class diggr:Edition ;
+		sh:class diggr:Platform_Edition ;
 		sh:nodeKind sh:IRI 
 	] ;
 	sh:property [
 		sh:path diggr:isPublisherOf ;
-		sh:class diggr:Edition ;
+		sh:class diggr:Platform_Edition ;
 		sh:nodeKind sh:IRI 
 	] .
 
-diggr:Shape_Place a sh:Shape ;
-	sh:targetClass gndo:PlaceOrGeographicName ;
+diggr:Shape_Location_Statement a sh:Shape ;
+	sh:targetClass diggr:LocationStatement ;
 	sh:property [
 		sh:minCount 1 ;
-		sh:path wdt:P625 # wikdata coordinates
+		sh:path gndo:place ;
+		sh:class gndo:PlaceOrGeographicName
+	] ;
+	sh:property [
+		sh:minCount 1 ;
+		sh:path diggr:dateFrom
+	] ;
+	sh:property [
+		sh:minCount 1 ;
+		sh:path diggr:dateUntil
 	] .
