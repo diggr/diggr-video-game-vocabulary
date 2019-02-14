@@ -261,16 +261,6 @@ diggr:hasNote a owl:DatatypeProperty ;
 	rdfs:label "has note"@en ;
     rdfs:domain diggr:DiggrEntity .
 
-# todo: replace this with upper vocabulary term
-diggr:dateFrom a owl:DatatypeProperty ;
-	rdfs:label "date from"@en ;
-	rdfs:domain diggr:LocationStatement .
-
-# todo: replace this with upper vocabulary term
-diggr:dateUntil a owl:DatatypeProperty ;
-	rdfs:label "date until"@en ;
-	rdfs:domain diggr:LocationStatement .
-
 diggr:releaseDate a owl:DatatypeProperty ;
 	rdfs:label "release date"@en ;
 	rdfs:comment "The release date of a game entity."@en ;
@@ -281,7 +271,6 @@ diggr:variantTitle a owl:DatatypeProperty ;
 	rdfs:comment "A variant title of something"@en ;
 	rdfs:domain diggr:DiggrEntity .
 	
-
 diggr:title a owl:DatatypeProperty ;
 	rdfs:label "title"@en ;
 	rdfs:comment "The title of a game entity."@en ;
