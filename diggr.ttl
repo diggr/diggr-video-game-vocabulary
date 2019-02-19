@@ -30,7 +30,7 @@
 diggr:DiggrEntity rdf:type owl:Class ;
 	rdfs:subClassOf owl:Thing , crm:E1_CRM_Entity ;
 	rdfs:comment "Comprises all gaming related things."@en ;                    
-    rdfs:label "Diggr game entity"@en .
+    rdfs:label "Diggr Game Entity"@en .
 
 ## Main Game Classes
 
@@ -205,7 +205,7 @@ diggr:hasSpecialEdition a owl:ObjectProperty ;
 diggr:isReleaseOf a owl:ObjectProperty ;
 	rdfs:domain diggr:LocalRelease ;
 	owl:inverseOf diggr:hasRelease ;
-	rdfs:comment "A local release is a specific release of an edition."@en ;
+	rdfs:comment "A local release is a specific release of an Edition and a specific Platform Realization."@en ;
 	rdfs:label "is release of"@en .
 
 diggr:hasRelease a owl:ObjectProperty ;
