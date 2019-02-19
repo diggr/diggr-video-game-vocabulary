@@ -29,7 +29,7 @@
 
 diggr:DiggrEntity rdf:type owl:Class ;
 	rdfs:subClassOf owl:Thing , crm:E1_CRM_Entity ;
-	rdfs:comment "Comprises all gaming related things."@en ;                    
+	rdfs:comment "Comprises all game related things."@en ;                    
     rdfs:label "Diggr Game Entity"@en .
 
 ## Main Game Classes
@@ -44,10 +44,10 @@ diggr:Game a owl:Class;
 
 diggr:Platform_Realization a owl:Class;
 	rdfs:subClassOf diggr:DiggrEntity, frbroo:F22_Self-Contained_Expression;
-	rdfs:comment """The Platform Realization entity type denotes a particular instantiation of a video game from a technical perspective.
+	rdfs:comment """The Platform Realization class denotes a particular instantiation of a video game from a technical perspective.
 		It differs in the development for a particular hardware platform (e.g. PlayStation 3 or Xbox 360).
-		The Platform Edition bundles together such features as special additional hardware or system requirements.
-		A Platform entity differs to others on the basis of a certain platform and thus by major differences in the program code. A port creates a new platform edition entity."""@en ; 
+		The Platform Realization bundles together such features as special additional hardware or system requirements.
+		A Platform Realization differs to others on the basis of a certain platform and thus by major differences in the program code. A port creates a new platform edition entity."""@en ; 
 	rdfs:label "Plattform Realisation"@de , "Platform Realization"@en . 
 
 diggr:Generic_Edition a owl:Class;
@@ -66,8 +66,7 @@ diggr:Special_Edition a owl:Class;
 
 diggr:LocalRelease a owl:Class;
 	rdfs:subClassOf diggr:DiggrEntity, frbroo:F3_Manifestation_Product_Type ;
-	rdfs:comment """
-		A Local Release incorporates a specific Edition and a specific Platform Realization.
+	rdfs:comment """A Local Release incorporates a specific Edition and a specific Platform Realization.
 		It is made available and accessible in a particular region and in a particular language.
 		Local releases can differ in language, graphics localization, customization options for difficulty levels and characters."""@en ;
 	rdfs:label "Lokale Veröffentlichung"@de , "Local Release"@en . 
@@ -226,17 +225,17 @@ diggr:hasEdition a owl:ObjectProperty ;
 	rdfs:comment "..."@en ;
 	rdfs:label "has edition"@en .
 
-diggr:isPlatformEditionOf a owl:ObjectProperty ;
+diggr:isPlatformRealizationOf a owl:ObjectProperty ;
 	rdfs:domain diggr:Platform_Realization ;
-	owl:inverseOf diggr:hasPlatformEdition ;
+	owl:inverseOf diggr:hasPlatformRealization ;
 	rdfs:comment "..."@en ;
-	rdfs:label "is platform edition of"@en .
+	rdfs:label "is platform realization of"@en .
 
-diggr:hasPlatformEdition a owl:ObjectProperty ;
+diggr:hasPlatformRealization a owl:ObjectProperty ;
 	rdfs:range diggr:Platform_Realization ;
-	owl:inverseOf diggr:isPlatformEditionOf ;
+	owl:inverseOf diggr:isPlatformRealizationOf ;
 	rdfs:comment "..."@en ;
-	rdfs:label "has platform edition"@en .
+	rdfs:label "has platform realization"@en .
 
 diggr:releaseCountry a owl:ObjectProperty ;
 	rdfs:domain diggr:LocalRelease ;
