@@ -19,8 +19,8 @@
      dbo:subtitle "A Vocabulary for Interlinking Video Game Databases"@en ;
      vann:preferredNamespacePrefix "diggr" ;
      vann:preferredNamespaceUri "http://vocab.ub.uni-leipzig.de/diggr/" ;
-     owl:versionInfo "1.0" ;
-     terms:modified "2019-02-12"^^xsd:date ;
+     owl:versionInfo "1.1" ;
+     terms:modified "2019-02-15"^^xsd:date ;
      terms:created "2017-04-04"^^xsd:date ;
      terms:license "CC0 1.0 Universal";
      doap:homepage <http://diggr.link> .
@@ -29,8 +29,8 @@
 
 diggr:DiggrEntity rdf:type owl:Class ;
 	rdfs:subClassOf owl:Thing , crm:E1_CRM_Entity ;
-	rdfs:comment "Comprises all things"@en ;                    
-    rdfs:label "Diggr entity"@en .
+	rdfs:comment "Comprises all gaming related things."@en ;                    
+    rdfs:label "Diggr game entity"@en .
 
 ## Main Game Classes
 
@@ -42,22 +42,27 @@ diggr:Game a owl:Class;
 		Features attributed to the Game entity type also support distinguishing between games by genre, mood, theme, setting, plot, etc."""@en ;
 	rdfs:label "Videospiel"@de , "Video Game"@en .
 
-diggr:Platform_Edition a owl:Class;
-	rdfs:subClassOf diggr:Generic_Edition, frbroo:F22_Self-Contained_Expression;
-	rdfs:comment """The Platform Edition entity type denotes a particular instantiation of a video game from a technical perspective.
+diggr:Platform_Realization a owl:Class;
+	rdfs:subClassOf diggr:DiggrEntity, frbroo:F22_Self-Contained_Expression;
+	rdfs:comment """The Platform Realization entity type denotes a particular instantiation of a video game from a technical perspective.
 		It differs in the development for a particular hardware platform (e.g. PlayStation 3 or Xbox 360).
 		The Platform Edition bundles together such features as special additional hardware or system requirements.
 		A Platform entity differs to others on the basis of a certain platform and thus by major differences in the program code. A port creates a new platform edition entity."""@en ; 
-	rdfs:label "Plattform Edition"@de , "Platform Edition"@en . 
+	rdfs:label "Plattform Realisation"@de , "Platform Realization"@en . 
 
 diggr:Generic_Edition a owl:Class;
 	rdfs:subClassOf diggr:DiggrEntity, frbroo:F24_Publication_Expression ;
-	crm:P165_incorporates diggr:Platform_Edition ;	
+	crm:P165_incorporates diggr:Platform_Realization ;	
 	rdfs:comment """The Edition entity type denotes a particular instantiation of a video game from a publisher or distributional perspective.
 		An edition may be a particular release of a game that is in some way different than another release of the same game on the same platform.
 		This may be because it has fully integrated content that was previously available only as separate expansion material or additional content/features not available in the regular release of the game. 
 		This can also be done in physical form e.g. with merchandise."""@en ;
 	rdfs:label "Ausgabe (generisch)"@de , "Edition (generic)"@en . 
+
+diggr:Special_Edition a owl:Class;
+	rdfs:subClassOf diggr:Generic_Edition ;
+	rdfs:comment """TBD"""@en ;
+	rdfs:label "Ausgabe (speziell)"@de , "Edition (special)"@en . 
 
 diggr:LocalRelease a owl:Class;
 	rdfs:subClassOf diggr:DiggrEntity, frbroo:F3_Manifestation_Product_Type ;
@@ -79,7 +84,7 @@ diggr:ProductionEvent a owl:Class;
 #                owl:allValuesFrom diggr:RoleRelation ;
 #                owl:onProperty diggr:hasContributor
 #              ] ;
-	rdfs:comment "The act of creating a video game"@en ;   
+	rdfs:comment "The act of creating a video game."@en ;   
 	rdfs:label "Produktionsevent"@de , "Production event"@en .
 
 diggr:Role a owl:Class;
@@ -138,14 +143,13 @@ diggr:worksFor a owl:ObjectProperty ;
    rdfs:label "works for/cooperate with"@en .
 
 diggr:createdBy a owl:ObjectProperty ;
-	rdfs:domain diggr:Platform_Edition ;
 	rdfs:range diggr:ProductionEvent ;
-	rdfs:comment "A platform edition is created during an production event."@en ;
+	rdfs:comment "A platform realization is created during an production event."@en ;
 	rdfs:label "is created by"@en .
 
 diggr:isDeveloperOf a owl:ObjectProperty ;
 	rdfs:domain diggr:Company ;
-	rdfs:range diggr:Platform_Edition ;
+	rdfs:range diggr:Platform_Realization ;
 	owl:inverseOf diggr:developedBy ;
 	rdfs:comment "A company entity is a developer of a specific edition."@en ;
 	rdfs:label "is developer of"@en .
@@ -158,16 +162,16 @@ diggr:isPublisherOf a owl:ObjectProperty ;
 	rdfs:label "is publisher of"@en .
 
 diggr:developedBy a owl:ObjectProperty ;
-	rdfs:domain diggr:Platform_Edition;
+	rdfs:domain diggr:Platform_Realization;
 	rdfs:range diggr:Company ;
 	owl:inverseOf diggr:isDeveloperOf ;
-	rdfs:comment "A platform edition or game entity is developed by a company entity. (role shortcut)"@en ;
+	rdfs:comment "A platform realization entity is developed by a company entity. (role shortcut)"@en ;
 	rdfs:label "developed by"@en .
 
 diggr:portedBy a owl:ObjectProperty ;
-	rdfs:domain diggr:Platform_Edition ;
+	rdfs:domain diggr:Platform_Realization ;
 	rdfs:range diggr:Company ;
-	rdfs:comment "A platform edition or game entity is ported by a company entity. (role shortcut)"@en ;
+	rdfs:comment "A platform realization entity is ported by a company entity. (role shortcut)"@en ;
 	rdfs:label "ported by"@en .
 
 diggr:publishedBy a owl:ObjectProperty ;
@@ -186,9 +190,9 @@ diggr:isInvolvedIn a owl:ObjectProperty ;
 	rdfs:label "is involved in"@en .
 
 diggr:isPortOf a owl:ObjectProperty ;
-	rdfs:domain diggr:Platform_Edition ;
-	rdfs:range diggr:Platform_Edition ;
-	rdfs:comment "A Platform Edition of a game can be a port of a game from another hardware platform."@en ;
+	rdfs:domain diggr:Platform_Realization ;
+	rdfs:range diggr:Platform_Realization ;
+	rdfs:comment "A Platform Realization of a game can be a port of a game from another hardware platform."@en ;
 	rdfs:label "is port of"@en .
 
 diggr:hasSpecialEdition a owl:ObjectProperty ;
@@ -203,7 +207,6 @@ diggr:isReleaseOf a owl:ObjectProperty ;
 	rdfs:label "is release of"@en .
 
 diggr:hasRelease a owl:ObjectProperty ;
-	rdfs:domain diggr:Generic_Edition ;
 	rdfs:range diggr:LocalRelease ;
 	owl:inverseOf diggr:isReleaseOf ;
 	rdfs:comment "An edition has a specific local release."@en ;
@@ -216,21 +219,19 @@ diggr:isEditionOf a owl:ObjectProperty ;
 	rdfs:label "is edition of"@en .
 
 diggr:hasEdition a owl:ObjectProperty ;
-	rdfs:domain diggr:Game ;
 	rdfs:range diggr:Generic_Edition ;
 	owl:inverseOf diggr:isEditionOf ;
 	rdfs:comment "..."@en ;
 	rdfs:label "has edition"@en .
 
 diggr:isPlatformEditionOf a owl:ObjectProperty ;
-	rdfs:domain diggr:Platform_Edition ;
+	rdfs:domain diggr:Platform_Realization ;
 	owl:inverseOf diggr:hasPlatformEdition ;
 	rdfs:comment "..."@en ;
 	rdfs:label "is platform edition of"@en .
 
 diggr:hasPlatformEdition a owl:ObjectProperty ;
-	rdfs:domain diggr:Generic_Edition ;
-	rdfs:range diggr:Platform_Edition ;
+	rdfs:range diggr:Platform_Realization ;
 	owl:inverseOf diggr:isPlatformEditionOf ;
 	rdfs:comment "..."@en ;
 	rdfs:label "has platform edition"@en .
@@ -242,7 +243,7 @@ diggr:releaseCountry a owl:ObjectProperty ;
 	rdfs:label "release country"@en .
 
 diggr:platform a owl:ObjectProperty ;
-	rdfs:domain diggr:Generic_Edition ;
+	rdfs:domain diggr:Platform_Realization ;
 	rdfs:range diggr:Platform ;
 	rdfs:comment "Relationship to a specific hardware platform."@en ;
 	rdfs:label "on/for platform"@en .
@@ -268,7 +269,7 @@ diggr:releaseDate a owl:DatatypeProperty ;
 
 diggr:variantTitle a owl:DatatypeProperty ;
 	rdfs:label "variant title"@en ;
-	rdfs:comment "A variant title of something"@en ;
+	rdfs:comment "A variant title of something."@en ;
 	rdfs:domain diggr:DiggrEntity .
 	
 diggr:title a owl:DatatypeProperty ;
@@ -279,5 +280,5 @@ diggr:title a owl:DatatypeProperty ;
 # genre as a datatype property - maybe later a class with properties: preferredLabel, alternativeLabel,...
 diggr:gameGenre a owl:DatatypeProperty ;
 	rdfs:label "game genre"@en ;
-	rdfs:comment "The categorization of a video game e.g. puzzle video game or dungeon crawl"@en ;
+	rdfs:comment "The categorization of a video game e.g. puzzle video game or dungeon crawl."@en ;
 	rdfs:domain diggr:Game .

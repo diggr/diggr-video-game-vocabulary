@@ -97,7 +97,7 @@ gamefaqs:wikipedia rdf:type owl:DatatypeProperty .
 ###  http://kirby.diggr.link/dataset/gamefaqs/Data
 gamefaqs:Data rdf:type owl:Class ;
               skos:closeMatch mobygames:Game ;
-              rdfs:subClassOf diggr:Platform_Edition ;
+              rdfs:subClassOf diggr:Platform_Realization ;
               rdfs:label "GameFAQs game entity" .
 
 
