@@ -52,21 +52,23 @@ diggr:Platform_Realization a owl:Class;
 
 diggr:Generic_Edition a owl:Class;
 	rdfs:subClassOf diggr:DiggrEntity, frbroo:F24_Publication_Expression ;
-	crm:P165_incorporates diggr:Platform_Realization ;	
-	rdfs:comment """The Edition entity type denotes a particular instantiation of a video game from a publisher or distributional perspective.
-		An edition may be a particular release of a game that is in some way different than another release of the same game on the same platform.
-		This may be because it has fully integrated content that was previously available only as separate expansion material or additional content/features not available in the regular release of the game. 
-		This can also be done in physical form e.g. with merchandise."""@en ;
+	rdfs:comment """The Generic Edition is the creative or economic vision of game which will be realized in Platform Realizations.
+		The Edition denotes a particular instantiation of a video game from a publisher or distributional perspective.
+		"""@en ;
 	rdfs:label "Ausgabe (generisch)"@de , "Edition (generic)"@en . 
 
 diggr:Special_Edition a owl:Class;
 	rdfs:subClassOf diggr:Generic_Edition ;
-	rdfs:comment """TBD"""@en ;
+	rdfs:comment """A Special Edition may be a particular release of a game that is in some way different than another release of the same game on the same platform.
+		This may be because it has fully integrated content that was previously available only as separate expansion material or additional content/features not available in the regular edition of the game. 
+		This can also be done in physical form e.g. with merchandise."""@en ;
 	rdfs:label "Ausgabe (speziell)"@de , "Edition (special)"@en . 
 
 diggr:LocalRelease a owl:Class;
 	rdfs:subClassOf diggr:DiggrEntity, frbroo:F3_Manifestation_Product_Type ;
-	rdfs:comment """Each edition of a video game is made available and accessible in a particular region and in a particular language as a local release.
+	rdfs:comment """
+		A Local Release incorporates a specific Edition and a specific Platform Realization.
+		It is made available and accessible in a particular region and in a particular language.
 		Local releases can differ in language, graphics localization, customization options for difficulty levels and characters."""@en ;
 	rdfs:label "Lokale Veröffentlichung"@de , "Local Release"@en . 
 
