@@ -1,8 +1,6 @@
 @prefix : <http://kirby.diggr.link/dataset/gamefaqs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix diggr: <http://vocab.ub.uni-leipzig.de/diggr/> .
@@ -10,6 +8,7 @@
 @prefix mobygames: <http://kirby.diggr.link/dataset/mobygames/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @base <http://kirby.diggr.link/dataset/gamefaqs/> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
 
 <http://kirby.diggr.link/dataset/gamefaqs/> rdf:type owl:Ontology ;
                                              rdfs:label "Vocabulary for GameFAQs"@en ;
@@ -23,12 +22,14 @@
 
 ###  http://kirby.diggr.link/dataset/gamefaqs/developer
 gamefaqs:developer rdf:type owl:ObjectProperty ;
-                   rdfs:domain gamefaqs:Data .
+                   rdfs:domain gamefaqs:Data ;
+                   rdfs:subPropertyOf diggr:developedBy .
 
 
 ###  http://kirby.diggr.link/dataset/gamefaqs/publisher
 gamefaqs:publisher rdf:type owl:ObjectProperty ;
-                   rdfs:domain gamefaqs:Data .
+                   rdfs:domain gamefaqs:Data ;
+                   rdfs:subPropertyOf diggr:publishedBy .
 
 
 ###  http://kirby.diggr.link/dataset/gamefaqs/releases
@@ -50,11 +51,13 @@ gamefaqs:esrb rdf:type owl:DatatypeProperty .
 
 
 ###  http://kirby.diggr.link/dataset/gamefaqs/genre
-gamefaqs:genre rdf:type owl:DatatypeProperty .
+gamefaqs:genre rdf:type owl:DatatypeProperty ;
+	rdfs:subPropertyOf diggr:gameGenre .
 
 
 ###  http://kirby.diggr.link/dataset/gamefaqs/name
-gamefaqs:name rdf:type owl:DatatypeProperty .
+gamefaqs:name rdf:type owl:DatatypeProperty ;
+	rdfs:subPropertyOf rdfs:label .
 
 
 ###  http://kirby.diggr.link/dataset/gamefaqs/product_id
@@ -70,7 +73,8 @@ gamefaqs:region rdf:type owl:DatatypeProperty .
 
 
 ###  http://kirby.diggr.link/dataset/gamefaqs/release_date
-gamefaqs:release_date rdf:type owl:DatatypeProperty .
+gamefaqs:release_date rdf:type owl:DatatypeProperty ;
+	rdfs:subPropertyOf diggr:releaseDate .
 
 
 ###  http://kirby.diggr.link/dataset/gamefaqs/slug
@@ -93,16 +97,18 @@ gamefaqs:wikipedia rdf:type owl:DatatypeProperty .
 ###  http://kirby.diggr.link/dataset/gamefaqs/Data
 gamefaqs:Data rdf:type owl:Class ;
               skos:closeMatch mobygames:Game ;
-              rdfs:subClassOf diggr:Platform_Edition ;
+              rdfs:subClassOf diggr:Platform_Realization ;
               rdfs:label "GameFAQs game entity" .
 
 
 ###  http://kirby.diggr.link/dataset/gamefaqs/Developer
-gamefaqs:Developer rdf:type owl:Class .
+gamefaqs:Developer rdf:type owl:Class ;
+	rdfs:subClassOf crm:E39_Actor .
 
 
 ###  http://kirby.diggr.link/dataset/gamefaqs/Publisher
-gamefaqs:Publisher rdf:type owl:Class .
+gamefaqs:Publisher rdf:type owl:Class ;
+	rdfs:subClassOf crm:E39_Actor .
 
 
 ###  http://kirby.diggr.link/dataset/gamefaqs/Releases

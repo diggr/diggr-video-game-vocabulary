@@ -22,19 +22,30 @@ mediaartdb:Access_1 a owl:DatatypeProperty .
 mediaartdb:Brand a owl:DatatypeProperty .
 mediaartdb:Copyright_information a owl:DatatypeProperty .
 mediaartdb:Currency a owl:DatatypeProperty .
-mediaartdb:Genre_1 a owl:DatatypeProperty .
+
+mediaartdb:Genre_1 a owl:DatatypeProperty ;
+	rdfs:subPropertyOf diggr:gameGenre .
+
 mediaartdb:Max_player a owl:DatatypeProperty .
 mediaartdb:Media a owl:DatatypeProperty .
 mediaartdb:Min_player a owl:DatatypeProperty .
 mediaartdb:Misc a owl:DatatypeProperty .
-mediaartdb:Plattform a owl:DatatypeProperty .
+
+mediaartdb:Plattform a owl:DatatypeProperty ;
+	rdfs:subPropertyOf diggr:platform .
+
 mediaartdb:Price a owl:DatatypeProperty .
-mediaartdb:Publisher a owl:DatatypeProperty .
+
+mediaartdb:Publisher a owl:DatatypeProperty ;
+	rdfs:subPropertyOf rdfs:label .
+
 mediaartdb:Rating a owl:DatatypeProperty .
 mediaartdb:Recommended_environment a owl:DatatypeProperty .
 mediaartdb:Releasedate_day a owl:DatatypeProperty .
 mediaartdb:Releasedate_month a owl:DatatypeProperty .
-mediaartdb:Releasedate_year a owl:DatatypeProperty .
+mediaartdb:Releasedate_year a owl:DatatypeProperty ;
+	rdfs:subPropertyOf diggr:releaseDate .
+
 mediaartdb:Required_environment a owl:DatatypeProperty .
 mediaartdb:Source_1 a owl:DatatypeProperty .
 mediaartdb:Source_URL_1 a owl:DatatypeProperty .
