@@ -1,11 +1,7 @@
 # diggr Video Game Vocabulary
 [![License: CC0-1.0](https://img.shields.io/badge/License-CC0%201.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
 
-Vocabulary for video games defined by project diggr (Databased Infrastructure for Global Games Culture Research - https://diggr.link).
-
-Used to describe video games and interlink between different video game databases. Includes source vocabulary from the used databases Mobygames, GameFAQs and Media Art Database.
-
-Additionally, the linking vocabulary (_diggr_linking.ttl_) describe possible match candidates.
+To support video game research, the diggr (Databased Infrastructure for Global Game Culture Research) project aims to integrate and interlink datasets to construct an extensible knowledge graph for video games. Therefore, we created a mediated vocabulary which can act as basis for the data integration process of online video game datasets.
 
 This is work in progress. At this state the vocabulary focus on:
 
@@ -14,7 +10,6 @@ This is work in progress. At this state the vocabulary focus on:
 
 ## Future Work:
 
-- [ ] provide alignments to FRBRoo for interoperability
 - [ ] Add more relationships between games
 
 ## License
