@@ -12,6 +12,7 @@
 @prefix frbroo: <http://iflastandards.info/ns/fr/frbr/frbroo/> .
 @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
 @prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix rcgs: <http://www.rcgs.jp/terms/> .
 @base <http://vocab.ub.uni-leipzig.de/diggr/> .
 
 <http://vocab.ub.uni-leipzig.de/diggr/> a owl:Ontology ;
@@ -35,7 +36,7 @@ diggr:DiggrEntity rdf:type owl:Class ;
 ## Main Game Classes
 
 diggr:Game a owl:Class;
-	rdfs:subClassOf diggr:DiggrEntity , frbroo:F1_Work ;
+	rdfs:subClassOf diggr:DiggrEntity, frbroo:F1_Work, rcgs:Work;
 	owl:equivalentClass VideoGameOntology:Game ;
 	rdfs:comment """The Game entity type is an abstract entity that describes features that are shared among different editions of a game.
 		The characteristics that are typically recognized by users when they say “we played the same game” even if they played it on different platforms (e.g. PlayStations 3 and Xbox 360).
@@ -43,7 +44,7 @@ diggr:Game a owl:Class;
 	rdfs:label "Videospiel"@de , "Video Game"@en .
 
 diggr:Platform_Realization a owl:Class;
-	rdfs:subClassOf diggr:DiggrEntity, frbroo:F22_Self-Contained_Expression;
+	rdfs:subClassOf diggr:DiggrEntity, frbroo:F22_Self-Contained_Expression, rcgs:Variation;
 	rdfs:comment """The Platform Realization class denotes a particular instantiation of a video game from a technical perspective.
 		It differs in the development for a particular hardware platform (e.g. PlayStation 3 or Xbox 360).
 		The Platform Realization bundles together such features as special additional hardware or system requirements.
@@ -51,7 +52,7 @@ diggr:Platform_Realization a owl:Class;
 	rdfs:label "Plattform Realisation"@de , "Platform Realization"@en . 
 
 diggr:Generic_Edition a owl:Class;
-	rdfs:subClassOf diggr:DiggrEntity, frbroo:F24_Publication_Expression ;
+	rdfs:subClassOf diggr:DiggrEntity, frbroo:F24_Publication_Expression, rcgs:Variation ;
 	rdfs:comment """The Generic Edition is the creative or economic vision of game which will be realized in Platform Realizations.
 		The Edition denotes a particular instantiation of a video game from a publisher or distributional perspective.
 		"""@en ;
@@ -65,7 +66,7 @@ diggr:Special_Edition a owl:Class;
 	rdfs:label "Ausgabe (speziell)"@de , "Edition (special)"@en . 
 
 diggr:LocalRelease a owl:Class;
-	rdfs:subClassOf diggr:DiggrEntity, frbroo:F3_Manifestation_Product_Type ;
+	rdfs:subClassOf diggr:DiggrEntity, frbroo:F3_Manifestation_Product_Type, rcgs:Package ;
 	rdfs:comment """A Local Release incorporates a specific Edition and a specific Platform Realization.
 		It is made available and accessible in a particular region and in a particular language.
 		Local releases can differ in language, graphics localization, customization options for difficulty levels and characters."""@en ;
@@ -74,7 +75,7 @@ diggr:LocalRelease a owl:Class;
 ## Additional Classes
 
 diggr:Platform a owl:Class;
-	rdfs:subClassOf diggr:DiggrEntity ;
+	rdfs:subClassOf diggr:DiggrEntity, rcgs:Platform ;
 	rdfs:comment "Hardware or Software platform for which a Video Game is developed or released e.g. PlayStation 2 or XBox One."@en ; 
 	rdfs:label "Plattform"@de , "Platform"@en .  
 
