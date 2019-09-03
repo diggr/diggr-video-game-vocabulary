@@ -3,10 +3,11 @@
 
 To support video game research, the diggr (Databased Infrastructure for Global Game Culture Research) project aims to integrate and interlink datasets to construct an extensible knowledge graph for video games. Therefore, we created a mediated vocabulary which can act as basis for the data integration process of online video game datasets.
 
-This is work in progress. At this state the vocabulary focus on:
+This is work in progress. At this state the vocabulary contains:
 
 * Video game metadata at a broad level
-* Video game companies with their roles in the production process
+* Video game companies with relation to roles in the production process
+* Alignments to FRBRoo and RCGS (Ritsumeikan Center for Game Studies)
 
 ## Future Work:
 
