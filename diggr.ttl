@@ -185,8 +185,6 @@ diggr:publishedBy a owl:ObjectProperty ;
 	rdfs:comment "A company entity is a publisher of a specific local release or game. (role shortcut)"@en ;
 	rdfs:label "published by"@en .
 
-# distributedBy?
-
 diggr:isInvolvedIn a owl:ObjectProperty ;
 	rdfs:domain crm:E39_Actor ;
 	rdfs:range diggr:ProductionEvent ;
