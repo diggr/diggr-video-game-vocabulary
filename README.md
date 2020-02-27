@@ -17,6 +17,13 @@ This is work in progress. At this state the vocabulary contains:
 
 This vocabulary is licensed under the CC0 1.0 Universal - see the [LICENSE.md](LICENSE.md) file for details
 
+## Further Reading
+
+Hoffmann, Tracy, (2019). Developing a Mediated Vocabulary for Video Game Research. Proceedings of the Doctoral Symposium on Research on Online Databases in History, co-located with 3rd Data for History Workshop, CEUR-WS.org, online CEUR Vol-2532.
+
+Archived at Zenodo in Version 1.1:
+Hoffmann, Tracy. (2019, February 19). Diggr Video Game Vocabulary (Version 1.1). Zenodo. http://doi.org/10.5281/zenodo.3237537
+
 ## Acknowledgments
 
 Some definitions were adapted from:
