@@ -13,7 +13,7 @@
 @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
 @prefix dbo: <http://dbpedia.org/ontology/> .
 @prefix rcgs: <http://www.rcgs.jp/terms/> .
-@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
 @base <http://vocab.ub.uni-leipzig.de/diggr/> .
 
 <http://vocab.ub.uni-leipzig.de/diggr/> a <http://purl.org/vocommons/voaf#Vocabulary>, owl:Ontology ;
