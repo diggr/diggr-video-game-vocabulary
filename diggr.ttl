@@ -22,7 +22,7 @@
      vann:preferredNamespacePrefix "diggr" ;
      vann:preferredNamespaceUri "http://vocab.ub.uni-leipzig.de/diggr/" ;
      owl:versionInfo "1.1" ;
-	 dct:creator "Tracy Hoffmann" ;
+	dct:creator "Tracy Hoffmann" ;
      terms:modified "2019-02-15"^^xsd:date ;
      terms:created "2017-04-04"^^xsd:date ;
      terms:license "CC0 1.0 Universal";
