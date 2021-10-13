@@ -3,7 +3,7 @@ name: Build Jekyll Page
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   build:
