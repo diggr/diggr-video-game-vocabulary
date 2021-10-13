@@ -1,7 +1,6 @@
 # diggr Video Game Vocabulary
 [![License: CC0-1.0](https://img.shields.io/badge/License-CC0%201.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3237537.svg)](https://doi.org/10.5281/zenodo.3237537)
-[![Build Status](https://travis-ci.com/diggr/diggr-video-game-vocabulary.svg?branch=master)](https://travis-ci.com/diggr/diggr-video-game-vocabulary)
 
 To support video game research, the diggr (Databased Infrastructure for Global Game Culture Research) project aims to integrate and interlink datasets to construct an extensible knowledge graph for video games. Therefore, we created a mediated vocabulary which can act as basis for the data integration process of online video game datasets.
 
