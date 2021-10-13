@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
   </head>
   <body>
 
@@ -31,7 +32,12 @@
 
 <div class="container-fluid">
   <div class="row">
-      <nav class="col-sm-3 col-md-2 col-lg-3 col-xl-3 d-none d-sm-block bg-light sidebar">
+      <nav class="col-sm-3 col-md-2 col-lg-3 col-xl-3 d-none d-sm-block bg-light"
+style="position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: auto;">
     <form class="bd-search d-flex align-items-center">
         <input
           type="search"
@@ -42,84 +48,270 @@
           spellcheck="false"
           role="combobox"
           dir="auto"
+          onkeyup="searchInList()"
           />
     </form>
 
-    <ul class="nav nav-pills flex-column">
+    <ul class="nav nav-pills flex-column" id="search-list">
         
             <li class="nav-item">
-                <a class="nav-link" href="#http://vocab.ub.uni-leipzig.de/diggr/Platform_Realization">
-                    Platform Realization
-                </a>
-            </li>
-        
-            <li class="nav-item">
-                <a class="nav-link" href="#http://vocab.ub.uni-leipzig.de/diggr/DiggrEntity">
-                    Diggr Game Entity
-                </a>
-            </li>
-        
-            <li class="nav-item">
-                <a class="nav-link" href="#http://vocab.ub.uni-leipzig.de/diggr/Game">
-                    Video Game
-                </a>
-            </li>
-        
-            <li class="nav-item">
-                <a class="nav-link" href="#http://vocab.ub.uni-leipzig.de/diggr/ProductionEvent">
-                    Production event
-                </a>
-            </li>
-        
-            <li class="nav-item">
-                <a class="nav-link" href="#http://vocab.ub.uni-leipzig.de/diggr/Company">
-                    Company
-                </a>
-            </li>
-        
-            <li class="nav-item">
-                <a class="nav-link" href="#http://vocab.ub.uni-leipzig.de/diggr/Generic_Edition">
+                <a class="nav-link" href="#id-e850ed8794749ea994439cba1051350a">
                     Edition (generic)
                 </a>
             </li>
         
             <li class="nav-item">
-                <a class="nav-link" href="#http://vocab.ub.uni-leipzig.de/diggr/LocalRelease">
-                    Local Release
-                </a>
-            </li>
-        
-            <li class="nav-item">
-                <a class="nav-link" href="#http://vocab.ub.uni-leipzig.de/diggr/Role">
+                <a class="nav-link" href="#id-84a8d9941c0c8f6e544a9f113b916dc3">
                     Role
                 </a>
             </li>
         
             <li class="nav-item">
-                <a class="nav-link" href="#http://vocab.ub.uni-leipzig.de/diggr/RoleRelation">
-                    Role relation
-                </a>
-            </li>
-        
-            <li class="nav-item">
-                <a class="nav-link" href="#http://vocab.ub.uni-leipzig.de/diggr/LocationStatement">
-                    Location statement
-                </a>
-            </li>
-        
-            <li class="nav-item">
-                <a class="nav-link" href="#http://vocab.ub.uni-leipzig.de/diggr/Platform">
+                <a class="nav-link" href="#id-83e164c02caecddee69dba9157bf4dbf">
                     Platform
                 </a>
             </li>
         
             <li class="nav-item">
-                <a class="nav-link" href="#http://vocab.ub.uni-leipzig.de/diggr/Special_Edition">
+                <a class="nav-link" href="#id-48779ac3a9d1d839f9e7a79e569cd16c">
+                    Company
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-04e28fdfa8b8821c3d3c357070357879">
+                    Production event
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-646986f504044d99bae4b4c3e27de0b7">
+                    Diggr Game Entity
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-15d06531f9f6c74aa08fcca993b483e4">
+                    Location statement
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-9476ec250e3c90fcc8bb6f2ac66954a8">
+                    Local Release
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-88753d0290f7b6007e5444619c7628a7">
+                    Video Game
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-94b94866a898228454a6f0848925437f">
                     Edition (special)
                 </a>
             </li>
         
+            <li class="nav-item">
+                <a class="nav-link" href="#id-235340abab47924e3530a9d46a8fdbbc">
+                    Platform Realization
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-22f8262a66ed3057e396a6fa355880ed">
+                    Role relation
+                </a>
+            </li>
+        
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-3611cb250d2bfe43e920619eb3352bfe">
+                    is publisher of
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-c7f6dc7ede9f533524b7f4f73da043b6">
+                    has edition
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-3807247dab073c0c61dfb3992970508e">
+                    published by
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-ed731456e8a349674906e24d4364f7e8">
+                    on/for platform
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-5b5967f911ead9f2972c8d738646c477">
+                    has release
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-029afdbc8e8cda55302951029bdeeca2">
+                    is release of
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-0c305eae6b444c1b2ee3d6d251ecd3ef">
+                    role value
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-4baaf66fc2f7f75e3ab1dd8eb7c6624b">
+                    role actor
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-70dff910c438553299dacdd037bd7010">
+                    is special edition of
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-795b6d8f6fe9072ebb87bc8ea963ce6e">
+                    is port of
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-5163bba903ef7d2e71318353b43e90d7">
+                    is developer of
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-3b12824d0622901993c94ad594bd86e5">
+                    place of business
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-c878856c3b21d7d92803658dd2959df0">
+                    developed by
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-19e5f7545a9edb659a4e3cbeea42fcac">
+                    is platform realization of
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-67fbc45bccda117a45f2e97b5944ddef">
+                    release country
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-5670944fb2ae8c7f08943e9e28c60f2b">
+                    ported by
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-e1e3e43ece740b66f2fdc9acd61f468b">
+                    is created by
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-1dacb9e454f88800ca1c2fb63974f36b">
+                    works for/cooperate with
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-0b53fec4c228efd600a54b02ea5634a8">
+                    is edition of
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-5e789fb6adf2ab04863b27fcaf448a52">
+                    is involved in
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-d65a2ccf73ab23209fe62a03f8158806">
+                    has contributor
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-e394f72e8e7529bb6e97ea93777a467b">
+                    has platform realization
+                </a>
+            </li>
+        
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-cc416deb83925a971a9d7d1913805504">
+                    release date
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-bab55d3817ecd5526031d62b789011a4">
+                    has note
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-b019922777da9167e759722e0ded5e5d">
+                    variant title
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-b3eac554b0de83fcaeb76a0649ddb2fa">
+                    title
+                </a>
+            </li>
+        
+            <li class="nav-item">
+                <a class="nav-link" href="#id-3593c3390b47f886c61d2707a15370df">
+                    game genre
+                </a>
+            </li>
+        
     </ul>
+    <script type="text/javascript">
+    function searchInList() {
+      // Declare variables
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById('search-input');
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("search-list");
+      li = ul.getElementsByTagName('li');
+
+      // Loop through all list items, and hide those who don't match the search query
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
+    }
+    </script>
 </nav>
 
 
@@ -162,41 +354,797 @@
       
           <p><div
     class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/Platform_Realization"
+    id="id-e850ed8794749ea994439cba1051350a"
+    >
+    <div class="card-header">
+        <h4 class="card-title">Edition (generic)</h4>
+        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/Generic_Edition</small></p>
+        <nav
+            class="nav nav-tabs card-header-tabs"
+            id="id-e850ed8794749ea994439cba1051350a-nav"
+            role="tablist">
+            <a
+                href="#id-e850ed8794749ea994439cba1051350a-description"
+                class="nav-item nav-link active"
+                aria-selected="true"
+                data-bs-toggle="tab"
+                role="tab">Description</a>
+            <a
+                href="#id-e850ed8794749ea994439cba1051350a-annotations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Annotations</a>
+            <a
+                href="#id-e850ed8794749ea994439cba1051350a-relations"
+                id="id-e850ed8794749ea994439cba1051350a-tab-relations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Relations</a>
+        </nav>
+    </div>
+    <div
+        id="id-e850ed8794749ea994439cba1051350a-tab-content"
+        class="tab-content card-body">
+        <div
+            id="id-e850ed8794749ea994439cba1051350a-description"
+            class="card-text tab-pane fade show active"
+            role="tabpanel">
+            <p>
+            The Generic Edition is the creative or economic vision of game which will be realized in Platform Realizations.
+		The Edition denotes a particular instantiation of a video game from a publisher or distributional perspective.
+		
+            </p>
+            <dl></dl>
+        </div>
+        <div
+            id="id-e850ed8794749ea994439cba1051350a-annotations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl></dl>
+        </div>
+        <div
+            id="id-e850ed8794749ea994439cba1051350a-relations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl><dt>has sub-classes</dt><dd><a
+    href="#94b94866a898228454a6f0848925437f"
+    >Edition (special)</a>
+</dd><dt>has super-classes</dt><dd><a
+    href="#ba21970f1aa6cad438dd6d67eb3ab3e1"
+    >F24_Publication_Expression</a>
+</dd><dd><a
+    href="#646986f504044d99bae4b4c3e27de0b7"
+    >Diggr Game Entity</a>
+</dd><dd><a
+    href="#25d7275a9e342fbcd6cd097c52db2518"
+    >Variation</a>
+</dd><dt>is in domain of</dt><dd><a
+    href="#70dff910c438553299dacdd037bd7010"
+    >is special edition of</a>
+</dd><dd><a
+    href="#0b53fec4c228efd600a54b02ea5634a8"
+    >is edition of</a>
+</dd><dt>is in range of</dt><dd><a
+    href="#c7f6dc7ede9f533524b7f4f73da043b6"
+    >has edition</a>
+</dd></dl>
+        </div>
+    </div>
+    <div class="card-footer"></div>
+</div>
+</p>
+      
+          <p><div
+    class="card"
+    id="id-84a8d9941c0c8f6e544a9f113b916dc3"
+    >
+    <div class="card-header">
+        <h4 class="card-title">Role</h4>
+        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/Role</small></p>
+        <nav
+            class="nav nav-tabs card-header-tabs"
+            id="id-84a8d9941c0c8f6e544a9f113b916dc3-nav"
+            role="tablist">
+            <a
+                href="#id-84a8d9941c0c8f6e544a9f113b916dc3-description"
+                class="nav-item nav-link active"
+                aria-selected="true"
+                data-bs-toggle="tab"
+                role="tab">Description</a>
+            <a
+                href="#id-84a8d9941c0c8f6e544a9f113b916dc3-annotations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Annotations</a>
+            <a
+                href="#id-84a8d9941c0c8f6e544a9f113b916dc3-relations"
+                id="id-84a8d9941c0c8f6e544a9f113b916dc3-tab-relations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Relations</a>
+        </nav>
+    </div>
+    <div
+        id="id-84a8d9941c0c8f6e544a9f113b916dc3-tab-content"
+        class="tab-content card-body">
+        <div
+            id="id-84a8d9941c0c8f6e544a9f113b916dc3-description"
+            class="card-text tab-pane fade show active"
+            role="tabpanel">
+            <p>
+            A role within a game production process, e.g. writer, developer, voice actor, etc.
+            </p>
+            <dl></dl>
+        </div>
+        <div
+            id="id-84a8d9941c0c8f6e544a9f113b916dc3-annotations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl></dl>
+        </div>
+        <div
+            id="id-84a8d9941c0c8f6e544a9f113b916dc3-relations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl><dt>is in range of</dt><dd><a
+    href="#0c305eae6b444c1b2ee3d6d251ecd3ef"
+    >role value</a>
+</dd></dl>
+        </div>
+    </div>
+    <div class="card-footer"></div>
+</div>
+</p>
+      
+          <p><div
+    class="card"
+    id="id-83e164c02caecddee69dba9157bf4dbf"
+    >
+    <div class="card-header">
+        <h4 class="card-title">Platform</h4>
+        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/Platform</small></p>
+        <nav
+            class="nav nav-tabs card-header-tabs"
+            id="id-83e164c02caecddee69dba9157bf4dbf-nav"
+            role="tablist">
+            <a
+                href="#id-83e164c02caecddee69dba9157bf4dbf-description"
+                class="nav-item nav-link active"
+                aria-selected="true"
+                data-bs-toggle="tab"
+                role="tab">Description</a>
+            <a
+                href="#id-83e164c02caecddee69dba9157bf4dbf-annotations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Annotations</a>
+            <a
+                href="#id-83e164c02caecddee69dba9157bf4dbf-relations"
+                id="id-83e164c02caecddee69dba9157bf4dbf-tab-relations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Relations</a>
+        </nav>
+    </div>
+    <div
+        id="id-83e164c02caecddee69dba9157bf4dbf-tab-content"
+        class="tab-content card-body">
+        <div
+            id="id-83e164c02caecddee69dba9157bf4dbf-description"
+            class="card-text tab-pane fade show active"
+            role="tabpanel">
+            <p>
+            Hardware or Software platform for which a Video Game is developed or released e.g. PlayStation 2 or XBox One.
+            </p>
+            <dl></dl>
+        </div>
+        <div
+            id="id-83e164c02caecddee69dba9157bf4dbf-annotations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl></dl>
+        </div>
+        <div
+            id="id-83e164c02caecddee69dba9157bf4dbf-relations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl><dt>has super-classes</dt><dd><a
+    href="#a7b7047936e28f8b2f2c321f94942579"
+    >Platform</a>
+</dd><dd><a
+    href="#646986f504044d99bae4b4c3e27de0b7"
+    >Diggr Game Entity</a>
+</dd><dt>is in range of</dt><dd><a
+    href="#ed731456e8a349674906e24d4364f7e8"
+    >on/for platform</a>
+</dd></dl>
+        </div>
+    </div>
+    <div class="card-footer"></div>
+</div>
+</p>
+      
+          <p><div
+    class="card"
+    id="id-48779ac3a9d1d839f9e7a79e569cd16c"
+    >
+    <div class="card-header">
+        <h4 class="card-title">Company</h4>
+        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/Company</small></p>
+        <nav
+            class="nav nav-tabs card-header-tabs"
+            id="id-48779ac3a9d1d839f9e7a79e569cd16c-nav"
+            role="tablist">
+            <a
+                href="#id-48779ac3a9d1d839f9e7a79e569cd16c-description"
+                class="nav-item nav-link active"
+                aria-selected="true"
+                data-bs-toggle="tab"
+                role="tab">Description</a>
+            <a
+                href="#id-48779ac3a9d1d839f9e7a79e569cd16c-annotations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Annotations</a>
+            <a
+                href="#id-48779ac3a9d1d839f9e7a79e569cd16c-relations"
+                id="id-48779ac3a9d1d839f9e7a79e569cd16c-tab-relations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Relations</a>
+        </nav>
+    </div>
+    <div
+        id="id-48779ac3a9d1d839f9e7a79e569cd16c-tab-content"
+        class="tab-content card-body">
+        <div
+            id="id-48779ac3a9d1d839f9e7a79e569cd16c-description"
+            class="card-text tab-pane fade show active"
+            role="tabpanel">
+            <p>
+            A company which is involved in the video game industry.
+            </p>
+            <dl></dl>
+        </div>
+        <div
+            id="id-48779ac3a9d1d839f9e7a79e569cd16c-annotations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl></dl>
+        </div>
+        <div
+            id="id-48779ac3a9d1d839f9e7a79e569cd16c-relations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl><dt>has super-classes</dt><dd><a
+    href="#08bffd3b6c414c5acbefdda2734ab8fc"
+    >E39_Actor</a>
+</dd><dt>is in domain of</dt><dd><a
+    href="#3611cb250d2bfe43e920619eb3352bfe"
+    >is publisher of</a>
+</dd><dd><a
+    href="#5163bba903ef7d2e71318353b43e90d7"
+    >is developer of</a>
+</dd><dd><a
+    href="#3b12824d0622901993c94ad594bd86e5"
+    >place of business</a>
+</dd><dt>is in range of</dt><dd><a
+    href="#3807247dab073c0c61dfb3992970508e"
+    >published by</a>
+</dd><dd><a
+    href="#c878856c3b21d7d92803658dd2959df0"
+    >developed by</a>
+</dd><dd><a
+    href="#5670944fb2ae8c7f08943e9e28c60f2b"
+    >ported by</a>
+</dd></dl>
+        </div>
+    </div>
+    <div class="card-footer"></div>
+</div>
+</p>
+      
+          <p><div
+    class="card"
+    id="id-04e28fdfa8b8821c3d3c357070357879"
+    >
+    <div class="card-header">
+        <h4 class="card-title">Production event</h4>
+        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/ProductionEvent</small></p>
+        <nav
+            class="nav nav-tabs card-header-tabs"
+            id="id-04e28fdfa8b8821c3d3c357070357879-nav"
+            role="tablist">
+            <a
+                href="#id-04e28fdfa8b8821c3d3c357070357879-description"
+                class="nav-item nav-link active"
+                aria-selected="true"
+                data-bs-toggle="tab"
+                role="tab">Description</a>
+            <a
+                href="#id-04e28fdfa8b8821c3d3c357070357879-annotations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Annotations</a>
+            <a
+                href="#id-04e28fdfa8b8821c3d3c357070357879-relations"
+                id="id-04e28fdfa8b8821c3d3c357070357879-tab-relations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Relations</a>
+        </nav>
+    </div>
+    <div
+        id="id-04e28fdfa8b8821c3d3c357070357879-tab-content"
+        class="tab-content card-body">
+        <div
+            id="id-04e28fdfa8b8821c3d3c357070357879-description"
+            class="card-text tab-pane fade show active"
+            role="tabpanel">
+            <p>
+            The act of creating a video game.
+            </p>
+            <dl></dl>
+        </div>
+        <div
+            id="id-04e28fdfa8b8821c3d3c357070357879-annotations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl></dl>
+        </div>
+        <div
+            id="id-04e28fdfa8b8821c3d3c357070357879-relations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl><dt>has super-classes</dt><dd><a
+    href="#ed346f482aaae90765d60e443ff7df55"
+    >E5_Event</a>
+</dd><dt>is in domain of</dt><dd><a
+    href="#d65a2ccf73ab23209fe62a03f8158806"
+    >has contributor</a>
+</dd><dt>is in range of</dt><dd><a
+    href="#e1e3e43ece740b66f2fdc9acd61f468b"
+    >is created by</a>
+</dd><dd><a
+    href="#5e789fb6adf2ab04863b27fcaf448a52"
+    >is involved in</a>
+</dd></dl>
+        </div>
+    </div>
+    <div class="card-footer"></div>
+</div>
+</p>
+      
+          <p><div
+    class="card"
+    id="id-646986f504044d99bae4b4c3e27de0b7"
+    >
+    <div class="card-header">
+        <h4 class="card-title">Diggr Game Entity</h4>
+        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/DiggrEntity</small></p>
+        <nav
+            class="nav nav-tabs card-header-tabs"
+            id="id-646986f504044d99bae4b4c3e27de0b7-nav"
+            role="tablist">
+            <a
+                href="#id-646986f504044d99bae4b4c3e27de0b7-description"
+                class="nav-item nav-link active"
+                aria-selected="true"
+                data-bs-toggle="tab"
+                role="tab">Description</a>
+            <a
+                href="#id-646986f504044d99bae4b4c3e27de0b7-annotations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Annotations</a>
+            <a
+                href="#id-646986f504044d99bae4b4c3e27de0b7-relations"
+                id="id-646986f504044d99bae4b4c3e27de0b7-tab-relations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Relations</a>
+        </nav>
+    </div>
+    <div
+        id="id-646986f504044d99bae4b4c3e27de0b7-tab-content"
+        class="tab-content card-body">
+        <div
+            id="id-646986f504044d99bae4b4c3e27de0b7-description"
+            class="card-text tab-pane fade show active"
+            role="tabpanel">
+            <p>
+            Comprises all game related things.
+            </p>
+            <dl></dl>
+        </div>
+        <div
+            id="id-646986f504044d99bae4b4c3e27de0b7-annotations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl></dl>
+        </div>
+        <div
+            id="id-646986f504044d99bae4b4c3e27de0b7-relations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl><dt>has sub-classes</dt><dd><a
+    href="#e850ed8794749ea994439cba1051350a"
+    >Edition (generic)</a>
+</dd><dd><a
+    href="#83e164c02caecddee69dba9157bf4dbf"
+    >Platform</a>
+</dd><dd><a
+    href="#9476ec250e3c90fcc8bb6f2ac66954a8"
+    >Local Release</a>
+</dd><dd><a
+    href="#88753d0290f7b6007e5444619c7628a7"
+    >Video Game</a>
+</dd><dd><a
+    href="#235340abab47924e3530a9d46a8fdbbc"
+    >Platform Realization</a>
+</dd><dt>has super-classes</dt><dd><a
+    href="#5d8d7b2654e10107de09e7646407caa5"
+    >Thing</a>
+</dd><dd><a
+    href="#068e8cededc3af912a8a82419d2303ed"
+    >E1_CRM_Entity</a>
+</dd><dt>is in domain of</dt><dd><a
+    href="#cc416deb83925a971a9d7d1913805504"
+    >release date</a>
+</dd><dd><a
+    href="#bab55d3817ecd5526031d62b789011a4"
+    >has note</a>
+</dd><dd><a
+    href="#b019922777da9167e759722e0ded5e5d"
+    >variant title</a>
+</dd><dd><a
+    href="#b3eac554b0de83fcaeb76a0649ddb2fa"
+    >title</a>
+</dd></dl>
+        </div>
+    </div>
+    <div class="card-footer"></div>
+</div>
+</p>
+      
+          <p><div
+    class="card"
+    id="id-15d06531f9f6c74aa08fcca993b483e4"
+    >
+    <div class="card-header">
+        <h4 class="card-title">Location statement</h4>
+        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/LocationStatement</small></p>
+        <nav
+            class="nav nav-tabs card-header-tabs"
+            id="id-15d06531f9f6c74aa08fcca993b483e4-nav"
+            role="tablist">
+            <a
+                href="#id-15d06531f9f6c74aa08fcca993b483e4-description"
+                class="nav-item nav-link active"
+                aria-selected="true"
+                data-bs-toggle="tab"
+                role="tab">Description</a>
+            <a
+                href="#id-15d06531f9f6c74aa08fcca993b483e4-annotations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Annotations</a>
+            <a
+                href="#id-15d06531f9f6c74aa08fcca993b483e4-relations"
+                id="id-15d06531f9f6c74aa08fcca993b483e4-tab-relations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Relations</a>
+        </nav>
+    </div>
+    <div
+        id="id-15d06531f9f6c74aa08fcca993b483e4-tab-content"
+        class="tab-content card-body">
+        <div
+            id="id-15d06531f9f6c74aa08fcca993b483e4-description"
+            class="card-text tab-pane fade show active"
+            role="tabpanel">
+            <p>
+            A location statement connects places or geographic entities with time or time span.
+            </p>
+            <dl></dl>
+        </div>
+        <div
+            id="id-15d06531f9f6c74aa08fcca993b483e4-annotations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl></dl>
+        </div>
+        <div
+            id="id-15d06531f9f6c74aa08fcca993b483e4-relations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl></dl>
+        </div>
+    </div>
+    <div class="card-footer"></div>
+</div>
+</p>
+      
+          <p><div
+    class="card"
+    id="id-9476ec250e3c90fcc8bb6f2ac66954a8"
+    >
+    <div class="card-header">
+        <h4 class="card-title">Local Release</h4>
+        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/LocalRelease</small></p>
+        <nav
+            class="nav nav-tabs card-header-tabs"
+            id="id-9476ec250e3c90fcc8bb6f2ac66954a8-nav"
+            role="tablist">
+            <a
+                href="#id-9476ec250e3c90fcc8bb6f2ac66954a8-description"
+                class="nav-item nav-link active"
+                aria-selected="true"
+                data-bs-toggle="tab"
+                role="tab">Description</a>
+            <a
+                href="#id-9476ec250e3c90fcc8bb6f2ac66954a8-annotations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Annotations</a>
+            <a
+                href="#id-9476ec250e3c90fcc8bb6f2ac66954a8-relations"
+                id="id-9476ec250e3c90fcc8bb6f2ac66954a8-tab-relations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Relations</a>
+        </nav>
+    </div>
+    <div
+        id="id-9476ec250e3c90fcc8bb6f2ac66954a8-tab-content"
+        class="tab-content card-body">
+        <div
+            id="id-9476ec250e3c90fcc8bb6f2ac66954a8-description"
+            class="card-text tab-pane fade show active"
+            role="tabpanel">
+            <p>
+            A Local Release incorporates a specific Edition and a specific Platform Realization.
+		It is made available and accessible in a particular region and in a particular language.
+		Local releases can differ in language, graphics localization, customization options for difficulty levels and characters.
+            </p>
+            <dl></dl>
+        </div>
+        <div
+            id="id-9476ec250e3c90fcc8bb6f2ac66954a8-annotations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl></dl>
+        </div>
+        <div
+            id="id-9476ec250e3c90fcc8bb6f2ac66954a8-relations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl><dt>has super-classes</dt><dd><a
+    href="#fd4e4c56c2e33668694194f053280c2e"
+    >F3_Manifestation_Product_Type</a>
+</dd><dd><a
+    href="#646986f504044d99bae4b4c3e27de0b7"
+    >Diggr Game Entity</a>
+</dd><dd><a
+    href="#dd742f6a610c20ba687fa53d3b88239e"
+    >Package</a>
+</dd><dt>is in domain of</dt><dd><a
+    href="#3807247dab073c0c61dfb3992970508e"
+    >published by</a>
+</dd><dd><a
+    href="#029afdbc8e8cda55302951029bdeeca2"
+    >is release of</a>
+</dd><dd><a
+    href="#67fbc45bccda117a45f2e97b5944ddef"
+    >release country</a>
+</dd><dt>is in range of</dt><dd><a
+    href="#3611cb250d2bfe43e920619eb3352bfe"
+    >is publisher of</a>
+</dd><dd><a
+    href="#5b5967f911ead9f2972c8d738646c477"
+    >has release</a>
+</dd></dl>
+        </div>
+    </div>
+    <div class="card-footer"></div>
+</div>
+</p>
+      
+          <p><div
+    class="card"
+    id="id-88753d0290f7b6007e5444619c7628a7"
+    >
+    <div class="card-header">
+        <h4 class="card-title">Video Game</h4>
+        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/Game</small></p>
+        <nav
+            class="nav nav-tabs card-header-tabs"
+            id="id-88753d0290f7b6007e5444619c7628a7-nav"
+            role="tablist">
+            <a
+                href="#id-88753d0290f7b6007e5444619c7628a7-description"
+                class="nav-item nav-link active"
+                aria-selected="true"
+                data-bs-toggle="tab"
+                role="tab">Description</a>
+            <a
+                href="#id-88753d0290f7b6007e5444619c7628a7-annotations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Annotations</a>
+            <a
+                href="#id-88753d0290f7b6007e5444619c7628a7-relations"
+                id="id-88753d0290f7b6007e5444619c7628a7-tab-relations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Relations</a>
+        </nav>
+    </div>
+    <div
+        id="id-88753d0290f7b6007e5444619c7628a7-tab-content"
+        class="tab-content card-body">
+        <div
+            id="id-88753d0290f7b6007e5444619c7628a7-description"
+            class="card-text tab-pane fade show active"
+            role="tabpanel">
+            <p>
+            The Game entity type is an abstract entity that describes features that are shared among different editions of a game.
+		The characteristics that are typically recognized by users when they say “we played the same game” even if they played it on different platforms (e.g. PlayStations 3 and Xbox 360).
+		Features attributed to the Game entity type also support distinguishing between games by genre, mood, theme, setting, plot, etc.
+            </p>
+            <dl></dl>
+        </div>
+        <div
+            id="id-88753d0290f7b6007e5444619c7628a7-annotations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl></dl>
+        </div>
+        <div
+            id="id-88753d0290f7b6007e5444619c7628a7-relations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl><dt>has super-classes</dt><dd><a
+    href="#813f55218f0f42abee47b77b7df22f69"
+    >F1_Work</a>
+</dd><dd><a
+    href="#646986f504044d99bae4b4c3e27de0b7"
+    >Diggr Game Entity</a>
+</dd><dd><a
+    href="#7098181a84e925901ea6ec11b74f140f"
+    >Work</a>
+</dd><dt>is in domain of</dt><dd><a
+    href="#3593c3390b47f886c61d2707a15370df"
+    >game genre</a>
+</dd></dl>
+        </div>
+    </div>
+    <div class="card-footer"></div>
+</div>
+</p>
+      
+          <p><div
+    class="card"
+    id="id-94b94866a898228454a6f0848925437f"
+    >
+    <div class="card-header">
+        <h4 class="card-title">Edition (special)</h4>
+        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/Special_Edition</small></p>
+        <nav
+            class="nav nav-tabs card-header-tabs"
+            id="id-94b94866a898228454a6f0848925437f-nav"
+            role="tablist">
+            <a
+                href="#id-94b94866a898228454a6f0848925437f-description"
+                class="nav-item nav-link active"
+                aria-selected="true"
+                data-bs-toggle="tab"
+                role="tab">Description</a>
+            <a
+                href="#id-94b94866a898228454a6f0848925437f-annotations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Annotations</a>
+            <a
+                href="#id-94b94866a898228454a6f0848925437f-relations"
+                id="id-94b94866a898228454a6f0848925437f-tab-relations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Relations</a>
+        </nav>
+    </div>
+    <div
+        id="id-94b94866a898228454a6f0848925437f-tab-content"
+        class="tab-content card-body">
+        <div
+            id="id-94b94866a898228454a6f0848925437f-description"
+            class="card-text tab-pane fade show active"
+            role="tabpanel">
+            <p>
+            A Special Edition may be a particular release of a game that is in some way different than another release of the same game on the same platform.
+		This may be because it has fully integrated content that was previously available only as separate expansion material or additional content/features not available in the regular edition of the game. 
+		This can also be done in physical form e.g. with merchandise.
+            </p>
+            <dl></dl>
+        </div>
+        <div
+            id="id-94b94866a898228454a6f0848925437f-annotations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl></dl>
+        </div>
+        <div
+            id="id-94b94866a898228454a6f0848925437f-relations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl><dt>has super-classes</dt><dd><a
+    href="#e850ed8794749ea994439cba1051350a"
+    >Edition (generic)</a>
+</dd></dl>
+        </div>
+    </div>
+    <div class="card-footer"></div>
+</div>
+</p>
+      
+          <p><div
+    class="card"
+    id="id-235340abab47924e3530a9d46a8fdbbc"
     >
     <div class="card-header">
         <h4 class="card-title">Platform Realization</h4>
         <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/Platform_Realization</small></p>
         <nav
             class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/Platform_Realization-nav"
+            id="id-235340abab47924e3530a9d46a8fdbbc-nav"
             role="tablist">
             <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/Platform_Realization-description"
+                href="#id-235340abab47924e3530a9d46a8fdbbc-description"
                 class="nav-item nav-link active"
                 aria-selected="true"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab">Description</a>
             <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/Platform_Realization-annotations"
+                href="#id-235340abab47924e3530a9d46a8fdbbc-annotations"
                 class="nav-item nav-link"
                 aria-selected="false"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab">Annotations</a>
             <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/Platform_Realization-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/Platform_Realization-tab-relations"
+                href="#id-235340abab47924e3530a9d46a8fdbbc-relations"
+                id="id-235340abab47924e3530a9d46a8fdbbc-tab-relations"
                 class="nav-item nav-link"
                 aria-selected="false"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab">Relations</a>
         </nav>
     </div>
     <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/Platform_Realization-tab-content"
+        id="id-235340abab47924e3530a9d46a8fdbbc-tab-content"
         class="tab-content card-body">
         <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/Platform_Realization-description"
+            id="id-235340abab47924e3530a9d46a8fdbbc-description"
             class="card-text tab-pane fade show active"
             role="tabpanel">
             <p>
@@ -208,48 +1156,48 @@
             <dl></dl>
         </div>
         <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/Platform_Realization-annotations"
+            id="id-235340abab47924e3530a9d46a8fdbbc-annotations"
             class="card-text tab-pane fade"
             role="tabpanel">
             <dl></dl>
         </div>
         <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/Platform_Realization-relations"
+            id="id-235340abab47924e3530a9d46a8fdbbc-relations"
             class="card-text tab-pane fade"
             role="tabpanel">
             <dl><dt>has super-classes</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/DiggrEntity"
-    >Diggr Game Entity</a>
-</dd><dd><a
-    href="#http://iflastandards.info/ns/fr/frbr/frbroo/F22_Self-Contained_Expression"
+    href="#20d054217b604e5aad80b1779406e280"
     >F22_Self-Contained_Expression</a>
 </dd><dd><a
-    href="#http://www.rcgs.jp/terms/Variation"
+    href="#646986f504044d99bae4b4c3e27de0b7"
+    >Diggr Game Entity</a>
+</dd><dd><a
+    href="#25d7275a9e342fbcd6cd097c52db2518"
     >Variation</a>
 </dd><dt>is in domain of</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/isPlatformRealizationOf"
+    href="#ed731456e8a349674906e24d4364f7e8"
+    >on/for platform</a>
+</dd><dd><a
+    href="#795b6d8f6fe9072ebb87bc8ea963ce6e"
+    >is port of</a>
+</dd><dd><a
+    href="#c878856c3b21d7d92803658dd2959df0"
+    >developed by</a>
+</dd><dd><a
+    href="#19e5f7545a9edb659a4e3cbeea42fcac"
     >is platform realization of</a>
 </dd><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/portedBy"
+    href="#5670944fb2ae8c7f08943e9e28c60f2b"
     >ported by</a>
-</dd><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/isPortOf"
+</dd><dt>is in range of</dt><dd><a
+    href="#795b6d8f6fe9072ebb87bc8ea963ce6e"
     >is port of</a>
 </dd><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/developedBy"
-    >developed by</a>
+    href="#5163bba903ef7d2e71318353b43e90d7"
+    >is developer of</a>
 </dd><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/platform"
-    >on/for platform</a>
-</dd><dt>is in range of</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/hasPlatformRealization"
+    href="#e394f72e8e7529bb6e97ea93777a467b"
     >has platform realization</a>
-</dd><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/isDeveloperOf"
-    >is developer of</a>
-</dd><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/isPortOf"
-    >is port of</a>
 </dd></dl>
         </div>
     </div>
@@ -259,600 +1207,41 @@
       
           <p><div
     class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/DiggrEntity"
-    >
-    <div class="card-header">
-        <h4 class="card-title">Diggr Game Entity</h4>
-        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/DiggrEntity</small></p>
-        <nav
-            class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/DiggrEntity-nav"
-            role="tablist">
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/DiggrEntity-description"
-                class="nav-item nav-link active"
-                aria-selected="true"
-                data-toggle="tab"
-                role="tab">Description</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/DiggrEntity-annotations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Annotations</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/DiggrEntity-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/DiggrEntity-tab-relations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Relations</a>
-        </nav>
-    </div>
-    <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/DiggrEntity-tab-content"
-        class="tab-content card-body">
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/DiggrEntity-description"
-            class="card-text tab-pane fade show active"
-            role="tabpanel">
-            <p>
-            Comprises all game related things.
-            </p>
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/DiggrEntity-annotations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/DiggrEntity-relations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl><dt>has sub-classes</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/Platform_Realization"
-    >Platform Realization</a>
-</dd><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/Game"
-    >Video Game</a>
-</dd><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/Generic_Edition"
-    >Edition (generic)</a>
-</dd><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/LocalRelease"
-    >Local Release</a>
-</dd><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/Platform"
-    >Platform</a>
-</dd><dt>has super-classes</dt><dd><a
-    href="#http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"
-    >E1_CRM_Entity</a>
-</dd><dd><a
-    href="#http://www.w3.org/2002/07/owl#Thing"
-    >Thing</a>
-</dd><dt>is in domain of</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/hasNote"
-    >has note</a>
-</dd><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/variantTitle"
-    >variant title</a>
-</dd><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/title"
-    >title</a>
-</dd><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/releaseDate"
-    >release date</a>
-</dd></dl>
-        </div>
-    </div>
-    <div class="card-footer"></div>
-</div>
-</p>
-      
-          <p><div
-    class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/Game"
-    >
-    <div class="card-header">
-        <h4 class="card-title">Video Game</h4>
-        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/Game</small></p>
-        <nav
-            class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/Game-nav"
-            role="tablist">
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/Game-description"
-                class="nav-item nav-link active"
-                aria-selected="true"
-                data-toggle="tab"
-                role="tab">Description</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/Game-annotations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Annotations</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/Game-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/Game-tab-relations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Relations</a>
-        </nav>
-    </div>
-    <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/Game-tab-content"
-        class="tab-content card-body">
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/Game-description"
-            class="card-text tab-pane fade show active"
-            role="tabpanel">
-            <p>
-            The Game entity type is an abstract entity that describes features that are shared among different editions of a game.
-		The characteristics that are typically recognized by users when they say “we played the same game” even if they played it on different platforms (e.g. PlayStations 3 and Xbox 360).
-		Features attributed to the Game entity type also support distinguishing between games by genre, mood, theme, setting, plot, etc.
-            </p>
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/Game-annotations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/Game-relations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl><dt>has super-classes</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/DiggrEntity"
-    >Diggr Game Entity</a>
-</dd><dd><a
-    href="#http://iflastandards.info/ns/fr/frbr/frbroo/F1_Work"
-    >F1_Work</a>
-</dd><dd><a
-    href="#http://www.rcgs.jp/terms/Work"
-    >Work</a>
-</dd><dt>is in domain of</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/gameGenre"
-    >game genre</a>
-</dd></dl>
-        </div>
-    </div>
-    <div class="card-footer"></div>
-</div>
-</p>
-      
-          <p><div
-    class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/ProductionEvent"
-    >
-    <div class="card-header">
-        <h4 class="card-title">Production event</h4>
-        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/ProductionEvent</small></p>
-        <nav
-            class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/ProductionEvent-nav"
-            role="tablist">
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/ProductionEvent-description"
-                class="nav-item nav-link active"
-                aria-selected="true"
-                data-toggle="tab"
-                role="tab">Description</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/ProductionEvent-annotations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Annotations</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/ProductionEvent-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/ProductionEvent-tab-relations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Relations</a>
-        </nav>
-    </div>
-    <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/ProductionEvent-tab-content"
-        class="tab-content card-body">
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/ProductionEvent-description"
-            class="card-text tab-pane fade show active"
-            role="tabpanel">
-            <p>
-            The act of creating a video game.
-            </p>
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/ProductionEvent-annotations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/ProductionEvent-relations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl><dt>has super-classes</dt><dd><a
-    href="#http://www.cidoc-crm.org/cidoc-crm/E5_Event"
-    >E5_Event</a>
-</dd><dt>is in domain of</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/hasContributor"
-    >has contributor</a>
-</dd><dt>is in range of</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/isInvolvedIn"
-    >is involved in</a>
-</dd><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/createdBy"
-    >is created by</a>
-</dd></dl>
-        </div>
-    </div>
-    <div class="card-footer"></div>
-</div>
-</p>
-      
-          <p><div
-    class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/Company"
-    >
-    <div class="card-header">
-        <h4 class="card-title">Company</h4>
-        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/Company</small></p>
-        <nav
-            class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/Company-nav"
-            role="tablist">
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/Company-description"
-                class="nav-item nav-link active"
-                aria-selected="true"
-                data-toggle="tab"
-                role="tab">Description</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/Company-annotations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Annotations</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/Company-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/Company-tab-relations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Relations</a>
-        </nav>
-    </div>
-    <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/Company-tab-content"
-        class="tab-content card-body">
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/Company-description"
-            class="card-text tab-pane fade show active"
-            role="tabpanel">
-            <p>
-            A company which is involved in the video game industry.
-            </p>
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/Company-annotations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/Company-relations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl><dt>has super-classes</dt><dd><a
-    href="#http://www.cidoc-crm.org/cidoc-crm/E39_Actor"
-    >E39_Actor</a>
-</dd><dt>is in domain of</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/isPublisherOf"
-    >is publisher of</a>
-</dd><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/placeOfBusiness"
-    >place of business</a>
-</dd><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/isDeveloperOf"
-    >is developer of</a>
-</dd><dt>is in range of</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/portedBy"
-    >ported by</a>
-</dd><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/publishedBy"
-    >published by</a>
-</dd><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/developedBy"
-    >developed by</a>
-</dd></dl>
-        </div>
-    </div>
-    <div class="card-footer"></div>
-</div>
-</p>
-      
-          <p><div
-    class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/Generic_Edition"
-    >
-    <div class="card-header">
-        <h4 class="card-title">Edition (generic)</h4>
-        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/Generic_Edition</small></p>
-        <nav
-            class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/Generic_Edition-nav"
-            role="tablist">
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/Generic_Edition-description"
-                class="nav-item nav-link active"
-                aria-selected="true"
-                data-toggle="tab"
-                role="tab">Description</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/Generic_Edition-annotations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Annotations</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/Generic_Edition-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/Generic_Edition-tab-relations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Relations</a>
-        </nav>
-    </div>
-    <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/Generic_Edition-tab-content"
-        class="tab-content card-body">
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/Generic_Edition-description"
-            class="card-text tab-pane fade show active"
-            role="tabpanel">
-            <p>
-            The Generic Edition is the creative or economic vision of game which will be realized in Platform Realizations.
-		The Edition denotes a particular instantiation of a video game from a publisher or distributional perspective.
-		
-            </p>
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/Generic_Edition-annotations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/Generic_Edition-relations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl><dt>has sub-classes</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/Special_Edition"
-    >Edition (special)</a>
-</dd><dt>has super-classes</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/DiggrEntity"
-    >Diggr Game Entity</a>
-</dd><dd><a
-    href="#http://iflastandards.info/ns/fr/frbr/frbroo/F24_Publication_Expression"
-    >F24_Publication_Expression</a>
-</dd><dd><a
-    href="#http://www.rcgs.jp/terms/Variation"
-    >Variation</a>
-</dd><dt>is in domain of</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/isEditionOf"
-    >is edition of</a>
-</dd><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/hasSpecialEdition"
-    >is special edition of</a>
-</dd><dt>is in range of</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/hasEdition"
-    >has edition</a>
-</dd></dl>
-        </div>
-    </div>
-    <div class="card-footer"></div>
-</div>
-</p>
-      
-          <p><div
-    class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/LocalRelease"
-    >
-    <div class="card-header">
-        <h4 class="card-title">Local Release</h4>
-        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/LocalRelease</small></p>
-        <nav
-            class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/LocalRelease-nav"
-            role="tablist">
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/LocalRelease-description"
-                class="nav-item nav-link active"
-                aria-selected="true"
-                data-toggle="tab"
-                role="tab">Description</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/LocalRelease-annotations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Annotations</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/LocalRelease-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/LocalRelease-tab-relations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Relations</a>
-        </nav>
-    </div>
-    <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/LocalRelease-tab-content"
-        class="tab-content card-body">
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/LocalRelease-description"
-            class="card-text tab-pane fade show active"
-            role="tabpanel">
-            <p>
-            A Local Release incorporates a specific Edition and a specific Platform Realization.
-		It is made available and accessible in a particular region and in a particular language.
-		Local releases can differ in language, graphics localization, customization options for difficulty levels and characters.
-            </p>
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/LocalRelease-annotations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/LocalRelease-relations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl><dt>has super-classes</dt><dd><a
-    href="#http://iflastandards.info/ns/fr/frbr/frbroo/F3_Manifestation_Product_Type"
-    >F3_Manifestation_Product_Type</a>
-</dd><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/DiggrEntity"
-    >Diggr Game Entity</a>
-</dd><dd><a
-    href="#http://www.rcgs.jp/terms/Package"
-    >Package</a>
-</dd><dt>is in domain of</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/isReleaseOf"
-    >is release of</a>
-</dd><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/publishedBy"
-    >published by</a>
-</dd><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/releaseCountry"
-    >release country</a>
-</dd><dt>is in range of</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/hasRelease"
-    >has release</a>
-</dd><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/isPublisherOf"
-    >is publisher of</a>
-</dd></dl>
-        </div>
-    </div>
-    <div class="card-footer"></div>
-</div>
-</p>
-      
-          <p><div
-    class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/Role"
-    >
-    <div class="card-header">
-        <h4 class="card-title">Role</h4>
-        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/Role</small></p>
-        <nav
-            class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/Role-nav"
-            role="tablist">
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/Role-description"
-                class="nav-item nav-link active"
-                aria-selected="true"
-                data-toggle="tab"
-                role="tab">Description</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/Role-annotations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Annotations</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/Role-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/Role-tab-relations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Relations</a>
-        </nav>
-    </div>
-    <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/Role-tab-content"
-        class="tab-content card-body">
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/Role-description"
-            class="card-text tab-pane fade show active"
-            role="tabpanel">
-            <p>
-            A role within a game production process, e.g. writer, developer, voice actor, etc.
-            </p>
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/Role-annotations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/Role-relations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl><dt>is in range of</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/roleValue"
-    >role value</a>
-</dd></dl>
-        </div>
-    </div>
-    <div class="card-footer"></div>
-</div>
-</p>
-      
-          <p><div
-    class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/RoleRelation"
+    id="id-22f8262a66ed3057e396a6fa355880ed"
     >
     <div class="card-header">
         <h4 class="card-title">Role relation</h4>
         <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/RoleRelation</small></p>
         <nav
             class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/RoleRelation-nav"
+            id="id-22f8262a66ed3057e396a6fa355880ed-nav"
             role="tablist">
             <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/RoleRelation-description"
+                href="#id-22f8262a66ed3057e396a6fa355880ed-description"
                 class="nav-item nav-link active"
                 aria-selected="true"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab">Description</a>
             <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/RoleRelation-annotations"
+                href="#id-22f8262a66ed3057e396a6fa355880ed-annotations"
                 class="nav-item nav-link"
                 aria-selected="false"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab">Annotations</a>
             <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/RoleRelation-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/RoleRelation-tab-relations"
+                href="#id-22f8262a66ed3057e396a6fa355880ed-relations"
+                id="id-22f8262a66ed3057e396a6fa355880ed-tab-relations"
                 class="nav-item nav-link"
                 aria-selected="false"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab">Relations</a>
         </nav>
     </div>
     <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/RoleRelation-tab-content"
+        id="id-22f8262a66ed3057e396a6fa355880ed-tab-content"
         class="tab-content card-body">
         <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/RoleRelation-description"
+            id="id-22f8262a66ed3057e396a6fa355880ed-description"
             class="card-text tab-pane fade show active"
             role="tabpanel">
             <p>
@@ -861,224 +1250,27 @@
             <dl></dl>
         </div>
         <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/RoleRelation-annotations"
+            id="id-22f8262a66ed3057e396a6fa355880ed-annotations"
             class="card-text tab-pane fade"
             role="tabpanel">
             <dl></dl>
         </div>
         <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/RoleRelation-relations"
+            id="id-22f8262a66ed3057e396a6fa355880ed-relations"
             class="card-text tab-pane fade"
             role="tabpanel">
             <dl><dt>is in domain of</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/roleValue"
+    href="#0c305eae6b444c1b2ee3d6d251ecd3ef"
     >role value</a>
 </dd><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/worksFor"
-    >works for/cooperate with</a>
-</dd><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/roleActor"
+    href="#4baaf66fc2f7f75e3ab1dd8eb7c6624b"
     >role actor</a>
-</dd><dt>is in range of</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/hasContributor"
-    >has contributor</a>
-</dd></dl>
-        </div>
-    </div>
-    <div class="card-footer"></div>
-</div>
-</p>
-      
-          <p><div
-    class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/LocationStatement"
-    >
-    <div class="card-header">
-        <h4 class="card-title">Location statement</h4>
-        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/LocationStatement</small></p>
-        <nav
-            class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/LocationStatement-nav"
-            role="tablist">
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/LocationStatement-description"
-                class="nav-item nav-link active"
-                aria-selected="true"
-                data-toggle="tab"
-                role="tab">Description</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/LocationStatement-annotations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Annotations</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/LocationStatement-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/LocationStatement-tab-relations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Relations</a>
-        </nav>
-    </div>
-    <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/LocationStatement-tab-content"
-        class="tab-content card-body">
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/LocationStatement-description"
-            class="card-text tab-pane fade show active"
-            role="tabpanel">
-            <p>
-            A location statement connects places or geographic entities with time or time span.
-            </p>
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/LocationStatement-annotations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/LocationStatement-relations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl></dl>
-        </div>
-    </div>
-    <div class="card-footer"></div>
-</div>
-</p>
-      
-          <p><div
-    class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/Platform"
-    >
-    <div class="card-header">
-        <h4 class="card-title">Platform</h4>
-        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/Platform</small></p>
-        <nav
-            class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/Platform-nav"
-            role="tablist">
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/Platform-description"
-                class="nav-item nav-link active"
-                aria-selected="true"
-                data-toggle="tab"
-                role="tab">Description</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/Platform-annotations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Annotations</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/Platform-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/Platform-tab-relations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Relations</a>
-        </nav>
-    </div>
-    <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/Platform-tab-content"
-        class="tab-content card-body">
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/Platform-description"
-            class="card-text tab-pane fade show active"
-            role="tabpanel">
-            <p>
-            Hardware or Software platform for which a Video Game is developed or released e.g. PlayStation 2 or XBox One.
-            </p>
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/Platform-annotations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/Platform-relations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl><dt>has super-classes</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/DiggrEntity"
-    >Diggr Game Entity</a>
 </dd><dd><a
-    href="#http://www.rcgs.jp/terms/Platform"
-    >Platform</a>
+    href="#1dacb9e454f88800ca1c2fb63974f36b"
+    >works for/cooperate with</a>
 </dd><dt>is in range of</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/platform"
-    >on/for platform</a>
-</dd></dl>
-        </div>
-    </div>
-    <div class="card-footer"></div>
-</div>
-</p>
-      
-          <p><div
-    class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/Special_Edition"
-    >
-    <div class="card-header">
-        <h4 class="card-title">Edition (special)</h4>
-        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/Special_Edition</small></p>
-        <nav
-            class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/Special_Edition-nav"
-            role="tablist">
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/Special_Edition-description"
-                class="nav-item nav-link active"
-                aria-selected="true"
-                data-toggle="tab"
-                role="tab">Description</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/Special_Edition-annotations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Annotations</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/Special_Edition-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/Special_Edition-tab-relations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Relations</a>
-        </nav>
-    </div>
-    <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/Special_Edition-tab-content"
-        class="tab-content card-body">
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/Special_Edition-description"
-            class="card-text tab-pane fade show active"
-            role="tabpanel">
-            <p>
-            A Special Edition may be a particular release of a game that is in some way different than another release of the same game on the same platform.
-		This may be because it has fully integrated content that was previously available only as separate expansion material or additional content/features not available in the regular edition of the game. 
-		This can also be done in physical form e.g. with merchandise.
-            </p>
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/Special_Edition-annotations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/Special_Edition-relations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl><dt>has super-classes</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/Generic_Edition"
-    >Edition (generic)</a>
+    href="#d65a2ccf73ab23209fe62a03f8158806"
+    >has contributor</a>
 </dd></dl>
         </div>
     </div>
@@ -1091,127 +1283,63 @@
       
           <p><div
     class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/isInvolvedIn"
+    id="id-3611cb250d2bfe43e920619eb3352bfe"
     >
     <div class="card-header">
-        <h4 class="card-title">is involved in</h4>
-        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/isInvolvedIn</small></p>
+        <h4 class="card-title">is publisher of</h4>
+        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/isPublisherOf</small></p>
         <nav
             class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/isInvolvedIn-nav"
+            id="id-3611cb250d2bfe43e920619eb3352bfe-nav"
             role="tablist">
             <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/isInvolvedIn-description"
+                href="#id-3611cb250d2bfe43e920619eb3352bfe-description"
                 class="nav-item nav-link active"
                 aria-selected="true"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab">Description</a>
             <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/isInvolvedIn-annotations"
+                href="#id-3611cb250d2bfe43e920619eb3352bfe-annotations"
                 class="nav-item nav-link"
                 aria-selected="false"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab">Annotations</a>
             <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/isInvolvedIn-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/isInvolvedIn-tab-relations"
+                href="#id-3611cb250d2bfe43e920619eb3352bfe-relations"
+                id="id-3611cb250d2bfe43e920619eb3352bfe-tab-relations"
                 class="nav-item nav-link"
                 aria-selected="false"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab">Relations</a>
         </nav>
     </div>
     <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/isInvolvedIn-tab-content"
+        id="id-3611cb250d2bfe43e920619eb3352bfe-tab-content"
         class="tab-content card-body">
         <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/isInvolvedIn-description"
+            id="id-3611cb250d2bfe43e920619eb3352bfe-description"
             class="card-text tab-pane fade show active"
             role="tabpanel">
             <p>
-            Persons or companies are involved in the production event of a video game.
+            A company entity is a publisher of a specific local release.
             </p>
             <dl></dl>
         </div>
         <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/isInvolvedIn-annotations"
+            id="id-3611cb250d2bfe43e920619eb3352bfe-annotations"
             class="card-text tab-pane fade"
             role="tabpanel">
             <dl></dl>
         </div>
         <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/isInvolvedIn-relations"
+            id="id-3611cb250d2bfe43e920619eb3352bfe-relations"
             class="card-text tab-pane fade"
             role="tabpanel">
             <dl><dt>has domain</dt><dd><a
-    href="#http://www.cidoc-crm.org/cidoc-crm/E39_Actor"
-    >E39_Actor</a>
+    href="#48779ac3a9d1d839f9e7a79e569cd16c"
+    >Company</a>
 </dd><dt>has range</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/ProductionEvent"
-    >Production event</a>
-</dd></dl>
-        </div>
-    </div>
-    <div class="card-footer"></div>
-</div>
-</p>
-      
-          <p><div
-    class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/isReleaseOf"
-    >
-    <div class="card-header">
-        <h4 class="card-title">is release of</h4>
-        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/isReleaseOf</small></p>
-        <nav
-            class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/isReleaseOf-nav"
-            role="tablist">
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/isReleaseOf-description"
-                class="nav-item nav-link active"
-                aria-selected="true"
-                data-toggle="tab"
-                role="tab">Description</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/isReleaseOf-annotations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Annotations</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/isReleaseOf-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/isReleaseOf-tab-relations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Relations</a>
-        </nav>
-    </div>
-    <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/isReleaseOf-tab-content"
-        class="tab-content card-body">
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/isReleaseOf-description"
-            class="card-text tab-pane fade show active"
-            role="tabpanel">
-            <p>
-            A local release is a specific release of an Edition and a specific Platform Realization.
-            </p>
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/isReleaseOf-annotations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/isReleaseOf-relations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl><dt>has domain</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/LocalRelease"
+    href="#9476ec250e3c90fcc8bb6f2ac66954a8"
     >Local Release</a>
 </dd></dl>
         </div>
@@ -1222,169 +1350,41 @@
       
           <p><div
     class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/hasPlatformRealization"
-    >
-    <div class="card-header">
-        <h4 class="card-title">has platform realization</h4>
-        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/hasPlatformRealization</small></p>
-        <nav
-            class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/hasPlatformRealization-nav"
-            role="tablist">
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/hasPlatformRealization-description"
-                class="nav-item nav-link active"
-                aria-selected="true"
-                data-toggle="tab"
-                role="tab">Description</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/hasPlatformRealization-annotations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Annotations</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/hasPlatformRealization-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/hasPlatformRealization-tab-relations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Relations</a>
-        </nav>
-    </div>
-    <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/hasPlatformRealization-tab-content"
-        class="tab-content card-body">
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/hasPlatformRealization-description"
-            class="card-text tab-pane fade show active"
-            role="tabpanel">
-            <p>
-            ...
-            </p>
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/hasPlatformRealization-annotations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/hasPlatformRealization-relations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl><dt>has range</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/Platform_Realization"
-    >Platform Realization</a>
-</dd></dl>
-        </div>
-    </div>
-    <div class="card-footer"></div>
-</div>
-</p>
-      
-          <p><div
-    class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/isPlatformRealizationOf"
-    >
-    <div class="card-header">
-        <h4 class="card-title">is platform realization of</h4>
-        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/isPlatformRealizationOf</small></p>
-        <nav
-            class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/isPlatformRealizationOf-nav"
-            role="tablist">
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/isPlatformRealizationOf-description"
-                class="nav-item nav-link active"
-                aria-selected="true"
-                data-toggle="tab"
-                role="tab">Description</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/isPlatformRealizationOf-annotations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Annotations</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/isPlatformRealizationOf-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/isPlatformRealizationOf-tab-relations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Relations</a>
-        </nav>
-    </div>
-    <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/isPlatformRealizationOf-tab-content"
-        class="tab-content card-body">
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/isPlatformRealizationOf-description"
-            class="card-text tab-pane fade show active"
-            role="tabpanel">
-            <p>
-            ...
-            </p>
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/isPlatformRealizationOf-annotations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/isPlatformRealizationOf-relations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl><dt>has domain</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/Platform_Realization"
-    >Platform Realization</a>
-</dd></dl>
-        </div>
-    </div>
-    <div class="card-footer"></div>
-</div>
-</p>
-      
-          <p><div
-    class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/hasEdition"
+    id="id-c7f6dc7ede9f533524b7f4f73da043b6"
     >
     <div class="card-header">
         <h4 class="card-title">has edition</h4>
         <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/hasEdition</small></p>
         <nav
             class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/hasEdition-nav"
+            id="id-c7f6dc7ede9f533524b7f4f73da043b6-nav"
             role="tablist">
             <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/hasEdition-description"
+                href="#id-c7f6dc7ede9f533524b7f4f73da043b6-description"
                 class="nav-item nav-link active"
                 aria-selected="true"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab">Description</a>
             <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/hasEdition-annotations"
+                href="#id-c7f6dc7ede9f533524b7f4f73da043b6-annotations"
                 class="nav-item nav-link"
                 aria-selected="false"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab">Annotations</a>
             <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/hasEdition-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/hasEdition-tab-relations"
+                href="#id-c7f6dc7ede9f533524b7f4f73da043b6-relations"
+                id="id-c7f6dc7ede9f533524b7f4f73da043b6-tab-relations"
                 class="nav-item nav-link"
                 aria-selected="false"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab">Relations</a>
         </nav>
     </div>
     <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/hasEdition-tab-content"
+        id="id-c7f6dc7ede9f533524b7f4f73da043b6-tab-content"
         class="tab-content card-body">
         <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/hasEdition-description"
+            id="id-c7f6dc7ede9f533524b7f4f73da043b6-description"
             class="card-text tab-pane fade show active"
             role="tabpanel">
             <p>
@@ -1393,17 +1393,17 @@
             <dl></dl>
         </div>
         <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/hasEdition-annotations"
+            id="id-c7f6dc7ede9f533524b7f4f73da043b6-annotations"
             class="card-text tab-pane fade"
             role="tabpanel">
             <dl></dl>
         </div>
         <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/hasEdition-relations"
+            id="id-c7f6dc7ede9f533524b7f4f73da043b6-relations"
             class="card-text tab-pane fade"
             role="tabpanel">
             <dl><dt>has range</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/Generic_Edition"
+    href="#e850ed8794749ea994439cba1051350a"
     >Edition (generic)</a>
 </dd></dl>
         </div>
@@ -1414,769 +1414,41 @@
       
           <p><div
     class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/portedBy"
-    >
-    <div class="card-header">
-        <h4 class="card-title">ported by</h4>
-        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/portedBy</small></p>
-        <nav
-            class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/portedBy-nav"
-            role="tablist">
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/portedBy-description"
-                class="nav-item nav-link active"
-                aria-selected="true"
-                data-toggle="tab"
-                role="tab">Description</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/portedBy-annotations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Annotations</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/portedBy-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/portedBy-tab-relations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Relations</a>
-        </nav>
-    </div>
-    <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/portedBy-tab-content"
-        class="tab-content card-body">
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/portedBy-description"
-            class="card-text tab-pane fade show active"
-            role="tabpanel">
-            <p>
-            A platform realization entity is ported by a company entity. (role shortcut)
-            </p>
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/portedBy-annotations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/portedBy-relations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl><dt>has domain</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/Platform_Realization"
-    >Platform Realization</a>
-</dd><dt>has range</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/Company"
-    >Company</a>
-</dd></dl>
-        </div>
-    </div>
-    <div class="card-footer"></div>
-</div>
-</p>
-      
-          <p><div
-    class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/hasContributor"
-    >
-    <div class="card-header">
-        <h4 class="card-title">has contributor</h4>
-        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/hasContributor</small></p>
-        <nav
-            class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/hasContributor-nav"
-            role="tablist">
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/hasContributor-description"
-                class="nav-item nav-link active"
-                aria-selected="true"
-                data-toggle="tab"
-                role="tab">Description</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/hasContributor-annotations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Annotations</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/hasContributor-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/hasContributor-tab-relations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Relations</a>
-        </nav>
-    </div>
-    <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/hasContributor-tab-content"
-        class="tab-content card-body">
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/hasContributor-description"
-            class="card-text tab-pane fade show active"
-            role="tabpanel">
-            <p>
-            A game production event has one or more contributors, e.g. writers, developers, voice actors, etc. which are defined by a role relation.
-            </p>
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/hasContributor-annotations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/hasContributor-relations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl><dt>has domain</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/ProductionEvent"
-    >Production event</a>
-</dd><dt>has range</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/RoleRelation"
-    >Role relation</a>
-</dd></dl>
-        </div>
-    </div>
-    <div class="card-footer"></div>
-</div>
-</p>
-      
-          <p><div
-    class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/hasRelease"
-    >
-    <div class="card-header">
-        <h4 class="card-title">has release</h4>
-        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/hasRelease</small></p>
-        <nav
-            class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/hasRelease-nav"
-            role="tablist">
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/hasRelease-description"
-                class="nav-item nav-link active"
-                aria-selected="true"
-                data-toggle="tab"
-                role="tab">Description</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/hasRelease-annotations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Annotations</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/hasRelease-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/hasRelease-tab-relations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Relations</a>
-        </nav>
-    </div>
-    <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/hasRelease-tab-content"
-        class="tab-content card-body">
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/hasRelease-description"
-            class="card-text tab-pane fade show active"
-            role="tabpanel">
-            <p>
-            An edition has a specific local release.
-            </p>
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/hasRelease-annotations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/hasRelease-relations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl><dt>has range</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/LocalRelease"
-    >Local Release</a>
-</dd></dl>
-        </div>
-    </div>
-    <div class="card-footer"></div>
-</div>
-</p>
-      
-          <p><div
-    class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/roleValue"
-    >
-    <div class="card-header">
-        <h4 class="card-title">role value</h4>
-        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/roleValue</small></p>
-        <nav
-            class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/roleValue-nav"
-            role="tablist">
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/roleValue-description"
-                class="nav-item nav-link active"
-                aria-selected="true"
-                data-toggle="tab"
-                role="tab">Description</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/roleValue-annotations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Annotations</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/roleValue-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/roleValue-tab-relations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Relations</a>
-        </nav>
-    </div>
-    <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/roleValue-tab-content"
-        class="tab-content card-body">
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/roleValue-description"
-            class="card-text tab-pane fade show active"
-            role="tabpanel">
-            <p>
-            A game production role, e.g. writer, developer, voice actors, etc.
-            </p>
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/roleValue-annotations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/roleValue-relations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl><dt>has domain</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/RoleRelation"
-    >Role relation</a>
-</dd><dt>has range</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/Role"
-    >Role</a>
-</dd></dl>
-        </div>
-    </div>
-    <div class="card-footer"></div>
-</div>
-</p>
-      
-          <p><div
-    class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/isPublisherOf"
-    >
-    <div class="card-header">
-        <h4 class="card-title">is publisher of</h4>
-        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/isPublisherOf</small></p>
-        <nav
-            class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/isPublisherOf-nav"
-            role="tablist">
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/isPublisherOf-description"
-                class="nav-item nav-link active"
-                aria-selected="true"
-                data-toggle="tab"
-                role="tab">Description</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/isPublisherOf-annotations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Annotations</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/isPublisherOf-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/isPublisherOf-tab-relations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Relations</a>
-        </nav>
-    </div>
-    <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/isPublisherOf-tab-content"
-        class="tab-content card-body">
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/isPublisherOf-description"
-            class="card-text tab-pane fade show active"
-            role="tabpanel">
-            <p>
-            A company entity is a publisher of a specific local release.
-            </p>
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/isPublisherOf-annotations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/isPublisherOf-relations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl><dt>has domain</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/Company"
-    >Company</a>
-</dd><dt>has range</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/LocalRelease"
-    >Local Release</a>
-</dd></dl>
-        </div>
-    </div>
-    <div class="card-footer"></div>
-</div>
-</p>
-      
-          <p><div
-    class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/placeOfBusiness"
-    >
-    <div class="card-header">
-        <h4 class="card-title">place of business</h4>
-        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/placeOfBusiness</small></p>
-        <nav
-            class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/placeOfBusiness-nav"
-            role="tablist">
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/placeOfBusiness-description"
-                class="nav-item nav-link active"
-                aria-selected="true"
-                data-toggle="tab"
-                role="tab">Description</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/placeOfBusiness-annotations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Annotations</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/placeOfBusiness-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/placeOfBusiness-tab-relations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Relations</a>
-        </nav>
-    </div>
-    <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/placeOfBusiness-tab-content"
-        class="tab-content card-body">
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/placeOfBusiness-description"
-            class="card-text tab-pane fade show active"
-            role="tabpanel">
-            <p>
-            
-            </p>
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/placeOfBusiness-annotations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/placeOfBusiness-relations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl><dt>has domain</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/Company"
-    >Company</a>
-</dd></dl>
-        </div>
-    </div>
-    <div class="card-footer"></div>
-</div>
-</p>
-      
-          <p><div
-    class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/worksFor"
-    >
-    <div class="card-header">
-        <h4 class="card-title">works for/cooperate with</h4>
-        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/worksFor</small></p>
-        <nav
-            class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/worksFor-nav"
-            role="tablist">
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/worksFor-description"
-                class="nav-item nav-link active"
-                aria-selected="true"
-                data-toggle="tab"
-                role="tab">Description</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/worksFor-annotations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Annotations</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/worksFor-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/worksFor-tab-relations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Relations</a>
-        </nav>
-    </div>
-    <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/worksFor-tab-content"
-        class="tab-content card-body">
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/worksFor-description"
-            class="card-text tab-pane fade show active"
-            role="tabpanel">
-            <p>
-            The relation between a specific role, actor and a corporation at the point in time of the production process.
-            </p>
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/worksFor-annotations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/worksFor-relations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl><dt>has domain</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/RoleRelation"
-    >Role relation</a>
-</dd><dt>has range</dt><dd><a
-    href="#http://www.cidoc-crm.org/cidoc-crm/E39_Actor"
-    >E39_Actor</a>
-</dd></dl>
-        </div>
-    </div>
-    <div class="card-footer"></div>
-</div>
-</p>
-      
-          <p><div
-    class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/isDeveloperOf"
-    >
-    <div class="card-header">
-        <h4 class="card-title">is developer of</h4>
-        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/isDeveloperOf</small></p>
-        <nav
-            class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/isDeveloperOf-nav"
-            role="tablist">
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/isDeveloperOf-description"
-                class="nav-item nav-link active"
-                aria-selected="true"
-                data-toggle="tab"
-                role="tab">Description</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/isDeveloperOf-annotations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Annotations</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/isDeveloperOf-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/isDeveloperOf-tab-relations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Relations</a>
-        </nav>
-    </div>
-    <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/isDeveloperOf-tab-content"
-        class="tab-content card-body">
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/isDeveloperOf-description"
-            class="card-text tab-pane fade show active"
-            role="tabpanel">
-            <p>
-            A company entity is a developer of a specific edition.
-            </p>
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/isDeveloperOf-annotations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/isDeveloperOf-relations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl><dt>has domain</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/Company"
-    >Company</a>
-</dd><dt>has range</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/Platform_Realization"
-    >Platform Realization</a>
-</dd></dl>
-        </div>
-    </div>
-    <div class="card-footer"></div>
-</div>
-</p>
-      
-          <p><div
-    class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/createdBy"
-    >
-    <div class="card-header">
-        <h4 class="card-title">is created by</h4>
-        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/createdBy</small></p>
-        <nav
-            class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/createdBy-nav"
-            role="tablist">
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/createdBy-description"
-                class="nav-item nav-link active"
-                aria-selected="true"
-                data-toggle="tab"
-                role="tab">Description</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/createdBy-annotations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Annotations</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/createdBy-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/createdBy-tab-relations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Relations</a>
-        </nav>
-    </div>
-    <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/createdBy-tab-content"
-        class="tab-content card-body">
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/createdBy-description"
-            class="card-text tab-pane fade show active"
-            role="tabpanel">
-            <p>
-            A platform realization is created during an production event.
-            </p>
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/createdBy-annotations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/createdBy-relations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl><dt>has range</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/ProductionEvent"
-    >Production event</a>
-</dd></dl>
-        </div>
-    </div>
-    <div class="card-footer"></div>
-</div>
-</p>
-      
-          <p><div
-    class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/roleActor"
-    >
-    <div class="card-header">
-        <h4 class="card-title">role actor</h4>
-        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/roleActor</small></p>
-        <nav
-            class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/roleActor-nav"
-            role="tablist">
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/roleActor-description"
-                class="nav-item nav-link active"
-                aria-selected="true"
-                data-toggle="tab"
-                role="tab">Description</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/roleActor-annotations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Annotations</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/roleActor-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/roleActor-tab-relations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Relations</a>
-        </nav>
-    </div>
-    <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/roleActor-tab-content"
-        class="tab-content card-body">
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/roleActor-description"
-            class="card-text tab-pane fade show active"
-            role="tabpanel">
-            <p>
-            An actor has one or more roles within a game production process, e.g. writers, developers, voice actors, etc. and can also be a company.
-            </p>
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/roleActor-annotations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/roleActor-relations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl><dt>has domain</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/RoleRelation"
-    >Role relation</a>
-</dd><dt>has range</dt><dd><a
-    href="#http://www.cidoc-crm.org/cidoc-crm/E39_Actor"
-    >E39_Actor</a>
-</dd></dl>
-        </div>
-    </div>
-    <div class="card-footer"></div>
-</div>
-</p>
-      
-          <p><div
-    class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/isPortOf"
-    >
-    <div class="card-header">
-        <h4 class="card-title">is port of</h4>
-        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/isPortOf</small></p>
-        <nav
-            class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/isPortOf-nav"
-            role="tablist">
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/isPortOf-description"
-                class="nav-item nav-link active"
-                aria-selected="true"
-                data-toggle="tab"
-                role="tab">Description</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/isPortOf-annotations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Annotations</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/isPortOf-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/isPortOf-tab-relations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Relations</a>
-        </nav>
-    </div>
-    <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/isPortOf-tab-content"
-        class="tab-content card-body">
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/isPortOf-description"
-            class="card-text tab-pane fade show active"
-            role="tabpanel">
-            <p>
-            A Platform Realization of a game can be a port of a game from another hardware platform.
-            </p>
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/isPortOf-annotations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/isPortOf-relations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl><dt>has domain</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/Platform_Realization"
-    >Platform Realization</a>
-</dd><dt>has range</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/Platform_Realization"
-    >Platform Realization</a>
-</dd></dl>
-        </div>
-    </div>
-    <div class="card-footer"></div>
-</div>
-</p>
-      
-          <p><div
-    class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/publishedBy"
+    id="id-3807247dab073c0c61dfb3992970508e"
     >
     <div class="card-header">
         <h4 class="card-title">published by</h4>
         <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/publishedBy</small></p>
         <nav
             class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/publishedBy-nav"
+            id="id-3807247dab073c0c61dfb3992970508e-nav"
             role="tablist">
             <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/publishedBy-description"
+                href="#id-3807247dab073c0c61dfb3992970508e-description"
                 class="nav-item nav-link active"
                 aria-selected="true"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab">Description</a>
             <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/publishedBy-annotations"
+                href="#id-3807247dab073c0c61dfb3992970508e-annotations"
                 class="nav-item nav-link"
                 aria-selected="false"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab">Annotations</a>
             <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/publishedBy-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/publishedBy-tab-relations"
+                href="#id-3807247dab073c0c61dfb3992970508e-relations"
+                id="id-3807247dab073c0c61dfb3992970508e-tab-relations"
                 class="nav-item nav-link"
                 aria-selected="false"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab">Relations</a>
         </nav>
     </div>
     <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/publishedBy-tab-content"
+        id="id-3807247dab073c0c61dfb3992970508e-tab-content"
         class="tab-content card-body">
         <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/publishedBy-description"
+            id="id-3807247dab073c0c61dfb3992970508e-description"
             class="card-text tab-pane fade show active"
             role="tabpanel">
             <p>
@@ -2185,20 +1457,20 @@
             <dl></dl>
         </div>
         <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/publishedBy-annotations"
+            id="id-3807247dab073c0c61dfb3992970508e-annotations"
             class="card-text tab-pane fade"
             role="tabpanel">
             <dl></dl>
         </div>
         <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/publishedBy-relations"
+            id="id-3807247dab073c0c61dfb3992970508e-relations"
             class="card-text tab-pane fade"
             role="tabpanel">
             <dl><dt>has domain</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/LocalRelease"
+    href="#9476ec250e3c90fcc8bb6f2ac66954a8"
     >Local Release</a>
 </dd><dt>has range</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/Company"
+    href="#48779ac3a9d1d839f9e7a79e569cd16c"
     >Company</a>
 </dd></dl>
         </div>
@@ -2209,108 +1481,41 @@
       
           <p><div
     class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/developedBy"
-    >
-    <div class="card-header">
-        <h4 class="card-title">developed by</h4>
-        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/developedBy</small></p>
-        <nav
-            class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/developedBy-nav"
-            role="tablist">
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/developedBy-description"
-                class="nav-item nav-link active"
-                aria-selected="true"
-                data-toggle="tab"
-                role="tab">Description</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/developedBy-annotations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Annotations</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/developedBy-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/developedBy-tab-relations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Relations</a>
-        </nav>
-    </div>
-    <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/developedBy-tab-content"
-        class="tab-content card-body">
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/developedBy-description"
-            class="card-text tab-pane fade show active"
-            role="tabpanel">
-            <p>
-            A platform realization entity is developed by a company entity. (role shortcut)
-            </p>
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/developedBy-annotations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/developedBy-relations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl><dt>has domain</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/Platform_Realization"
-    >Platform Realization</a>
-</dd><dt>has range</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/Company"
-    >Company</a>
-</dd></dl>
-        </div>
-    </div>
-    <div class="card-footer"></div>
-</div>
-</p>
-      
-          <p><div
-    class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/platform"
+    id="id-ed731456e8a349674906e24d4364f7e8"
     >
     <div class="card-header">
         <h4 class="card-title">on/for platform</h4>
         <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/platform</small></p>
         <nav
             class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/platform-nav"
+            id="id-ed731456e8a349674906e24d4364f7e8-nav"
             role="tablist">
             <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/platform-description"
+                href="#id-ed731456e8a349674906e24d4364f7e8-description"
                 class="nav-item nav-link active"
                 aria-selected="true"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab">Description</a>
             <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/platform-annotations"
+                href="#id-ed731456e8a349674906e24d4364f7e8-annotations"
                 class="nav-item nav-link"
                 aria-selected="false"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab">Annotations</a>
             <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/platform-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/platform-tab-relations"
+                href="#id-ed731456e8a349674906e24d4364f7e8-relations"
+                id="id-ed731456e8a349674906e24d4364f7e8-tab-relations"
                 class="nav-item nav-link"
                 aria-selected="false"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab">Relations</a>
         </nav>
     </div>
     <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/platform-tab-content"
+        id="id-ed731456e8a349674906e24d4364f7e8-tab-content"
         class="tab-content card-body">
         <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/platform-description"
+            id="id-ed731456e8a349674906e24d4364f7e8-description"
             class="card-text tab-pane fade show active"
             role="tabpanel">
             <p>
@@ -2319,20 +1524,20 @@
             <dl></dl>
         </div>
         <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/platform-annotations"
+            id="id-ed731456e8a349674906e24d4364f7e8-annotations"
             class="card-text tab-pane fade"
             role="tabpanel">
             <dl></dl>
         </div>
         <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/platform-relations"
+            id="id-ed731456e8a349674906e24d4364f7e8-relations"
             class="card-text tab-pane fade"
             role="tabpanel">
             <dl><dt>has domain</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/Platform_Realization"
+    href="#235340abab47924e3530a9d46a8fdbbc"
     >Platform Realization</a>
 </dd><dt>has range</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/Platform"
+    href="#83e164c02caecddee69dba9157bf4dbf"
     >Platform</a>
 </dd></dl>
         </div>
@@ -2343,61 +1548,61 @@
       
           <p><div
     class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/isEditionOf"
+    id="id-5b5967f911ead9f2972c8d738646c477"
     >
     <div class="card-header">
-        <h4 class="card-title">is edition of</h4>
-        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/isEditionOf</small></p>
+        <h4 class="card-title">has release</h4>
+        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/hasRelease</small></p>
         <nav
             class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/isEditionOf-nav"
+            id="id-5b5967f911ead9f2972c8d738646c477-nav"
             role="tablist">
             <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/isEditionOf-description"
+                href="#id-5b5967f911ead9f2972c8d738646c477-description"
                 class="nav-item nav-link active"
                 aria-selected="true"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab">Description</a>
             <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/isEditionOf-annotations"
+                href="#id-5b5967f911ead9f2972c8d738646c477-annotations"
                 class="nav-item nav-link"
                 aria-selected="false"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab">Annotations</a>
             <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/isEditionOf-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/isEditionOf-tab-relations"
+                href="#id-5b5967f911ead9f2972c8d738646c477-relations"
+                id="id-5b5967f911ead9f2972c8d738646c477-tab-relations"
                 class="nav-item nav-link"
                 aria-selected="false"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab">Relations</a>
         </nav>
     </div>
     <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/isEditionOf-tab-content"
+        id="id-5b5967f911ead9f2972c8d738646c477-tab-content"
         class="tab-content card-body">
         <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/isEditionOf-description"
+            id="id-5b5967f911ead9f2972c8d738646c477-description"
             class="card-text tab-pane fade show active"
             role="tabpanel">
             <p>
-            ...
+            An edition has a specific local release.
             </p>
             <dl></dl>
         </div>
         <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/isEditionOf-annotations"
+            id="id-5b5967f911ead9f2972c8d738646c477-annotations"
             class="card-text tab-pane fade"
             role="tabpanel">
             <dl></dl>
         </div>
         <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/isEditionOf-relations"
+            id="id-5b5967f911ead9f2972c8d738646c477-relations"
             class="card-text tab-pane fade"
             role="tabpanel">
-            <dl><dt>has domain</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/Generic_Edition"
-    >Edition (generic)</a>
+            <dl><dt>has range</dt><dd><a
+    href="#9476ec250e3c90fcc8bb6f2ac66954a8"
+    >Local Release</a>
 </dd></dl>
         </div>
     </div>
@@ -2407,41 +1612,239 @@
       
           <p><div
     class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/hasSpecialEdition"
+    id="id-029afdbc8e8cda55302951029bdeeca2"
+    >
+    <div class="card-header">
+        <h4 class="card-title">is release of</h4>
+        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/isReleaseOf</small></p>
+        <nav
+            class="nav nav-tabs card-header-tabs"
+            id="id-029afdbc8e8cda55302951029bdeeca2-nav"
+            role="tablist">
+            <a
+                href="#id-029afdbc8e8cda55302951029bdeeca2-description"
+                class="nav-item nav-link active"
+                aria-selected="true"
+                data-bs-toggle="tab"
+                role="tab">Description</a>
+            <a
+                href="#id-029afdbc8e8cda55302951029bdeeca2-annotations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Annotations</a>
+            <a
+                href="#id-029afdbc8e8cda55302951029bdeeca2-relations"
+                id="id-029afdbc8e8cda55302951029bdeeca2-tab-relations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Relations</a>
+        </nav>
+    </div>
+    <div
+        id="id-029afdbc8e8cda55302951029bdeeca2-tab-content"
+        class="tab-content card-body">
+        <div
+            id="id-029afdbc8e8cda55302951029bdeeca2-description"
+            class="card-text tab-pane fade show active"
+            role="tabpanel">
+            <p>
+            A local release is a specific release of an Edition and a specific Platform Realization.
+            </p>
+            <dl></dl>
+        </div>
+        <div
+            id="id-029afdbc8e8cda55302951029bdeeca2-annotations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl></dl>
+        </div>
+        <div
+            id="id-029afdbc8e8cda55302951029bdeeca2-relations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl><dt>has domain</dt><dd><a
+    href="#9476ec250e3c90fcc8bb6f2ac66954a8"
+    >Local Release</a>
+</dd></dl>
+        </div>
+    </div>
+    <div class="card-footer"></div>
+</div>
+</p>
+      
+          <p><div
+    class="card"
+    id="id-0c305eae6b444c1b2ee3d6d251ecd3ef"
+    >
+    <div class="card-header">
+        <h4 class="card-title">role value</h4>
+        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/roleValue</small></p>
+        <nav
+            class="nav nav-tabs card-header-tabs"
+            id="id-0c305eae6b444c1b2ee3d6d251ecd3ef-nav"
+            role="tablist">
+            <a
+                href="#id-0c305eae6b444c1b2ee3d6d251ecd3ef-description"
+                class="nav-item nav-link active"
+                aria-selected="true"
+                data-bs-toggle="tab"
+                role="tab">Description</a>
+            <a
+                href="#id-0c305eae6b444c1b2ee3d6d251ecd3ef-annotations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Annotations</a>
+            <a
+                href="#id-0c305eae6b444c1b2ee3d6d251ecd3ef-relations"
+                id="id-0c305eae6b444c1b2ee3d6d251ecd3ef-tab-relations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Relations</a>
+        </nav>
+    </div>
+    <div
+        id="id-0c305eae6b444c1b2ee3d6d251ecd3ef-tab-content"
+        class="tab-content card-body">
+        <div
+            id="id-0c305eae6b444c1b2ee3d6d251ecd3ef-description"
+            class="card-text tab-pane fade show active"
+            role="tabpanel">
+            <p>
+            A game production role, e.g. writer, developer, voice actors, etc.
+            </p>
+            <dl></dl>
+        </div>
+        <div
+            id="id-0c305eae6b444c1b2ee3d6d251ecd3ef-annotations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl></dl>
+        </div>
+        <div
+            id="id-0c305eae6b444c1b2ee3d6d251ecd3ef-relations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl><dt>has domain</dt><dd><a
+    href="#22f8262a66ed3057e396a6fa355880ed"
+    >Role relation</a>
+</dd><dt>has range</dt><dd><a
+    href="#84a8d9941c0c8f6e544a9f113b916dc3"
+    >Role</a>
+</dd></dl>
+        </div>
+    </div>
+    <div class="card-footer"></div>
+</div>
+</p>
+      
+          <p><div
+    class="card"
+    id="id-4baaf66fc2f7f75e3ab1dd8eb7c6624b"
+    >
+    <div class="card-header">
+        <h4 class="card-title">role actor</h4>
+        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/roleActor</small></p>
+        <nav
+            class="nav nav-tabs card-header-tabs"
+            id="id-4baaf66fc2f7f75e3ab1dd8eb7c6624b-nav"
+            role="tablist">
+            <a
+                href="#id-4baaf66fc2f7f75e3ab1dd8eb7c6624b-description"
+                class="nav-item nav-link active"
+                aria-selected="true"
+                data-bs-toggle="tab"
+                role="tab">Description</a>
+            <a
+                href="#id-4baaf66fc2f7f75e3ab1dd8eb7c6624b-annotations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Annotations</a>
+            <a
+                href="#id-4baaf66fc2f7f75e3ab1dd8eb7c6624b-relations"
+                id="id-4baaf66fc2f7f75e3ab1dd8eb7c6624b-tab-relations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Relations</a>
+        </nav>
+    </div>
+    <div
+        id="id-4baaf66fc2f7f75e3ab1dd8eb7c6624b-tab-content"
+        class="tab-content card-body">
+        <div
+            id="id-4baaf66fc2f7f75e3ab1dd8eb7c6624b-description"
+            class="card-text tab-pane fade show active"
+            role="tabpanel">
+            <p>
+            An actor has one or more roles within a game production process, e.g. writers, developers, voice actors, etc. and can also be a company.
+            </p>
+            <dl></dl>
+        </div>
+        <div
+            id="id-4baaf66fc2f7f75e3ab1dd8eb7c6624b-annotations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl></dl>
+        </div>
+        <div
+            id="id-4baaf66fc2f7f75e3ab1dd8eb7c6624b-relations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl><dt>has domain</dt><dd><a
+    href="#22f8262a66ed3057e396a6fa355880ed"
+    >Role relation</a>
+</dd><dt>has range</dt><dd><a
+    href="#08bffd3b6c414c5acbefdda2734ab8fc"
+    >E39_Actor</a>
+</dd></dl>
+        </div>
+    </div>
+    <div class="card-footer"></div>
+</div>
+</p>
+      
+          <p><div
+    class="card"
+    id="id-70dff910c438553299dacdd037bd7010"
     >
     <div class="card-header">
         <h4 class="card-title">is special edition of</h4>
         <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/hasSpecialEdition</small></p>
         <nav
             class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/hasSpecialEdition-nav"
+            id="id-70dff910c438553299dacdd037bd7010-nav"
             role="tablist">
             <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/hasSpecialEdition-description"
+                href="#id-70dff910c438553299dacdd037bd7010-description"
                 class="nav-item nav-link active"
                 aria-selected="true"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab">Description</a>
             <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/hasSpecialEdition-annotations"
+                href="#id-70dff910c438553299dacdd037bd7010-annotations"
                 class="nav-item nav-link"
                 aria-selected="false"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab">Annotations</a>
             <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/hasSpecialEdition-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/hasSpecialEdition-tab-relations"
+                href="#id-70dff910c438553299dacdd037bd7010-relations"
+                id="id-70dff910c438553299dacdd037bd7010-tab-relations"
                 class="nav-item nav-link"
                 aria-selected="false"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab">Relations</a>
         </nav>
     </div>
     <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/hasSpecialEdition-tab-content"
+        id="id-70dff910c438553299dacdd037bd7010-tab-content"
         class="tab-content card-body">
         <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/hasSpecialEdition-description"
+            id="id-70dff910c438553299dacdd037bd7010-description"
             class="card-text tab-pane fade show active"
             role="tabpanel">
             <p>
@@ -2450,17 +1853,17 @@
             <dl></dl>
         </div>
         <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/hasSpecialEdition-annotations"
+            id="id-70dff910c438553299dacdd037bd7010-annotations"
             class="card-text tab-pane fade"
             role="tabpanel">
             <dl></dl>
         </div>
         <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/hasSpecialEdition-relations"
+            id="id-70dff910c438553299dacdd037bd7010-relations"
             class="card-text tab-pane fade"
             role="tabpanel">
             <dl><dt>has domain</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/Generic_Edition"
+    href="#e850ed8794749ea994439cba1051350a"
     >Edition (generic)</a>
 </dd></dl>
         </div>
@@ -2471,41 +1874,370 @@
       
           <p><div
     class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/releaseCountry"
+    id="id-795b6d8f6fe9072ebb87bc8ea963ce6e"
+    >
+    <div class="card-header">
+        <h4 class="card-title">is port of</h4>
+        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/isPortOf</small></p>
+        <nav
+            class="nav nav-tabs card-header-tabs"
+            id="id-795b6d8f6fe9072ebb87bc8ea963ce6e-nav"
+            role="tablist">
+            <a
+                href="#id-795b6d8f6fe9072ebb87bc8ea963ce6e-description"
+                class="nav-item nav-link active"
+                aria-selected="true"
+                data-bs-toggle="tab"
+                role="tab">Description</a>
+            <a
+                href="#id-795b6d8f6fe9072ebb87bc8ea963ce6e-annotations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Annotations</a>
+            <a
+                href="#id-795b6d8f6fe9072ebb87bc8ea963ce6e-relations"
+                id="id-795b6d8f6fe9072ebb87bc8ea963ce6e-tab-relations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Relations</a>
+        </nav>
+    </div>
+    <div
+        id="id-795b6d8f6fe9072ebb87bc8ea963ce6e-tab-content"
+        class="tab-content card-body">
+        <div
+            id="id-795b6d8f6fe9072ebb87bc8ea963ce6e-description"
+            class="card-text tab-pane fade show active"
+            role="tabpanel">
+            <p>
+            A Platform Realization of a game can be a port of a game from another hardware platform.
+            </p>
+            <dl></dl>
+        </div>
+        <div
+            id="id-795b6d8f6fe9072ebb87bc8ea963ce6e-annotations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl></dl>
+        </div>
+        <div
+            id="id-795b6d8f6fe9072ebb87bc8ea963ce6e-relations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl><dt>has domain</dt><dd><a
+    href="#235340abab47924e3530a9d46a8fdbbc"
+    >Platform Realization</a>
+</dd><dt>has range</dt><dd><a
+    href="#235340abab47924e3530a9d46a8fdbbc"
+    >Platform Realization</a>
+</dd></dl>
+        </div>
+    </div>
+    <div class="card-footer"></div>
+</div>
+</p>
+      
+          <p><div
+    class="card"
+    id="id-5163bba903ef7d2e71318353b43e90d7"
+    >
+    <div class="card-header">
+        <h4 class="card-title">is developer of</h4>
+        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/isDeveloperOf</small></p>
+        <nav
+            class="nav nav-tabs card-header-tabs"
+            id="id-5163bba903ef7d2e71318353b43e90d7-nav"
+            role="tablist">
+            <a
+                href="#id-5163bba903ef7d2e71318353b43e90d7-description"
+                class="nav-item nav-link active"
+                aria-selected="true"
+                data-bs-toggle="tab"
+                role="tab">Description</a>
+            <a
+                href="#id-5163bba903ef7d2e71318353b43e90d7-annotations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Annotations</a>
+            <a
+                href="#id-5163bba903ef7d2e71318353b43e90d7-relations"
+                id="id-5163bba903ef7d2e71318353b43e90d7-tab-relations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Relations</a>
+        </nav>
+    </div>
+    <div
+        id="id-5163bba903ef7d2e71318353b43e90d7-tab-content"
+        class="tab-content card-body">
+        <div
+            id="id-5163bba903ef7d2e71318353b43e90d7-description"
+            class="card-text tab-pane fade show active"
+            role="tabpanel">
+            <p>
+            A company entity is a developer of a specific edition.
+            </p>
+            <dl></dl>
+        </div>
+        <div
+            id="id-5163bba903ef7d2e71318353b43e90d7-annotations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl></dl>
+        </div>
+        <div
+            id="id-5163bba903ef7d2e71318353b43e90d7-relations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl><dt>has domain</dt><dd><a
+    href="#48779ac3a9d1d839f9e7a79e569cd16c"
+    >Company</a>
+</dd><dt>has range</dt><dd><a
+    href="#235340abab47924e3530a9d46a8fdbbc"
+    >Platform Realization</a>
+</dd></dl>
+        </div>
+    </div>
+    <div class="card-footer"></div>
+</div>
+</p>
+      
+          <p><div
+    class="card"
+    id="id-3b12824d0622901993c94ad594bd86e5"
+    >
+    <div class="card-header">
+        <h4 class="card-title">place of business</h4>
+        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/placeOfBusiness</small></p>
+        <nav
+            class="nav nav-tabs card-header-tabs"
+            id="id-3b12824d0622901993c94ad594bd86e5-nav"
+            role="tablist">
+            <a
+                href="#id-3b12824d0622901993c94ad594bd86e5-description"
+                class="nav-item nav-link active"
+                aria-selected="true"
+                data-bs-toggle="tab"
+                role="tab">Description</a>
+            <a
+                href="#id-3b12824d0622901993c94ad594bd86e5-annotations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Annotations</a>
+            <a
+                href="#id-3b12824d0622901993c94ad594bd86e5-relations"
+                id="id-3b12824d0622901993c94ad594bd86e5-tab-relations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Relations</a>
+        </nav>
+    </div>
+    <div
+        id="id-3b12824d0622901993c94ad594bd86e5-tab-content"
+        class="tab-content card-body">
+        <div
+            id="id-3b12824d0622901993c94ad594bd86e5-description"
+            class="card-text tab-pane fade show active"
+            role="tabpanel">
+            <p>
+            
+            </p>
+            <dl></dl>
+        </div>
+        <div
+            id="id-3b12824d0622901993c94ad594bd86e5-annotations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl></dl>
+        </div>
+        <div
+            id="id-3b12824d0622901993c94ad594bd86e5-relations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl><dt>has domain</dt><dd><a
+    href="#48779ac3a9d1d839f9e7a79e569cd16c"
+    >Company</a>
+</dd></dl>
+        </div>
+    </div>
+    <div class="card-footer"></div>
+</div>
+</p>
+      
+          <p><div
+    class="card"
+    id="id-c878856c3b21d7d92803658dd2959df0"
+    >
+    <div class="card-header">
+        <h4 class="card-title">developed by</h4>
+        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/developedBy</small></p>
+        <nav
+            class="nav nav-tabs card-header-tabs"
+            id="id-c878856c3b21d7d92803658dd2959df0-nav"
+            role="tablist">
+            <a
+                href="#id-c878856c3b21d7d92803658dd2959df0-description"
+                class="nav-item nav-link active"
+                aria-selected="true"
+                data-bs-toggle="tab"
+                role="tab">Description</a>
+            <a
+                href="#id-c878856c3b21d7d92803658dd2959df0-annotations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Annotations</a>
+            <a
+                href="#id-c878856c3b21d7d92803658dd2959df0-relations"
+                id="id-c878856c3b21d7d92803658dd2959df0-tab-relations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Relations</a>
+        </nav>
+    </div>
+    <div
+        id="id-c878856c3b21d7d92803658dd2959df0-tab-content"
+        class="tab-content card-body">
+        <div
+            id="id-c878856c3b21d7d92803658dd2959df0-description"
+            class="card-text tab-pane fade show active"
+            role="tabpanel">
+            <p>
+            A platform realization entity is developed by a company entity. (role shortcut)
+            </p>
+            <dl></dl>
+        </div>
+        <div
+            id="id-c878856c3b21d7d92803658dd2959df0-annotations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl></dl>
+        </div>
+        <div
+            id="id-c878856c3b21d7d92803658dd2959df0-relations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl><dt>has domain</dt><dd><a
+    href="#235340abab47924e3530a9d46a8fdbbc"
+    >Platform Realization</a>
+</dd><dt>has range</dt><dd><a
+    href="#48779ac3a9d1d839f9e7a79e569cd16c"
+    >Company</a>
+</dd></dl>
+        </div>
+    </div>
+    <div class="card-footer"></div>
+</div>
+</p>
+      
+          <p><div
+    class="card"
+    id="id-19e5f7545a9edb659a4e3cbeea42fcac"
+    >
+    <div class="card-header">
+        <h4 class="card-title">is platform realization of</h4>
+        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/isPlatformRealizationOf</small></p>
+        <nav
+            class="nav nav-tabs card-header-tabs"
+            id="id-19e5f7545a9edb659a4e3cbeea42fcac-nav"
+            role="tablist">
+            <a
+                href="#id-19e5f7545a9edb659a4e3cbeea42fcac-description"
+                class="nav-item nav-link active"
+                aria-selected="true"
+                data-bs-toggle="tab"
+                role="tab">Description</a>
+            <a
+                href="#id-19e5f7545a9edb659a4e3cbeea42fcac-annotations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Annotations</a>
+            <a
+                href="#id-19e5f7545a9edb659a4e3cbeea42fcac-relations"
+                id="id-19e5f7545a9edb659a4e3cbeea42fcac-tab-relations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Relations</a>
+        </nav>
+    </div>
+    <div
+        id="id-19e5f7545a9edb659a4e3cbeea42fcac-tab-content"
+        class="tab-content card-body">
+        <div
+            id="id-19e5f7545a9edb659a4e3cbeea42fcac-description"
+            class="card-text tab-pane fade show active"
+            role="tabpanel">
+            <p>
+            ...
+            </p>
+            <dl></dl>
+        </div>
+        <div
+            id="id-19e5f7545a9edb659a4e3cbeea42fcac-annotations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl></dl>
+        </div>
+        <div
+            id="id-19e5f7545a9edb659a4e3cbeea42fcac-relations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl><dt>has domain</dt><dd><a
+    href="#235340abab47924e3530a9d46a8fdbbc"
+    >Platform Realization</a>
+</dd></dl>
+        </div>
+    </div>
+    <div class="card-footer"></div>
+</div>
+</p>
+      
+          <p><div
+    class="card"
+    id="id-67fbc45bccda117a45f2e97b5944ddef"
     >
     <div class="card-header">
         <h4 class="card-title">release country</h4>
         <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/releaseCountry</small></p>
         <nav
             class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/releaseCountry-nav"
+            id="id-67fbc45bccda117a45f2e97b5944ddef-nav"
             role="tablist">
             <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/releaseCountry-description"
+                href="#id-67fbc45bccda117a45f2e97b5944ddef-description"
                 class="nav-item nav-link active"
                 aria-selected="true"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab">Description</a>
             <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/releaseCountry-annotations"
+                href="#id-67fbc45bccda117a45f2e97b5944ddef-annotations"
                 class="nav-item nav-link"
                 aria-selected="false"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab">Annotations</a>
             <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/releaseCountry-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/releaseCountry-tab-relations"
+                href="#id-67fbc45bccda117a45f2e97b5944ddef-relations"
+                id="id-67fbc45bccda117a45f2e97b5944ddef-tab-relations"
                 class="nav-item nav-link"
                 aria-selected="false"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab">Relations</a>
         </nav>
     </div>
     <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/releaseCountry-tab-content"
+        id="id-67fbc45bccda117a45f2e97b5944ddef-tab-content"
         class="tab-content card-body">
         <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/releaseCountry-description"
+            id="id-67fbc45bccda117a45f2e97b5944ddef-description"
             class="card-text tab-pane fade show active"
             role="tabpanel">
             <p>
@@ -2514,21 +2246,481 @@
             <dl></dl>
         </div>
         <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/releaseCountry-annotations"
+            id="id-67fbc45bccda117a45f2e97b5944ddef-annotations"
             class="card-text tab-pane fade"
             role="tabpanel">
             <dl></dl>
         </div>
         <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/releaseCountry-relations"
+            id="id-67fbc45bccda117a45f2e97b5944ddef-relations"
             class="card-text tab-pane fade"
             role="tabpanel">
             <dl><dt>has domain</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/LocalRelease"
+    href="#9476ec250e3c90fcc8bb6f2ac66954a8"
     >Local Release</a>
 </dd><dt>has range</dt><dd><a
-    href="#http://d-nb.info/standards/elementset/gnd#PlaceOrGeographicName"
+    href="#00bba4f32e0b29bd3513d350b4d729a6"
     >PlaceOrGeographicName</a>
+</dd></dl>
+        </div>
+    </div>
+    <div class="card-footer"></div>
+</div>
+</p>
+      
+          <p><div
+    class="card"
+    id="id-5670944fb2ae8c7f08943e9e28c60f2b"
+    >
+    <div class="card-header">
+        <h4 class="card-title">ported by</h4>
+        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/portedBy</small></p>
+        <nav
+            class="nav nav-tabs card-header-tabs"
+            id="id-5670944fb2ae8c7f08943e9e28c60f2b-nav"
+            role="tablist">
+            <a
+                href="#id-5670944fb2ae8c7f08943e9e28c60f2b-description"
+                class="nav-item nav-link active"
+                aria-selected="true"
+                data-bs-toggle="tab"
+                role="tab">Description</a>
+            <a
+                href="#id-5670944fb2ae8c7f08943e9e28c60f2b-annotations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Annotations</a>
+            <a
+                href="#id-5670944fb2ae8c7f08943e9e28c60f2b-relations"
+                id="id-5670944fb2ae8c7f08943e9e28c60f2b-tab-relations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Relations</a>
+        </nav>
+    </div>
+    <div
+        id="id-5670944fb2ae8c7f08943e9e28c60f2b-tab-content"
+        class="tab-content card-body">
+        <div
+            id="id-5670944fb2ae8c7f08943e9e28c60f2b-description"
+            class="card-text tab-pane fade show active"
+            role="tabpanel">
+            <p>
+            A platform realization entity is ported by a company entity. (role shortcut)
+            </p>
+            <dl></dl>
+        </div>
+        <div
+            id="id-5670944fb2ae8c7f08943e9e28c60f2b-annotations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl></dl>
+        </div>
+        <div
+            id="id-5670944fb2ae8c7f08943e9e28c60f2b-relations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl><dt>has domain</dt><dd><a
+    href="#235340abab47924e3530a9d46a8fdbbc"
+    >Platform Realization</a>
+</dd><dt>has range</dt><dd><a
+    href="#48779ac3a9d1d839f9e7a79e569cd16c"
+    >Company</a>
+</dd></dl>
+        </div>
+    </div>
+    <div class="card-footer"></div>
+</div>
+</p>
+      
+          <p><div
+    class="card"
+    id="id-e1e3e43ece740b66f2fdc9acd61f468b"
+    >
+    <div class="card-header">
+        <h4 class="card-title">is created by</h4>
+        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/createdBy</small></p>
+        <nav
+            class="nav nav-tabs card-header-tabs"
+            id="id-e1e3e43ece740b66f2fdc9acd61f468b-nav"
+            role="tablist">
+            <a
+                href="#id-e1e3e43ece740b66f2fdc9acd61f468b-description"
+                class="nav-item nav-link active"
+                aria-selected="true"
+                data-bs-toggle="tab"
+                role="tab">Description</a>
+            <a
+                href="#id-e1e3e43ece740b66f2fdc9acd61f468b-annotations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Annotations</a>
+            <a
+                href="#id-e1e3e43ece740b66f2fdc9acd61f468b-relations"
+                id="id-e1e3e43ece740b66f2fdc9acd61f468b-tab-relations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Relations</a>
+        </nav>
+    </div>
+    <div
+        id="id-e1e3e43ece740b66f2fdc9acd61f468b-tab-content"
+        class="tab-content card-body">
+        <div
+            id="id-e1e3e43ece740b66f2fdc9acd61f468b-description"
+            class="card-text tab-pane fade show active"
+            role="tabpanel">
+            <p>
+            A platform realization is created during an production event.
+            </p>
+            <dl></dl>
+        </div>
+        <div
+            id="id-e1e3e43ece740b66f2fdc9acd61f468b-annotations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl></dl>
+        </div>
+        <div
+            id="id-e1e3e43ece740b66f2fdc9acd61f468b-relations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl><dt>has range</dt><dd><a
+    href="#04e28fdfa8b8821c3d3c357070357879"
+    >Production event</a>
+</dd></dl>
+        </div>
+    </div>
+    <div class="card-footer"></div>
+</div>
+</p>
+      
+          <p><div
+    class="card"
+    id="id-1dacb9e454f88800ca1c2fb63974f36b"
+    >
+    <div class="card-header">
+        <h4 class="card-title">works for/cooperate with</h4>
+        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/worksFor</small></p>
+        <nav
+            class="nav nav-tabs card-header-tabs"
+            id="id-1dacb9e454f88800ca1c2fb63974f36b-nav"
+            role="tablist">
+            <a
+                href="#id-1dacb9e454f88800ca1c2fb63974f36b-description"
+                class="nav-item nav-link active"
+                aria-selected="true"
+                data-bs-toggle="tab"
+                role="tab">Description</a>
+            <a
+                href="#id-1dacb9e454f88800ca1c2fb63974f36b-annotations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Annotations</a>
+            <a
+                href="#id-1dacb9e454f88800ca1c2fb63974f36b-relations"
+                id="id-1dacb9e454f88800ca1c2fb63974f36b-tab-relations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Relations</a>
+        </nav>
+    </div>
+    <div
+        id="id-1dacb9e454f88800ca1c2fb63974f36b-tab-content"
+        class="tab-content card-body">
+        <div
+            id="id-1dacb9e454f88800ca1c2fb63974f36b-description"
+            class="card-text tab-pane fade show active"
+            role="tabpanel">
+            <p>
+            The relation between a specific role, actor and a corporation at the point in time of the production process.
+            </p>
+            <dl></dl>
+        </div>
+        <div
+            id="id-1dacb9e454f88800ca1c2fb63974f36b-annotations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl></dl>
+        </div>
+        <div
+            id="id-1dacb9e454f88800ca1c2fb63974f36b-relations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl><dt>has domain</dt><dd><a
+    href="#22f8262a66ed3057e396a6fa355880ed"
+    >Role relation</a>
+</dd><dt>has range</dt><dd><a
+    href="#08bffd3b6c414c5acbefdda2734ab8fc"
+    >E39_Actor</a>
+</dd></dl>
+        </div>
+    </div>
+    <div class="card-footer"></div>
+</div>
+</p>
+      
+          <p><div
+    class="card"
+    id="id-0b53fec4c228efd600a54b02ea5634a8"
+    >
+    <div class="card-header">
+        <h4 class="card-title">is edition of</h4>
+        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/isEditionOf</small></p>
+        <nav
+            class="nav nav-tabs card-header-tabs"
+            id="id-0b53fec4c228efd600a54b02ea5634a8-nav"
+            role="tablist">
+            <a
+                href="#id-0b53fec4c228efd600a54b02ea5634a8-description"
+                class="nav-item nav-link active"
+                aria-selected="true"
+                data-bs-toggle="tab"
+                role="tab">Description</a>
+            <a
+                href="#id-0b53fec4c228efd600a54b02ea5634a8-annotations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Annotations</a>
+            <a
+                href="#id-0b53fec4c228efd600a54b02ea5634a8-relations"
+                id="id-0b53fec4c228efd600a54b02ea5634a8-tab-relations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Relations</a>
+        </nav>
+    </div>
+    <div
+        id="id-0b53fec4c228efd600a54b02ea5634a8-tab-content"
+        class="tab-content card-body">
+        <div
+            id="id-0b53fec4c228efd600a54b02ea5634a8-description"
+            class="card-text tab-pane fade show active"
+            role="tabpanel">
+            <p>
+            ...
+            </p>
+            <dl></dl>
+        </div>
+        <div
+            id="id-0b53fec4c228efd600a54b02ea5634a8-annotations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl></dl>
+        </div>
+        <div
+            id="id-0b53fec4c228efd600a54b02ea5634a8-relations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl><dt>has domain</dt><dd><a
+    href="#e850ed8794749ea994439cba1051350a"
+    >Edition (generic)</a>
+</dd></dl>
+        </div>
+    </div>
+    <div class="card-footer"></div>
+</div>
+</p>
+      
+          <p><div
+    class="card"
+    id="id-5e789fb6adf2ab04863b27fcaf448a52"
+    >
+    <div class="card-header">
+        <h4 class="card-title">is involved in</h4>
+        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/isInvolvedIn</small></p>
+        <nav
+            class="nav nav-tabs card-header-tabs"
+            id="id-5e789fb6adf2ab04863b27fcaf448a52-nav"
+            role="tablist">
+            <a
+                href="#id-5e789fb6adf2ab04863b27fcaf448a52-description"
+                class="nav-item nav-link active"
+                aria-selected="true"
+                data-bs-toggle="tab"
+                role="tab">Description</a>
+            <a
+                href="#id-5e789fb6adf2ab04863b27fcaf448a52-annotations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Annotations</a>
+            <a
+                href="#id-5e789fb6adf2ab04863b27fcaf448a52-relations"
+                id="id-5e789fb6adf2ab04863b27fcaf448a52-tab-relations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Relations</a>
+        </nav>
+    </div>
+    <div
+        id="id-5e789fb6adf2ab04863b27fcaf448a52-tab-content"
+        class="tab-content card-body">
+        <div
+            id="id-5e789fb6adf2ab04863b27fcaf448a52-description"
+            class="card-text tab-pane fade show active"
+            role="tabpanel">
+            <p>
+            Persons or companies are involved in the production event of a video game.
+            </p>
+            <dl></dl>
+        </div>
+        <div
+            id="id-5e789fb6adf2ab04863b27fcaf448a52-annotations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl></dl>
+        </div>
+        <div
+            id="id-5e789fb6adf2ab04863b27fcaf448a52-relations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl><dt>has domain</dt><dd><a
+    href="#08bffd3b6c414c5acbefdda2734ab8fc"
+    >E39_Actor</a>
+</dd><dt>has range</dt><dd><a
+    href="#04e28fdfa8b8821c3d3c357070357879"
+    >Production event</a>
+</dd></dl>
+        </div>
+    </div>
+    <div class="card-footer"></div>
+</div>
+</p>
+      
+          <p><div
+    class="card"
+    id="id-d65a2ccf73ab23209fe62a03f8158806"
+    >
+    <div class="card-header">
+        <h4 class="card-title">has contributor</h4>
+        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/hasContributor</small></p>
+        <nav
+            class="nav nav-tabs card-header-tabs"
+            id="id-d65a2ccf73ab23209fe62a03f8158806-nav"
+            role="tablist">
+            <a
+                href="#id-d65a2ccf73ab23209fe62a03f8158806-description"
+                class="nav-item nav-link active"
+                aria-selected="true"
+                data-bs-toggle="tab"
+                role="tab">Description</a>
+            <a
+                href="#id-d65a2ccf73ab23209fe62a03f8158806-annotations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Annotations</a>
+            <a
+                href="#id-d65a2ccf73ab23209fe62a03f8158806-relations"
+                id="id-d65a2ccf73ab23209fe62a03f8158806-tab-relations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Relations</a>
+        </nav>
+    </div>
+    <div
+        id="id-d65a2ccf73ab23209fe62a03f8158806-tab-content"
+        class="tab-content card-body">
+        <div
+            id="id-d65a2ccf73ab23209fe62a03f8158806-description"
+            class="card-text tab-pane fade show active"
+            role="tabpanel">
+            <p>
+            A game production event has one or more contributors, e.g. writers, developers, voice actors, etc. which are defined by a role relation.
+            </p>
+            <dl></dl>
+        </div>
+        <div
+            id="id-d65a2ccf73ab23209fe62a03f8158806-annotations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl></dl>
+        </div>
+        <div
+            id="id-d65a2ccf73ab23209fe62a03f8158806-relations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl><dt>has domain</dt><dd><a
+    href="#04e28fdfa8b8821c3d3c357070357879"
+    >Production event</a>
+</dd><dt>has range</dt><dd><a
+    href="#22f8262a66ed3057e396a6fa355880ed"
+    >Role relation</a>
+</dd></dl>
+        </div>
+    </div>
+    <div class="card-footer"></div>
+</div>
+</p>
+      
+          <p><div
+    class="card"
+    id="id-e394f72e8e7529bb6e97ea93777a467b"
+    >
+    <div class="card-header">
+        <h4 class="card-title">has platform realization</h4>
+        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/hasPlatformRealization</small></p>
+        <nav
+            class="nav nav-tabs card-header-tabs"
+            id="id-e394f72e8e7529bb6e97ea93777a467b-nav"
+            role="tablist">
+            <a
+                href="#id-e394f72e8e7529bb6e97ea93777a467b-description"
+                class="nav-item nav-link active"
+                aria-selected="true"
+                data-bs-toggle="tab"
+                role="tab">Description</a>
+            <a
+                href="#id-e394f72e8e7529bb6e97ea93777a467b-annotations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Annotations</a>
+            <a
+                href="#id-e394f72e8e7529bb6e97ea93777a467b-relations"
+                id="id-e394f72e8e7529bb6e97ea93777a467b-tab-relations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Relations</a>
+        </nav>
+    </div>
+    <div
+        id="id-e394f72e8e7529bb6e97ea93777a467b-tab-content"
+        class="tab-content card-body">
+        <div
+            id="id-e394f72e8e7529bb6e97ea93777a467b-description"
+            class="card-text tab-pane fade show active"
+            role="tabpanel">
+            <p>
+            ...
+            </p>
+            <dl></dl>
+        </div>
+        <div
+            id="id-e394f72e8e7529bb6e97ea93777a467b-annotations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl></dl>
+        </div>
+        <div
+            id="id-e394f72e8e7529bb6e97ea93777a467b-relations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl><dt>has range</dt><dd><a
+    href="#235340abab47924e3530a9d46a8fdbbc"
+    >Platform Realization</a>
 </dd></dl>
         </div>
     </div>
@@ -2541,297 +2733,41 @@
       
           <p><div
     class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/hasNote"
-    >
-    <div class="card-header">
-        <h4 class="card-title">has note</h4>
-        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/hasNote</small></p>
-        <nav
-            class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/hasNote-nav"
-            role="tablist">
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/hasNote-description"
-                class="nav-item nav-link active"
-                aria-selected="true"
-                data-toggle="tab"
-                role="tab">Description</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/hasNote-annotations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Annotations</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/hasNote-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/hasNote-tab-relations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Relations</a>
-        </nav>
-    </div>
-    <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/hasNote-tab-content"
-        class="tab-content card-body">
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/hasNote-description"
-            class="card-text tab-pane fade show active"
-            role="tabpanel">
-            <p>
-            
-            </p>
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/hasNote-annotations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/hasNote-relations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl><dt>has domain</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/DiggrEntity"
-    >Diggr Game Entity</a>
-</dd></dl>
-        </div>
-    </div>
-    <div class="card-footer"></div>
-</div>
-</p>
-      
-          <p><div
-    class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/gameGenre"
-    >
-    <div class="card-header">
-        <h4 class="card-title">game genre</h4>
-        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/gameGenre</small></p>
-        <nav
-            class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/gameGenre-nav"
-            role="tablist">
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/gameGenre-description"
-                class="nav-item nav-link active"
-                aria-selected="true"
-                data-toggle="tab"
-                role="tab">Description</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/gameGenre-annotations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Annotations</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/gameGenre-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/gameGenre-tab-relations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Relations</a>
-        </nav>
-    </div>
-    <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/gameGenre-tab-content"
-        class="tab-content card-body">
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/gameGenre-description"
-            class="card-text tab-pane fade show active"
-            role="tabpanel">
-            <p>
-            The categorization of a video game e.g. puzzle video game or dungeon crawl.
-            </p>
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/gameGenre-annotations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/gameGenre-relations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl><dt>has domain</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/Game"
-    >Video Game</a>
-</dd></dl>
-        </div>
-    </div>
-    <div class="card-footer"></div>
-</div>
-</p>
-      
-          <p><div
-    class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/variantTitle"
-    >
-    <div class="card-header">
-        <h4 class="card-title">variant title</h4>
-        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/variantTitle</small></p>
-        <nav
-            class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/variantTitle-nav"
-            role="tablist">
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/variantTitle-description"
-                class="nav-item nav-link active"
-                aria-selected="true"
-                data-toggle="tab"
-                role="tab">Description</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/variantTitle-annotations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Annotations</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/variantTitle-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/variantTitle-tab-relations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Relations</a>
-        </nav>
-    </div>
-    <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/variantTitle-tab-content"
-        class="tab-content card-body">
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/variantTitle-description"
-            class="card-text tab-pane fade show active"
-            role="tabpanel">
-            <p>
-            A variant title of something.
-            </p>
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/variantTitle-annotations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/variantTitle-relations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl><dt>has domain</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/DiggrEntity"
-    >Diggr Game Entity</a>
-</dd></dl>
-        </div>
-    </div>
-    <div class="card-footer"></div>
-</div>
-</p>
-      
-          <p><div
-    class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/title"
-    >
-    <div class="card-header">
-        <h4 class="card-title">title</h4>
-        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/title</small></p>
-        <nav
-            class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/title-nav"
-            role="tablist">
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/title-description"
-                class="nav-item nav-link active"
-                aria-selected="true"
-                data-toggle="tab"
-                role="tab">Description</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/title-annotations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Annotations</a>
-            <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/title-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/title-tab-relations"
-                class="nav-item nav-link"
-                aria-selected="false"
-                data-toggle="tab"
-                role="tab">Relations</a>
-        </nav>
-    </div>
-    <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/title-tab-content"
-        class="tab-content card-body">
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/title-description"
-            class="card-text tab-pane fade show active"
-            role="tabpanel">
-            <p>
-            The title of a game entity.
-            </p>
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/title-annotations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl></dl>
-        </div>
-        <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/title-relations"
-            class="card-text tab-pane fade"
-            role="tabpanel">
-            <dl><dt>has domain</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/DiggrEntity"
-    >Diggr Game Entity</a>
-</dd></dl>
-        </div>
-    </div>
-    <div class="card-footer"></div>
-</div>
-</p>
-      
-          <p><div
-    class="card"
-    id="http://vocab.ub.uni-leipzig.de/diggr/releaseDate"
+    id="id-cc416deb83925a971a9d7d1913805504"
     >
     <div class="card-header">
         <h4 class="card-title">release date</h4>
         <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/releaseDate</small></p>
         <nav
             class="nav nav-tabs card-header-tabs"
-            id="http://vocab.ub.uni-leipzig.de/diggr/releaseDate-nav"
+            id="id-cc416deb83925a971a9d7d1913805504-nav"
             role="tablist">
             <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/releaseDate-description"
+                href="#id-cc416deb83925a971a9d7d1913805504-description"
                 class="nav-item nav-link active"
                 aria-selected="true"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab">Description</a>
             <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/releaseDate-annotations"
+                href="#id-cc416deb83925a971a9d7d1913805504-annotations"
                 class="nav-item nav-link"
                 aria-selected="false"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab">Annotations</a>
             <a
-                href="#http://vocab.ub.uni-leipzig.de/diggr/releaseDate-relations"
-                id="http://vocab.ub.uni-leipzig.de/diggr/releaseDate-tab-relations"
+                href="#id-cc416deb83925a971a9d7d1913805504-relations"
+                id="id-cc416deb83925a971a9d7d1913805504-tab-relations"
                 class="nav-item nav-link"
                 aria-selected="false"
-                data-toggle="tab"
+                data-bs-toggle="tab"
                 role="tab">Relations</a>
         </nav>
     </div>
     <div
-        id="http://vocab.ub.uni-leipzig.de/diggr/releaseDate-tab-content"
+        id="id-cc416deb83925a971a9d7d1913805504-tab-content"
         class="tab-content card-body">
         <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/releaseDate-description"
+            id="id-cc416deb83925a971a9d7d1913805504-description"
             class="card-text tab-pane fade show active"
             role="tabpanel">
             <p>
@@ -2840,18 +2776,274 @@
             <dl></dl>
         </div>
         <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/releaseDate-annotations"
+            id="id-cc416deb83925a971a9d7d1913805504-annotations"
             class="card-text tab-pane fade"
             role="tabpanel">
             <dl></dl>
         </div>
         <div
-            id="http://vocab.ub.uni-leipzig.de/diggr/releaseDate-relations"
+            id="id-cc416deb83925a971a9d7d1913805504-relations"
             class="card-text tab-pane fade"
             role="tabpanel">
             <dl><dt>has domain</dt><dd><a
-    href="#http://vocab.ub.uni-leipzig.de/diggr/DiggrEntity"
+    href="#646986f504044d99bae4b4c3e27de0b7"
     >Diggr Game Entity</a>
+</dd></dl>
+        </div>
+    </div>
+    <div class="card-footer"></div>
+</div>
+</p>
+      
+          <p><div
+    class="card"
+    id="id-bab55d3817ecd5526031d62b789011a4"
+    >
+    <div class="card-header">
+        <h4 class="card-title">has note</h4>
+        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/hasNote</small></p>
+        <nav
+            class="nav nav-tabs card-header-tabs"
+            id="id-bab55d3817ecd5526031d62b789011a4-nav"
+            role="tablist">
+            <a
+                href="#id-bab55d3817ecd5526031d62b789011a4-description"
+                class="nav-item nav-link active"
+                aria-selected="true"
+                data-bs-toggle="tab"
+                role="tab">Description</a>
+            <a
+                href="#id-bab55d3817ecd5526031d62b789011a4-annotations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Annotations</a>
+            <a
+                href="#id-bab55d3817ecd5526031d62b789011a4-relations"
+                id="id-bab55d3817ecd5526031d62b789011a4-tab-relations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Relations</a>
+        </nav>
+    </div>
+    <div
+        id="id-bab55d3817ecd5526031d62b789011a4-tab-content"
+        class="tab-content card-body">
+        <div
+            id="id-bab55d3817ecd5526031d62b789011a4-description"
+            class="card-text tab-pane fade show active"
+            role="tabpanel">
+            <p>
+            
+            </p>
+            <dl></dl>
+        </div>
+        <div
+            id="id-bab55d3817ecd5526031d62b789011a4-annotations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl></dl>
+        </div>
+        <div
+            id="id-bab55d3817ecd5526031d62b789011a4-relations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl><dt>has domain</dt><dd><a
+    href="#646986f504044d99bae4b4c3e27de0b7"
+    >Diggr Game Entity</a>
+</dd></dl>
+        </div>
+    </div>
+    <div class="card-footer"></div>
+</div>
+</p>
+      
+          <p><div
+    class="card"
+    id="id-b019922777da9167e759722e0ded5e5d"
+    >
+    <div class="card-header">
+        <h4 class="card-title">variant title</h4>
+        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/variantTitle</small></p>
+        <nav
+            class="nav nav-tabs card-header-tabs"
+            id="id-b019922777da9167e759722e0ded5e5d-nav"
+            role="tablist">
+            <a
+                href="#id-b019922777da9167e759722e0ded5e5d-description"
+                class="nav-item nav-link active"
+                aria-selected="true"
+                data-bs-toggle="tab"
+                role="tab">Description</a>
+            <a
+                href="#id-b019922777da9167e759722e0ded5e5d-annotations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Annotations</a>
+            <a
+                href="#id-b019922777da9167e759722e0ded5e5d-relations"
+                id="id-b019922777da9167e759722e0ded5e5d-tab-relations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Relations</a>
+        </nav>
+    </div>
+    <div
+        id="id-b019922777da9167e759722e0ded5e5d-tab-content"
+        class="tab-content card-body">
+        <div
+            id="id-b019922777da9167e759722e0ded5e5d-description"
+            class="card-text tab-pane fade show active"
+            role="tabpanel">
+            <p>
+            A variant title of something.
+            </p>
+            <dl></dl>
+        </div>
+        <div
+            id="id-b019922777da9167e759722e0ded5e5d-annotations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl></dl>
+        </div>
+        <div
+            id="id-b019922777da9167e759722e0ded5e5d-relations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl><dt>has domain</dt><dd><a
+    href="#646986f504044d99bae4b4c3e27de0b7"
+    >Diggr Game Entity</a>
+</dd></dl>
+        </div>
+    </div>
+    <div class="card-footer"></div>
+</div>
+</p>
+      
+          <p><div
+    class="card"
+    id="id-b3eac554b0de83fcaeb76a0649ddb2fa"
+    >
+    <div class="card-header">
+        <h4 class="card-title">title</h4>
+        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/title</small></p>
+        <nav
+            class="nav nav-tabs card-header-tabs"
+            id="id-b3eac554b0de83fcaeb76a0649ddb2fa-nav"
+            role="tablist">
+            <a
+                href="#id-b3eac554b0de83fcaeb76a0649ddb2fa-description"
+                class="nav-item nav-link active"
+                aria-selected="true"
+                data-bs-toggle="tab"
+                role="tab">Description</a>
+            <a
+                href="#id-b3eac554b0de83fcaeb76a0649ddb2fa-annotations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Annotations</a>
+            <a
+                href="#id-b3eac554b0de83fcaeb76a0649ddb2fa-relations"
+                id="id-b3eac554b0de83fcaeb76a0649ddb2fa-tab-relations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Relations</a>
+        </nav>
+    </div>
+    <div
+        id="id-b3eac554b0de83fcaeb76a0649ddb2fa-tab-content"
+        class="tab-content card-body">
+        <div
+            id="id-b3eac554b0de83fcaeb76a0649ddb2fa-description"
+            class="card-text tab-pane fade show active"
+            role="tabpanel">
+            <p>
+            The title of a game entity.
+            </p>
+            <dl></dl>
+        </div>
+        <div
+            id="id-b3eac554b0de83fcaeb76a0649ddb2fa-annotations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl></dl>
+        </div>
+        <div
+            id="id-b3eac554b0de83fcaeb76a0649ddb2fa-relations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl><dt>has domain</dt><dd><a
+    href="#646986f504044d99bae4b4c3e27de0b7"
+    >Diggr Game Entity</a>
+</dd></dl>
+        </div>
+    </div>
+    <div class="card-footer"></div>
+</div>
+</p>
+      
+          <p><div
+    class="card"
+    id="id-3593c3390b47f886c61d2707a15370df"
+    >
+    <div class="card-header">
+        <h4 class="card-title">game genre</h4>
+        <p><small class="text-muted">http://vocab.ub.uni-leipzig.de/diggr/gameGenre</small></p>
+        <nav
+            class="nav nav-tabs card-header-tabs"
+            id="id-3593c3390b47f886c61d2707a15370df-nav"
+            role="tablist">
+            <a
+                href="#id-3593c3390b47f886c61d2707a15370df-description"
+                class="nav-item nav-link active"
+                aria-selected="true"
+                data-bs-toggle="tab"
+                role="tab">Description</a>
+            <a
+                href="#id-3593c3390b47f886c61d2707a15370df-annotations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Annotations</a>
+            <a
+                href="#id-3593c3390b47f886c61d2707a15370df-relations"
+                id="id-3593c3390b47f886c61d2707a15370df-tab-relations"
+                class="nav-item nav-link"
+                aria-selected="false"
+                data-bs-toggle="tab"
+                role="tab">Relations</a>
+        </nav>
+    </div>
+    <div
+        id="id-3593c3390b47f886c61d2707a15370df-tab-content"
+        class="tab-content card-body">
+        <div
+            id="id-3593c3390b47f886c61d2707a15370df-description"
+            class="card-text tab-pane fade show active"
+            role="tabpanel">
+            <p>
+            The categorization of a video game e.g. puzzle video game or dungeon crawl.
+            </p>
+            <dl></dl>
+        </div>
+        <div
+            id="id-3593c3390b47f886c61d2707a15370df-annotations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl></dl>
+        </div>
+        <div
+            id="id-3593c3390b47f886c61d2707a15370df-relations"
+            class="card-text tab-pane fade"
+            role="tabpanel">
+            <dl><dt>has domain</dt><dd><a
+    href="#88753d0290f7b6007e5444619c7628a7"
+    >Video Game</a>
 </dd></dl>
         </div>
     </div>
@@ -2869,8 +3061,6 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   </body>
 </html>
